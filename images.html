@@ -194,6 +194,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="imaging-data-structure-and-formats.html">2. Imaging Data: Structure And Formats</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -258,7 +270,215 @@ Sun arise each and every morning
 <h3 id="introduction-figure-2">Figure 2</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Blue Carpentries hex person logo with no text.’</p>
 <figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><hr></section>
+</figure><hr></section><section id="imaging-data-structure-and-formats"><h2 class="section-heading"><a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></h2>
+<hr class="half-width">
+<h3 id="imaging-data-structure-and-formats-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Launch terminal window’</p>
+<p>Clicking on the Applications in the upper left-hand corner and select
+the terminal icon. This will open a terminal window that you will use to
+type commands <img src="fig/aic_smri_launch_terminal.png" alt="Launch terminal window" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Display toolbar’</p>
+<li>
+<strong>Affine transformation</strong> (<code>qform</code>): this
+field encodes a transformation or mapping that tells us <strong>how to
+convert the voxel location (i,j,k) to the real-world coordinates
+(x,y,z)</strong> (i.e. the coordinate system of the MRI scanner in which
+the image was acquired). The real-world coordinate system tends to be
+defined according to the patient. The x-axis tends to go from patient
+left to patient right, the y axis tends to go from anterior to
+posterior, and the z-axis goes from top to bottom of the patient. This
+mapping is very important, as this information will be needed to
+correctly visualize images and also to align them later. <img src="fig/coordinates_affine.png" alt="Display toolbar" class="figure"> An alternative
+command to <code>fslinfo</code> is <code>fslhd</code>, which displays a
+reduced set of properties about the images (mainly data type, dimension
+and resolution).</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Display toolbar’</p>
+<p><img src="fig/display_toolbar.png" alt="Display toolbar" height="180" class="figure"> The display toolbar allows you to adjust the display
+properties of the currently selected image. Play around with the
+controls and note how the image display changes (but leave the “overlay
+type” as “3D/4D volume”).</p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘gear icon’</p>
+<li>
+<strong>Overlay display panel:</strong> Clicking on the gear button
+( <img src="fig/gear_icon.png" alt="gear icon" height="24" class="figure"> ) opens a
+panel with more display settings.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘info’</p>
+<li>
+<strong>Overlay information:</strong> Clicking on the information
+button ( <img src="fig/information_icon.png" alt="info" height="24" class="figure"> )
+opens a panel with information about the image.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 2: ‘left’</p>
+<p aria-hidden="true">Image 2 of 2: ‘right’</p>
+<p>If FSLeyes does not have enough room to display a toolbar in full, it
+will display left and right arrows ( <img src="fig/toolbar_left.png" alt="left" height="24" class="figure"> ), ( <img src="fig/toolbar_right.png" alt="right" height="24" class="figure"> ) on each side of the toolbar - you can click
+on these arrows to navigate back and forth through the toolbar.</p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-7">Figure 7</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Ortho toolbar’</p>
+<figure><img src="fig/ortho_toolbar.png" alt="Ortho toolbar" height="160" class="figure mx-auto d-block"></figure><hr>
+<h3 id="imaging-data-structure-and-formats-figure-8">Figure 8</h3>
+<p aria-hidden="true">Image 1 of 1: ‘spanner icon’</p>
+<li>
+<strong>View settings panel</strong> <img src="fig/spanner_icon.png" alt="spanner icon" height="24" class="figure"> : Clicking on the spanner button opens
+panel with advanced ortho view settings.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-9">Figure 9</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot icon’</p>
+<li>
+<strong>Screenshot</strong> <img src="fig/camera_icon.png" alt="screenshot icon" height="24" class="figure"> : Clicking on the camera button
+will allow you to save the current scene, in this ortho view, to an
+image file.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-10">Figure 10</h3>
+<p aria-hidden="true">Image 1 of 3: ‘sagittal icon’</p>
+<p aria-hidden="true">Image 2 of 3: ‘coronal icon’</p>
+<p aria-hidden="true">Image 3 of 3: ‘axial icon’</p>
+<li>
+<strong>Toggle canvases</strong> <img src="fig/sagittal_icon.png" alt="sagittal icon" height="24" class="figure"> , <img src="fig/coronal_icon.png" alt="coronal icon" height="24" class="figure"> , <img src="fig/axial_icon.png" alt="axial icon" height="24" class="figure"> : These three buttons allow you to
+toggle each of the three canvases on the ortho view.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-11">Figure 11</h3>
+<p aria-hidden="true">Image 1 of 6: ‘horizontal icon’</p>
+<p aria-hidden="true">Image 2 of 6: ‘vertical icon’</p>
+<p aria-hidden="true">Image 3 of 6: ‘grid icon’</p>
+<p aria-hidden="true">Image 4 of 6: ‘horizontal icon’</p>
+<p aria-hidden="true">Image 5 of 6: ‘vertical icon’</p>
+<p aria-hidden="true">Image 6 of 6: ‘grid icon’</p>
+<li>
+<strong>Canvas layout</strong> <img src="fig/horizontal_icon.png" alt="horizontal icon" height="24" class="figure"> , <img src="fig/vertical_icon.png" alt="vertical icon" height="24" class="figure"> , <img src="fig/grid_icon.png" alt="grid icon" height="24" class="figure"> : These three buttons allow you to choose
+between laying out the canvases horizontally (<img src="fig/horizontal_icon.png" alt="horizontal icon" height="24" class="figure"> ),
+vertically (<img src="fig/vertical_icon.png" alt="vertical icon" height="24" class="figure"> ), or in a grid (<img src="fig/grid_icon.png" alt="grid icon" height="24" class="figure"> ).</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-12">Figure 12</h3>
+<p aria-hidden="true">Image 1 of 1: ‘movie icon’</p>
+<li>
+<strong>Movie mode</strong> <img src="fig/movie_icon.png" alt="movie icon" height="24" class="figure"> : This button enables <em>movie
+mode</em> - if you load a 4D image, and turn on movie mode, the image
+will be “played” as a movie (the view will loop through each of the 3D
+images in the 4D volume).</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-13">Figure 13</h3>
+<p aria-hidden="true">Image 1 of 1: ‘add icon’</p>
+<li>
+<strong>Toggle cursor/labels</strong> <img src="fig/plus_icon.png" alt="add icon" height="24" class="figure"> : This button allows you to toggle the
+anatomical labels and location cursor on and off.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-14">Figure 14</h3>
+<p aria-hidden="true">Image 1 of 1: ‘add icon’</p>
+<li>
+<strong>Reset zoom</strong> <img src="fig/reset_zoom_icon.png" alt="add icon" height="24" class="figure"> : This button resets the zoom level to
+100% on all three canvases.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-15">Figure 15</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Lightbox toolbar’</p>
+<p>Open a <em>lightbox</em> view using <em>View &gt; Lightbox View</em>.
+If you drag the mouse around in the viewer you can see that the cursor
+position is linked in the two views of the data (the ortho and the
+lightbox views). This is particularly useful when you have several
+images loaded in at the same time (you can view each in a separate view
+window and move around all of them simultaneously). <img src="fig/lightbox_toolbar.png" alt="Lightbox toolbar" height="210" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-16">Figure 16</h3>
+<p aria-hidden="true">Image 1 of 1: ‘spanner icon’</p>
+<li>
+<strong>View settings panel</strong> <img src="fig/spanner_icon.png" alt="spanner icon" height="24" class="figure"> : Clicking on the spanner button opens
+a panel with advanced lightbox view settings.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-17">Figure 17</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot icon’</p>
+<li>
+<strong>Screenshot</strong> <img src="fig/camera_icon.png" alt="screenshot icon" height="24" class="figure"> : Clicking on the camera button
+will allow you to save the current scene, in this lightbox view, to an
+image file.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-18">Figure 18</h3>
+<p aria-hidden="true">Image 1 of 3: ‘sagittal icon’</p>
+<p aria-hidden="true">Image 2 of 3: ‘coronal icon’</p>
+<p aria-hidden="true">Image 3 of 3: ‘axial icon’</p>
+<li>
+<strong>Z axis</strong> <img src="fig/sagittal_icon.png" alt="sagittal icon" height="24" class="figure"> , <img src="fig/coronal_icon.png" alt="coronal icon" height="24" class="figure"> , <img src="fig/axial_icon.png" alt="axial icon" height="24" class="figure"> : These three buttons allow you to
+choose which slice plane to display in the lightbox view.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-19">Figure 19</h3>
+<p aria-hidden="true">Image 1 of 1: ‘movie icon’</p>
+<li>
+<strong>Movie mode</strong> <img src="fig/movie_icon.png" alt="movie icon" height="24" class="figure"> : This button enables movie mode.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-20">Figure 20</h3>
+<p aria-hidden="true">Image 1 of 1: ‘spanner icon’</p>
+<p>You can “unlink” the cursor position between the two views (it is
+linked by default). Go into one of the views, e.g., the lightbox view,
+and press the spanner button ( <img src="fig/spanner_icon.png" alt="spanner icon" height="24" class="figure"> ). This will open the lightbox view
+settings panel. Turn off the <strong>Link Location</strong> option, and
+close the view settings panel. You will now find that this view (the
+lightbox view) is no longer linked to the “global” cursor position, and
+you can move the cursor independently (in this view) from where it is in
+the other views.</p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-21">Figure 21</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Overlay list’</p>
+<p>Now load in a second image
+(<code>sub-OAS30015_T1w_brain_pve_0.nii.gz</code>) using <em>File &gt;
+Add from file</em>. This image is a tissue segmentation image of the
+cerebrospinal fluid. In the bottom-left panel is a list of loaded images
+- the <em>overlay list</em>. <img src="fig/overlay_list_oasis.png" alt="Overlay list" height="150" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-22">Figure 22</h3>
+<li>Show/hide each overlay with the eye button ( <img src="fig/eye_icon.png" class="figure"> {alt=“eye icon” height=‘24px’} ), or by double
+clicking on the overlay name.</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-23">Figure 23</h3>
+<p aria-hidden="true">Image 1 of 1: ‘chain icon’</p>
+<li>Link overlay display properties with the chainlink button ( <img src="fig/chainlink_icon.png" alt="chain icon" height="24" class="figure"> ).</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-24">Figure 24</h3>
+<p aria-hidden="true">Image 1 of 1: ‘disk icon’</p>
+<li>Save an overlay if it has been edited, with the floppy disk button (
+<img src="fig/floppy_disk_icon.png" alt="disk icon" height="24" class="figure">
+).</li>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-25">Figure 25</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Location panel’</p>
+<p>In the bottom right corner of the FSLeyes window you will find the
+location panel, which contains information about the current cursor
+location, and image data values at that location. <img src="fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-26">Figure 26</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Atlas information panel’</p>
+<p>The <strong>Atlas information</strong> tab displays information about
+the current display location, relative to one or more atlases: <img src="fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure"> The list on the left allows you to select the atlases
+that you wish to query - click the check boxes to the left of an atlas
+to toggle information on and off for that atlas. The Harvard-Oxford
+cortical and sub-cortical structural atlases are both selected by
+default. These are formed by averaging careful hand segmentations of
+structural images of many separate individuals.</p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-27">Figure 27</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Atlas search panel’</p>
+<p>The <strong>Atlas search</strong> tab allows you to browse through
+the atlases, and search for specific regions. <img src="fig/atlas_search_panel.png" alt="Atlas search panel" height="200" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-28">Figure 28</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Atlas region search’</p>
+<p>The search field at the top of the region list allows you to filter
+the regions that are displayed. <img src="fig/atlas_region_search.png" alt="Atlas region search" height="200" class="figure"></p>
+<hr>
+<h3 id="imaging-data-structure-and-formats-figure-29">Figure 29</h3>
+<p>Change the intensity range for both images to be between 0 and 1000.
+Show/hide images with the eye button ( <img src="fig/eye_icon.png" class="figure">
+{alt=“eye icon” height=‘24px’} ), or by double clicking on the image
+name in the overlay list.</p>
+<hr></section>
 </div>
     </main>
 </div>
