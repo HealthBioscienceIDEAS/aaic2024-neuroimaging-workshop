@@ -56,6 +56,17 @@ From the terminal window type:
 cd ~/data/ImageDataVisualization
 ls
 ```
+```output
+sub-OAS30015_acq-TSE_T2w.json            sub-OAS30015_T1w_brain_seg.nii.gz
+sub-OAS30015_acq-TSE_T2w.nii.gz          sub-OAS30015_T1w.json
+sub-OAS30015_T1w_brain_mask.nii.gz       sub-OAS30015_T1w.nii.gz
+sub-OAS30015_T1w_brain_mixeltype.nii.gz  sub-OAS30015_T1w_orig.nii.gz
+sub-OAS30015_T1w_brain.nii.gz            sub-OAS30015_T2star.json
+sub-OAS30015_T1w_brain_pve_0.nii.gz      sub-OAS30015_T2star.nii.gz
+sub-OAS30015_T1w_brain_pve_1.nii.gz      sub-OAS30015_T2w.json
+sub-OAS30015_T1w_brain_pve_2.nii.gz      sub-OAS30015_T2w.nii.gz
+sub-OAS30015_T1w_brain_pveseg.nii.gz
+```
 
 This means that we are going to be working in the `ImageDataVisualization` 
 subfolder under `data` in your home directory (`~`).
@@ -65,14 +76,157 @@ Type
 ```bash
 fslhd sub-OAS30015_T1w.nii.gz
 ```
-TODO: Add output
-and
+::::::::::::::::::: spoiler
+### Let's look at the output
+```output
+filename	sub-OAS30015_T1w.nii.gz
 
-```shell
+sizeof_hdr	348
+data_type	INT16
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	4
+nbyper		2
+bitpix		16
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004
+```
+:::::::::::::::::::::
+
+```bash
 fslhd sub-OAS30015_T1w_brain_pve_0.nii.gz
 ```
-TODO: Add output
-and let's look at the most important fields:
+::::::::::::::::::: spoiler
+### Let's look at the output
+
+```output
+filename	sub-OAS30015_T1w_brain_pve_0.nii.gz
+
+sizeof_hdr	348
+data_type	FLOAT32
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	16
+nbyper		4
+bitpix		32
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004
+```
+::::::::::::::::::::::::::
+
+Let's look at the most important fields:
 
 * **Data type** (`data_type`): Note that some images (`sub-OAS30015_T1w`) are of _integer_ datatype, while others (`sub-OAS30015_T1w_brain_pve_0`) are of _floating point_ datatype. Integer means that the intensity values can only take on whole numbers - no fractions - raw image data is normally of this type. Floating point means that intensity values can be fractional - the result of applying most statistical processing algorithms to image data results in images of floating point type.
 * **Image dimension** (`dim1`, `dim2`,`dim3`): this is the number of voxels in the image in the x,y,z dimension. This means that we have a cube of imaging data in the file that contains `dim1` columns, `dim2` rows, and `dim3` slices.
