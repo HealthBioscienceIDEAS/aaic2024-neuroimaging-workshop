@@ -206,6 +206,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -597,6 +609,42 @@ them. <img src="fig/aic_smri_fsleyes_addstd.png" alt="Add standard function" cla
 <h3 id="structural-mri-figure-18">Figure 18</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Coregistration of T1 and FLAIR’</p>
 <p>The final command setup should look like the screenshot below: <img src="fig/aic_smri_flirt_T1FLAIR.png" alt="Coregistration of T1 and FLAIR" class="figure"></p>
+<hr></section><section id="pet-imaging"><h2 class="section-heading"><a href="pet-imaging.html">Processing and analysing PET brain images</a></h2>
+<hr class="half-width">
+<h3 id="pet-imaging-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘SPM ImCalc module’</p>
+<p>Select the <code>ImCalc</code> module. <img src="fig/aic_pet_imcalc_start.png" alt="SPM ImCalc module" class="figure"></p>
+<hr>
+<h3 id="pet-imaging-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose Frame 14’</p>
+<p>Enter the frame number corresponding to the frame that spans
+50-55 min post-injection (frame number 14) and hit enter. Click on the
+<code>sub001_pib.nii,14</code> file to add this to the list. <img src="fig/aic_pet_imcalc_choose14.png" alt="Choose Frame 14" class="figure"></p>
+<hr>
+<h3 id="pet-imaging-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose all’</p>
+<p>Enter the next framenumber and similarly add it to the list.
+Repeat until you’ve added the last four frames of the PiB image
+corresponding to 50-70 min post-injection (frames 14, 15, 16, and 17).
+Note the order you input the images corresponds to i1, i2, … in the
+Expression field later. Once you’ve selected the last four frames click
+Done to finalize the selection. <img src="fig/aic_pet_imcalc_chosenall.png" alt="Choose all" class="figure"></p>
+<hr>
+<h3 id="pet-imaging-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘ImCalc output’</p>
+<p><code>Output Filename</code> – enter text
+<code>sub001_pib_SUM50-70min.nii</code> <img src="fig/aic_pet_imcalc_output.png" alt="ImCalc output" class="figure"></p>
+<hr>
+<h3 id="pet-imaging-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘ImCalc expression’</p>
+<p>Note that taking the average of these frames is equivalent to summing
+all of the detected counts across the frames <img src="fig/aic_pet_imcalc_expression.png" alt="ImCalc expression" class="figure"> . and
+dividing by the total amount of time that has passed during those frames
+(i.e., 20 min).</p>
+<hr>
+<h3 id="pet-imaging-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose float image’</p>
+<p><code>Data Type</code> – specify FLOAT32 <img src="fig/aic_pet_imcalc_float.png" alt="Choose float image" class="figure"></p>
 <hr></section>
 </div>
     </main>

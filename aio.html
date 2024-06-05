@@ -206,6 +206,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -340,19 +352,199 @@ type commands <img src="fig/aic_smri_launch_terminal.png" alt="Launch terminal w
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>sub-OAS30015_acq-TSE_T2w.json            sub-OAS30015_T1w_brain_seg.nii.gz
+sub-OAS30015_acq-TSE_T2w.nii.gz          sub-OAS30015_T1w.json
+sub-OAS30015_T1w_brain_mask.nii.gz       sub-OAS30015_T1w.nii.gz
+sub-OAS30015_T1w_brain_mixeltype.nii.gz  sub-OAS30015_T1w_orig.nii.gz
+sub-OAS30015_T1w_brain.nii.gz            sub-OAS30015_T2star.json
+sub-OAS30015_T1w_brain_pve_0.nii.gz      sub-OAS30015_T2star.nii.gz
+sub-OAS30015_T1w_brain_pve_1.nii.gz      sub-OAS30015_T2w.json
+sub-OAS30015_T1w_brain_pve_2.nii.gz      sub-OAS30015_T2w.nii.gz
+sub-OAS30015_T1w_brain_pveseg.nii.gz</code></pre>
+</div>
 <p>This means that we are going to be working in the
 <code>ImageDataVisualization</code> subfolder under <code>data</code> in
 your home directory (<code>~</code>). The <code>ls</code> command gives
 you a list of the files in this directory.</p>
 <p>Type</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w.nii.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w.nii.gz</span></code></pre>
 </div>
-<p>TODO: Add output and</p>
-<pre class="shell"><code>fslhd sub-OAS30015_T1w_brain_pve_0.nii.gz</code></pre>
-<p>TODO: Add output and let’s look at the most important fields:</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>filename	sub-OAS30015_T1w.nii.gz
+
+sizeof_hdr	348
+data_type	INT16
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	4
+nbyper		2
+bitpix		16
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w_brain_pve_0.nii.gz</span></code></pre>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>filename	sub-OAS30015_T1w_brain_pve_0.nii.gz
+
+sizeof_hdr	348
+data_type	FLOAT32
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	16
+nbyper		4
+bitpix		32
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Let’s look at the most important fields:</p>
 <ul>
 <li>
 <strong>Data type</strong> (<code>data_type</code>): Note that some
@@ -837,11 +1029,11 @@ research as well as in clinical setting, we acquire multiple imaging
 modalities from the same individual to look at different brain
 characteristics. Even if we acquire all the modalities in the same
 session, the images may differ in orientation and resolution.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ExtraStructuralMRI</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ExtraStructuralMRI</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
 <p>Let’s take two imaging modalities from a different participant:
 <code>sub-OAS30003_T1w.nii.gz</code> and
@@ -852,10 +1044,10 @@ session, the images may differ in orientation and resolution.</p>
 </ul>
 <p>[Hint: use <code>fslhd</code> to answer]</p>
 <p>Now let’s have a look at them in FSLeyes:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz</span></code></pre>
 </div>
 <p>Change the intensity range for both images to be between 0 and 1000.
 Show/hide images with the eye button ( <img src="fig/eye_icon.png" class="figure">
@@ -1532,6 +1724,877 @@ neuroimaging analysis</li>
 matter, cerebrospinal fluid) from T1 weighted images</li>
 <li>Co-registration of MRI to other modalities can be used to analyse
 these images at a regional level.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-pet-imaging"><p>Content from <a href="pet-imaging.html">Processing and analysing PET brain images</a></p>
+<hr>
+<p>Last updated on 2024-06-05 |
+        
+        <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What does positron emission tomography measure?</li>
+<li>How is PET data stored and acquired?</li>
+<li>How can I extract key measurements of tracer uptake out of
+scans?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Describe how images are reconstructed in PET</li>
+<li>Explain the differences between static and dynamic acquisitions, and
+what information can be derived from them.</li>
+<li>Perform the basic processing steps involved in PET image
+analysis</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>This tutorial is an introduction to working with PET data in the
+context of AD neuroimaging. Due to the limited time, we will not have
+time to fully recreate a typical image processing pipeline for PET data,
+but have included enough steps that you’ll be able to perform the
+minimum steps needed to generate a parametric SUVR image. The provided
+dataset includes T1-weighted MRI, [18F]MK-6240 tau PET and [11C]PiB
+amyloid PET scans for a single subject at a single timepoint. For ease,
+the T1-weighted image was already rigidly aligned and resliced to a 1mm
+isotropic image in MNI152 space. The provided PET scans were acquired
+using different protocols to demonstrate two common ways that PET data
+can be acquired. The tutorial will explain the differences between these
+types of acquisitions and what information can be derived from them.</p>
+<div class="section level3">
+<h3 id="background-pet-data-image-processing-and-quantification">Background: PET data, image processing, and quantification<a class="anchor" aria-label="anchor" href="#background-pet-data-image-processing-and-quantification"></a>
+</h3>
+<p>PET data are collected on the scanner typically in <em>list
+mode</em>. This is quite literally a logged record of every event the
+scanner detects, but this type of data is not all that useful for
+interpretation. Viewing the images requires that the list mode data be
+reconstructed. The provided images have already been reconstructed with
+the widely-used Ordered Subset Expectation Maximization (OSEM) algorithm
+with common corrections (scatter, dead time, decay, etc.) already
+applied during the reconstruction. Notably, no smoothing was applied
+during the PET reconstruction.</p>
+</div>
+</section><section id="gaining-familiarity-with-4d-pet-data"><h2 class="section-heading">Gaining familiarity with 4D PET data<a class="anchor" aria-label="anchor" href="#gaining-familiarity-with-4d-pet-data"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="prepare-working-directory">Prepare working directory<a class="anchor" aria-label="anchor" href="#prepare-working-directory"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open a new terminal window and navigate to the directory with the
+unprocessed PET NIfTI images and data
+<code>/home/as2-streaming-user/data/PET_Imaging</code>.</li>
+<li>Use <code>ls</code> to view the contents of this directory</li>
+<li>Use <code>cd</code> to change your working directory to the
+following location:
+<code>bash     cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData</code>
+</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="view-pet-metadata">View PET metadata<a class="anchor" aria-label="anchor" href="#view-pet-metadata"></a>
+</h3>
+<p>View the information in the .json file for MK-6240 and PiB images by
+opening the .json files for the MK-6240 and PiB images. For example,
+type the following into the terminal:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">gedit</span> sub001_pib.json</span></code></pre>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div class="accordion-body">
+<p>Open up multiple terminal windows to view the .json file contents
+side-by-side.</p>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Note that the Time section differs with regard to the scant start
+and injection start times. Namely, the MK-6240 scan starts 70 minutes
+after tracer injection, whereas the PiB image starts at the same time as
+the scan start. The latter is often referred to as a <em>full
+dynamic</em> acquisition and enables us to calculate more accurate
+measurements like distribution volume ratio (DVR) and often additional
+parameters from the time-series data (e.g., <span class="math inline">\(R_1\)</span> relative perfusion). If we had
+arterial data available, we could also use the full dynamic scan to
+perform kinetic modeling.</p></li>
+<li><p>Also note the framing sequences differs between the two tracers.
+MK-6240 is using consecutive 5-minute frames whereas PiB starts with
+2-minute frames for the first 10 minutes and then 5-minute frames
+thereafter.</p></li>
+<li>
+<p>For both images, the decay correction factors correspond to the
+scan start time (indicated by “START” in the DecayCorrected field). This
+may or may not have consequences for how we quantify the image. For
+example, if we wanted to calculate the standard uptake value <span class="math inline">\(SUV = C(t) / InjectedDose * BodyMass\)</span>,</p>
+<p>we would need to decay correct the MK-6240 scan data to tracer
+injection but this is not needed to calculate SUV for the PiB scan
+because the scan started with tracer injection.</p>
+</li>
+</ul>
+<p>Now close the .json files in <code>gedit</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="view-4d-pet-data">View 4D PET data<a class="anchor" aria-label="anchor" href="#view-4d-pet-data"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open <code>sub001_pib.nii</code> using <code>fsleyes</code>.</li>
+<li>Set the minimum threshold to 0 and the maximum threshold to 30,000
+Bq/mL</li>
+<li>You are currently viewing individual PET frames that have not been
+denoised in any way. Notice the high noise level in the individual PET
+frames. This is why we often apply some type of denoising algorithm to
+the PET data before processing and quantification.</li>
+<li>Use your cursor to scroll around the image and observe the values in
+voxels in the brain. These values are activity concentrations given in
+<span class="math inline">\(Bq/mL\)</span>, where Bq (Becquerel) is the
+SI unit for radioactivity and is expressed as a rate (counts per
+second). In PET, the noise in the image is proportional to the inverse
+of the square root of the counts. Thus, the more counts detected, the
+less noisy the image will appear.</li>
+<li>Use the Volume field to advance through the PET frames from the
+first frame (index = 0) to the last frame (index = 16). Moving higher in
+volume indices is moving forward in time, like a 3D movie, as the tracer
+distributes throughout the brain over time. Note how the distribution of
+the tracer changes from the first frame to the last frame. The tracer
+distribution in early frames of this acquisition largely reflects the
+tracer perfusing the. brain tissue whereas later frames largely reflect
+a combination of free tracer and specific and non-specific tracer
+binding. You may need to adjust the upper window level to a lower value
+to more clearly visualize the later PET frames. You’ll also likely
+notice that the later frames are noisier than the beginning frames,
+again, this has to do with counting statistics and the reduced counts
+detected over time due to radioactive decay and lower tracer
+concentration in the brain at later timepoints.</li>
+<li>Close the 4D PET image in FSL by selecting the image in the Overlay
+list at the bottom of the page and clicking Overlay -&gt; Remove from
+the menu at the top of the page.</li>
+</ol>
+</div>
+</section><section id="creating-a-sum-pet-image"><h2 class="section-heading">Creating a SUM PET image<a class="anchor" aria-label="anchor" href="#creating-a-sum-pet-image"></a>
+</h2>
+<hr class="half-width">
+<p>We’ll create two different SUM images from the PiB scan; one for
+early- and one for late-frame data to visualize the differences in
+tracer distribution between these timepoints more easily. The early
+frame data will SUM 0-20 minutes post-injection whereas the late frame
+will SUM 50-70 minutes post-injection. We’ll do the late-frame image
+first and then the early-frame image. You can reference the
+FrameTimeStart and FrameTimeEnd fields in the .json file to determine
+which frames correspond to 0-20 min and 50-70 min postinjection.</p>
+<div class="section level3">
+<h3 id="using-imcalc-to-sum-frames">Using ImCalc to Sum Frames<a class="anchor" aria-label="anchor" href="#using-imcalc-to-sum-frames"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open SPM12 by typing <code>spm pet</code> in the command line.
+option.</p></li>
+<li><p>Select the <code>ImCalc</code> module. <img src="fig/aic_pet_imcalc_start.png" alt="SPM ImCalc module" class="figure"></p></li>
+<li>
+<p>For each variable in the GUI, you will need to specify values
+using the <code>Specify</code> button. Use the values specified below
+for each variable listed.</p>
+<ul>
+<li><p><code>Input Images</code> – here we want to specify the input
+images that we are going to use to perform the image calculation. The
+order that the images are specified will determine the order they are
+referred to in the expression field below (e.g., the first image is i1,
+the second image is i2, etc.,) However, SPM will only load one frame at
+a time for 4D data, so each frame needs to be specified individually
+using the Frames field. The frame number is then delineated by the
+filename followed by a comma and the frame number. Note that SPM uses
+index 1 for the first frame, which corresponds to index 0 in
+FSL.</p></li>
+<li><p>Enter the frame number corresponding to the frame that spans
+50-55 min post-injection (frame number 14) and hit enter. Click on the
+<code>sub001_pib.nii,14</code> file to add this to the list. <img src="fig/aic_pet_imcalc_choose14.png" alt="Choose Frame 14" class="figure"></p></li>
+<li><p>Enter the next framenumber and similarly add it to the list.
+Repeat until you’ve added the last four frames of the PiB image
+corresponding to 50-70 min post-injection (frames 14, 15, 16, and 17).
+Note the order you input the images corresponds to i1, i2, … in the
+Expression field later. Once you’ve selected the last four frames click
+Done to finalize the selection. <img src="fig/aic_pet_imcalc_chosenall.png" alt="Choose all" class="figure"></p></li>
+<li><p><code>Output Filename</code> – enter text
+<code>sub001_pib_SUM50-70min.nii</code> <img src="fig/aic_pet_imcalc_output.png" alt="ImCalc output" class="figure"></p></li>
+<li><p><code>Output Directory</code> – specify the output directory for
+the file. If you leave this blank, SPM will output the file in the
+present working directory (i.e., the directory that SPM was launched
+from in the command line)</p></li>
+<li>
+<p><code>Expression</code> – because the frames are all 5 minutes
+long at this part of the sequence, we can simply take the average to sum
+the last 20 minutes of counts.</p>
+<p>Enter the expression</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
+</div>
+<p>Note that taking the average of these frames is equivalent to summing
+all of the detected counts across the frames <img src="fig/aic_pet_imcalc_expression.png" alt="ImCalc expression" class="figure"> . and
+dividing by the total amount of time that has passed during those frames
+(i.e., 20 min).</p>
+</li>
+<li><p><code>Data Matrix</code>, <code>Masking</code>,
+<code>Interpolation</code> can all use default values</p></li>
+<li><p><code>Data Type</code> – specify FLOAT32 <img src="fig/aic_pet_imcalc_float.png" alt="Choose float image" class="figure"></p></li>
+</ul>
+</li>
+<li><p>Verify ImCalc inputs and then run the batch by pressing the green
+play button at the top of the batch editor. This should create a new
+NIfTI file with the late-frame summed data.</p></li>
+<li>
+<p>Open the 50-70 min SUM image in FSLeyes and note the difference
+in noise properties vs. those you observed in a single frame. The SNR
+has improved because we are now viewing an image with more total counts.
+Notice that you can now more clearly see some contrast between the
+precuneus and the adjacent occipital cortex in the sagittal plane just
+to the left or right of mid-sagittal. You can similarly see differences
+in intensity between much of the cortex and the cerebellar GM, a common
+reference region used for amyloid PET as it typically has negligible
+specific binding in the cerebellum.</p>
+<p><strong>Do you think this person is amyloid positive or
+negative?</strong></p>
+</li>
+<li>
+<p>Repeat the above steps to generate the SUM image for the early
+frame data. Make sure to remove the previous volumes before adding the
+new volume in the Input Images. You will need to use the first seven
+frames corresponding to the first 20 min of data. Note that the frames
+are not all the same duration and a straight average is no longer
+equivalent to summing all of the counts and dividing by the total time.
+How can we use a weighted average to account for the differences in
+frame durations between the first five and last two frames of the first
+20 minutes?</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i2</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span> <span class="va">i7</span><span class="op">*</span><span class="fl">5</span>) <span class="op">/</span> <span class="fl">20</span></span></code></pre>
+</div>
+</li>
+<li><p>Name this file <code>sub001_pib_SUM0-20min.nii</code></p></li>
+<li><p>Open the 0-20 min SUM image in FSLeyes and compare to the 50-70
+min SUM image. Note the differences in GM/WM contrast between the images
+and the differences in noise properties. You will likely have to change
+the max intensity settings in both images to be able to observe the
+differences in contrast.</p></li>
+<li><p>Close the SPM batch editor</p></li>
+</ol>
+</div>
+</section><section id="image-smoothing"><h2 class="section-heading">Image Smoothing<a class="anchor" aria-label="anchor" href="#image-smoothing"></a>
+</h2>
+<hr class="half-width">
+<p>As you can see from viewing the smoothed images, they still are quite
+noisy, particularly at the voxel level. In this section we’ll use a
+simple Gaussian smoothing kernel to reduce the voxel-level noise. We are
+really trading voxel variance for co-variance between voxels. This means
+that the activity concentration in any particular voxel will have lower
+variance, but will be more influenced by neighboring voxels. Thus we are
+degrading the spatial resolution of the image slightly to improve the
+noise characteristics. The size of the Gaussian smoothing kernel is
+typically specified as the full-width of the kernel at half the maximum
+value of the kernel.</p>
+<div class="section level3">
+<h3 id="apply-smoothing-to-sum-images">Apply smoothing to SUM images<a class="anchor" aria-label="anchor" href="#apply-smoothing-to-sum-images"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Click on the Smooth button to launch the Smooth module in SPM and
+use the following inputs:
+<ul>
+<li>
+<code>Image to Smooth</code> - Specify the two SUM images (you can
+do both at the same time)</li>
+<li>
+<code>FWHM</code> – 4 4 4 (this specified an isotropic 4 mm
+full-width half Gaussian smoothing kernel)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<code>Data Type</code> – Same</li>
+<li>
+<code>Implicit Mask</code> – No</li>
+<li>
+<code>Filename prefix</code> – ‘s’ (this prepends an “s” onto the
+filename to indicate the newly created image was smoothed)</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Press the green play button to run the smoothing module.</li>
+<li>Close the SPM batch editor.</li>
+<li>View the resultant smoothed images in FSL (the ones with an ‘s’
+prefix in the filename). Note the reduction in voxel-level noise but
+also the slight reduction in spatial resolution.</li>
+</ol>
+</div>
+</section><section id="intermodal-registration"><h2 class="section-heading">Intermodal Registration<a class="anchor" aria-label="anchor" href="#intermodal-registration"></a>
+</h2>
+<hr class="half-width">
+<p>While we can quantify PET images without anatomical data like
+T1-weighted MRI, we can gain considerable regional detail if we align
+our PET images to an anatomical reference. This section will use SPM12’s
+<code>Coregister</code> module to register the PET data to a T1-weighted
+MRI. We’ll first view the problem in FSL to demonstrate why we need to
+register the images and then perform the co-registration to align the
+PET data to the T1-w MRI.</p>
+<div class="section level3">
+<h3 id="view-images-in-fsl">View images in FSL<a class="anchor" aria-label="anchor" href="#view-images-in-fsl"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open the <code>sub001_t1mri.nii</code> and in FSL. Use the down
+arrow next to the Overlay list to move the T1 to the bottom of the list.
+Select the T1 and set the window min and max to 0 and 1,400,
+respectively.</li>
+<li>Select the smoothed 50-70 min SUM PIB image in the viewer and adjust
+the min and max window level to 0 and 30,000 respectively. Select the
+<code>Hot [Brain colours]</code> colormap for the PET image. Reduce the
+Opacity slider down until you can see both the MRI in the background and
+the PET image in the foreground.</li>
+<li>Notice that the images are not aligned. Thus, we cannot yet use the
+structural MRI to extract regional PET data. We first need to register
+the PET image to the</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="coregister-pet-to-t1-weighted-mri-">Coregister PET to T1-weighted MRI.<a class="anchor" aria-label="anchor" href="#coregister-pet-to-t1-weighted-mri-"></a>
+</h3>
+<p><strong>Caution: SPM will overwrite the transformation matrix in the
+Source Image and Other Image! As such, we will first create a safe copy
+of our SUM and 4D images before running the Coregistration
+module).</strong></p>
+<ol style="list-style-type: decimal">
+<li>Create copies of the smoothed late-frame SUM image and the 4D pib
+image.
+<ol style="list-style-type: decimal">
+<li>
+<p>In the terminal, create a new directory called “safe” in your
+working directory.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">mkdir</span> safe</span></code></pre>
+</div>
+</li>
+<li>
+<p>Copy the <code>ssub001_pib_SUM50-70min.nii</code> and
+<code>sub001_pib.nii</code> images to the safe directory using the cp
+command in the terminal.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">cp</span> ssub001_pib_SUM50-70min.nii safe/ ssub001_pib_SUM50-70min.nii</span></code></pre>
+</div>
+</li>
+</ol>
+</li>
+<li>Open the Coregistration module by selecting
+<code>Coregister (Est &amp; Res)</code> from the Spatial pre- processing
+drop down. This function will estimate the parameters needed to align
+the source image to the reference image, write those transformations to
+the NIfTI headers for those files and will create new images with the
+image matrices resliced to align voxel- to-voxel with the reference
+image.
+<ul>
+<li>Select <code>sub001_t1mri.nii</code> for the reference image.</li>
+<li>Select the smoothed 50-70 SUM image for the source image.
+<code>ssub001_pib_SUM50-70min.nii</code>
+</li>
+<li>Optional: if you’d like to also apply this registration to the 4D
+data, Select the 4D data for Other Images. You will need to enter each
+volume in the 4D image to apply the transformation matrix to each frame
+in the time series, or you can specify a subset of the frames to create
+a 4D image with just some frames included.</li>
+<li>We will use default values for <code>Estimation Options</code>
+</li>
+<li>In the <code>Reslice Options</code> Set Interpolation to “Trilinear”
+and masking to “Mask Images”</li>
+</ul>
+</li>
+<li>Press the green play button to register the PET data to MRI.</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="review-registration-results">Review registration results<a class="anchor" aria-label="anchor" href="#review-registration-results"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>In FSL, remove all of the loaded images using the Overlay&gt;Remove
+All command.</li>
+<li>Open the T1-weighted MRI and the resliced registered SUM PET image
+<code>rssub001_pib_SUM50-70min.nii</code> in FSLeyes.</li>
+<li>Select the SUM image. Select the <code>Hot [Brain colours]</code>
+colormap for the SUM PET image and set the min to 0 and max to
+25,000.</li>
+<li>Use the opacity slider to make the SUM PET image ~50%
+translucent.</li>
+<li>Scroll around in the image to view the registered SUM PET image
+overlayed on the T1-weighted MRI. Notice the PET image now aligns with
+the MRI. Also note the elevated binding in the precuneus, cingulate
+cortex, and frontal, parietal and temporal cortices.</li>
+<li>Also observe the registration accuracy by looking at features common
+to (i.e., mutual information) both T1-weighted MRI and PiB PET. For
+example, elevated non-specific PiB binding can be observed in the
+cerebellar peduncles (white matter) and a lack of tracer uptake is
+observed in the CSF filled spaces like the lateral ventricles which are
+also low intensity on the T1-w MRI.</li>
+<li>Compare the image headers for the SUM image in the safe directory
+with the SUM image with the same name that was used as the source image
+for registration. You can show the header info in the terminal using
+<code>fslhd</code> or select Setting&gt;Ortho View1&gt;Overlay
+Information in FSLeyes. Notice that the sform matrix parameters have
+changed to reflect the spatial transformation needed to align the PET
+image to the T1-weighted MRI. This allows a viewer to show the PET image
+aligned to the T1-w image in world coordinates without having to alter
+the image matrix.</li>
+<li>Now compare the image headers for the resliced SUM image
+<code>rssub001_pib_SUM50-70min.nii</code> with the T1-weighted MRI. The
+matrix size and sform matrix should be identical. This is because SPM
+resliced the PET image matrix such that the image matrix itself now
+aligns with the T1-weighted MRI, and thus no transformation in the
+header is needed to align the images in the viewer.</li>
+</ol>
+</div>
+</section><section id="create-a-standard-uptake-value-ratio-suvr-image"><h2 class="section-heading">Create a standard uptake value ratio (SUVR) image<a class="anchor" aria-label="anchor" href="#create-a-standard-uptake-value-ratio-suvr-image"></a>
+</h2>
+<hr class="half-width">
+<p>In this section, we will use the registered sum image and the
+T1-weighted MRI to create a cerebellum GM ROI and generate a parametric
+SUVR image. We’ll do all of these steps using FSL commands and
+functions. We’ll first create a hand-drawn ROI in the inferior
+cerebellum based on the MRI, and then use this mask to intensity
+normalize the SUM PET image and create our SUVR image. Note that we are
+specifically using the 50-70 min SUM image to generate the SUVR image as
+this is the timepoint wherein PiB has reached a pseudo “steady state”
+wherein binding estimates are more stable.</p>
+<div class="section level3">
+<h3 id="create-a-hand-drawn-cerebellum-gm-roi">Create a hand-drawn cerebellum GM ROI<a class="anchor" aria-label="anchor" href="#create-a-hand-drawn-cerebellum-gm-roi"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>In <code>fsleyes</code>, turn off the PET overlay.</li>
+<li>Turn on Edit mode by selecting Tools -&gt; Edit Mode</li>
+<li>In the image viewer, navigate to the inferior portion of the
+cerebellar GM (~Z voxel location 30). You should be 1-2 axial planes
+below the inferior GM/WM boundary in the cerebellum.</li>
+<li>Select the T1-w MRI in the Overlay list and click the icon on the
+left side of the viewer that looks like a sheet of paper to create a 3D
+mask using the T1-w image as a reference.</li>
+<li>Rename the mask <code>rsub001_cblm_mask</code> using the text box on
+the top-left side of FSLeyes</li>
+<li>Using the pencil and fill tools, hand draw circles in the left and
+right inferior cerebellum on the transaxial plane. Use the fill tool to
+fill in the inner part of the circle. Ensure the Fill value is set to 1.
+Using a Selection size of 3 voxels or greater will help draw the ROI
+more easily. When you’re done drawing your ROI, click the select tool to
+enable you to scroll around the image viewer.</li>
+<li>Select the mask image and save the image (Overlay -&gt; Save) as a
+new NIfTI file named <code>rsub001_cblm_mask.nii.</code>
+</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="create-the-suvr-image-with-the-inferior-cerebellum-reference-region">Create the SUVR Image with the inferior cerebellum reference
+region<a class="anchor" aria-label="anchor" href="#create-the-suvr-image-with-the-inferior-cerebellum-reference-region"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>For the expression, we want to divide the SUM 50-70 min pib image
+by the mean intensity in the cerebellum ROI that we just generated by
+hand. To accomplish this, we will divide the entire SUM pet image by the
+mean of the SUM PET image in all voxels where the cerebellum mask =1.
+We’ll do this in two steps using FSL.</p></li>
+<li>
+<p>In the command line, extract the mean activity concentration in
+the cerebellum mask using fslstats</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">fslstats</span> rssub001_pib_SUM50-70min.nii <span class="at">-k</span> rsub001_cblm_mask.nii <span class="at">-M</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>TODO: add output</code></pre>
+</div>
+</li>
+<li>
+<p>Create the SUVR image by dividing the SUM 50-70min image by the
+mean activity concentration output by <code>fslstats</code></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">fslmaths</span> rssub001_pib_SUM50-70min.nii <span class="at">-div</span> {ROI mean} rssub001_pib_SUVR50-70min.nii</span></code></pre>
+</div>
+</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="view-the-suvr-image-overlayed-on-the-t1-w-mri">View the SUVR image overlayed on the T1-w MRI<a class="anchor" aria-label="anchor" href="#view-the-suvr-image-overlayed-on-the-t1-w-mri"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open the T1-weighted MRI (if not already opened) and the newly
+created pib SUVR image <code>rssub001_pib_SUVR50-70min.nii</code> in
+FSLeyes.</li>
+<li>For the SUVR image, set the colormap to
+<code>Hot [Brain colours]</code>, set the min and max intensity window
+to 0 and 3, and set the opacity to ~50%.</li>
+<li>Notice the values within the image have been rescaled and should be
+roughly between 0 and 3 SUVR. For interpretation, values ~&gt;1 (plus
+some noise) in the gray matter indicate specific tracer binding to
+beta-amyloid plaques.</li>
+</ol>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li><strong>Which regions do you suspect have amyloid
+plaques?</strong></li>
+<li><strong>Which regions have the highest density of amyloid
+plaques?</strong></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="test-your-knowledge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="test-your-knowledge" class="callout-inner">
+<h3 class="callout-title">Test your knowledge<a class="anchor" aria-label="anchor" href="#test-your-knowledge"></a>
+</h3>
+<div class="callout-content">
+<p>You have created a SUVR image for PiB, which used a dynamic
+acquisition wherein the scan started at the same time as tracer
+injection. Now see if you can repeat the relevant steps above to create
+a SUVR image for the MK-6240 scan. You’ll need to look at the .json file
+and the timing and framing information to determine which frames to SUM
+to generate the SUVR image. The most commonly used MK-6240 SUVR windows
+are 70-90 min or 90-110 min post-injection. For most tau tracers, the
+inferior cerebellum is a valid reference region. If you run out of time
+and would like to view an MK-6240 SUVR image, you can view the images in
+<path>, which have been pre-processed. In addition, we have also
+pre-processed the PiB image using a different image pipeline that
+outputs DVR instead of SUVR. Compare the DVR and SUVR images.</path></p>
+</div>
+</div>
+</div>
+<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
+  <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
+</button>
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div class="accordion-body">
+<p>Pay close attention to the display settings for the window and
+colormap.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>TODo put solution here</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="additional-steps"><h2 class="section-heading">Additional steps<a class="anchor" aria-label="anchor" href="#additional-steps"></a>
+</h2>
+<hr class="half-width">
+<p>In the tutorial above, some steps that would typically be included in
+PET processing were omitted to enable enough time to get through the
+tutorial and create an SUVR image during the workshop. For example, we
+did not include interframe alignment and did not perform any smoothing
+or denoising on the 4D PET data. We have included additional steps below
+and have also included some preprocessed PiB data using a DVR pipeline
+that you can compare with your SUVR image.</p>
+<div class="section level3">
+<h3 id="interframe-realignment">Interframe realignment<a class="anchor" aria-label="anchor" href="#interframe-realignment"></a>
+</h3>
+<p>Interframe realignment is often included in processing 4D PET data to
+correct for motion between frames in a dynamic acquisition. It’s
+important to note that this process will not correct for motion that
+happens within a PET frame and will also not correct for misalignment of
+the emission scan and attenuation map used during the reconstruction. As
+such, correcting for interframe motion does not entirely account for
+motion that occurs during a PET scan. In cases with large amounts of
+motion, the reconstructed data may need to throw out bad frames or may
+simply be unusable. There are some approaches to correct for motion on
+the scanner and prior to/during reconstruction, but this is beyond the
+scope of this tutorial. We will use the 4D PiB data and SPM12 to perform
+interframe realignment, but will modify our approach to account for
+differences in PET frame duration and noise.</p>
+<ol style="list-style-type: decimal">
+<li>View the problem
+<ol style="list-style-type: decimal">
+<li>In the previous tutorial, we created SUM images of the first and
+last 20 minutes of the PiB acquisition. Load these images in FSLeyes.
+Recall that you’ll need to use the 50-70 SUM image in the /safe
+directory that did not have the coregistration transformation matrix
+written to the NIfTI header. If you have not completed the tutorial, you
+can load the following images that have been previously processed:
+<ul>
+<li><code>/home/as2-streaming-user/data/PET_Imaging/ProcessedTutorial/ssub001_pib_SUM0-20min.nii</code></li>
+<li><code>/home/as2-streaming-user/data/PET_Imaging/ProcessedTutorial/safe/ssub001_pib_SUM50-70min.nii</code></li>
+</ul>
+</li>
+<li>Set the threshold for the min and max window to 0 to 35,000 for the
+0-20 min SUM image and 0 to 20,000 for the 50-70 min SUM image.</li>
+<li>Toggle the top image on and off using the eye icon in the Overlay
+list. Notice the slight rotation of the head in the sagittal plane
+between the early and late frames. This is due to participant motion
+during the scan acquisition and what we are going to attempt to correct
+using interframe realignment.</li>
+<li>Close FSLeyes.</li>
+</ol>
+</li>
+<li>Launch SPM if not already opened</li>
+<li>Smooth all frames of the 4D data – smoothing prior to realignment
+will improve the registration by reducing voxel-level noise.
+<ol style="list-style-type: decimal">
+<li>Select the Smooth module from SPM</li>
+<li>Add all frames for the 4D PiB image <code>sub001_pib.nii</code> to
+the Images to smooth</li>
+<li>Set the FWHM to an isotropic 4 mm kernel (4 4 4).</li>
+<li>Set the datatype to FLOAT32</li>
+<li>Press the green play button to execute the smoothing operation</li>
+<li>Close the smooth module in SPM</li>
+<li>View the smoothed 4D PiB image in FSLeyes.</li>
+</ol>
+</li>
+<li>SUM PET frames across the 4D acquisition
+<ol style="list-style-type: decimal">
+<li><p>For interframe realignment, we typically create an average image
+of the entire 4D time series to use as a reference image to align each
+frame. Because the PiB framing sequence has different frame durations,
+we cannot simply average the frames as we would in fMRI, but instead
+need to create a SUM image of the entire 70-minute acquisition using a
+weighted average.</p></li>
+<li><p>Open the <code>ImCalc</code> module in SPM.</p></li>
+<li><p>Specify all frames of the smoothed 4D PiB image (ssub001_pib.nii)
+as Input Images. Be sure to maintain the frame order on the file
+input.</p></li>
+<li><p>Name the output file
+<code>ssub001_pib_SUM0-70min.nii</code></p></li>
+<li>
+<p>For the expression, specify an equation for a frame
+duration-weighted average of all frames. Recall that the frame durations
+are stored in the .json file.</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i7</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i8</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i9</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i10</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i11</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i12</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i13</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i14</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i15</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i16</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i17</span><span class="op">*</span><span class="fl">5</span>)<span class="op">/</span><span class="fl">70</span></span></code></pre>
+</div>
+</li>
+<li><p>Use FLOAT32 for the Data Type</p></li>
+<li><p>Run the module using the green play arrow.</p></li>
+<li><p>Close the SPM <code>ImCalc</code> module.</p></li>
+</ol>
+</li>
+<li>Perform Interframe alignment using SPM12 realign
+<ol style="list-style-type: decimal">
+<li>Open the Realign: Estimate and Reslice module in SPM12</li>
+<li>Select data and click Specify</li>
+<li>Select Session and click Specify
+<ol style="list-style-type: decimal">
+<li>Here we will use the SUM0-70 min image as the reference for
+realignment. This is done by selecting this file first in the session
+file input list.</li>
+<li>Select the SUM 0-70 min PiB image, and then specify the entire
+smoothed 4D time series by input each of the 17 frames.</li>
+<li>Use default settings for all parameters except the following
+<ol style="list-style-type: decimal">
+<li>Estimation Options-Smoothing (FWHM): 7</li>
+<li>Estimation Options-Interpolation: Trilinear</li>
+<li>Reslice Options-Resliced Images: Images 2..n</li>
+<li>Reslice Options-Interpolation: Trilinear</li>
+</ol>
+</li>
+<li>Run the module by clicking the green play icon</li>
+</ol>
+</li>
+<li>Once the process has completed, the SPM graphics window will output
+the translation and rotation parameters used to correct for motion in
+each frame. Note these are small changes typically &lt;1-2 mm
+translation and &lt;2 degrees rotation.</li>
+<li>Close the SPM realign module</li>
+<li>View the resultant 4D image in FSLeyes
+(<code>rssub001_pib.nii</code>) using a display min and max of 0 to
+30,000. Navigate in the viewer to view the sagittal plane just off
+mid-sagittal. Place your crosshairs at the most inferior part of the
+orbitofrontal cortex and advance through the PET frames. How did the
+realignment perform? Are you still seeing rotation in the sagittal plane
+between early and late frames?</li>
+<li>Now change the max window to 100 to saturate the image and view the
+outline of the head. Scroll through the frames to look for any head
+motion across the frames. To see the difference before and after
+realignment, load the smoothed 4D image, saturate the image to view the
+head motion between frames.</li>
+</ol>
+</li>
+</ol>
+</div>
+</section><section id="appendices-1-filenames-and-descriptions"><h2 class="section-heading">Appendices 1: Filenames and descriptions<a class="anchor" aria-label="anchor" href="#appendices-1-filenames-and-descriptions"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="filenames-and-descriptions">Filenames and Descriptions<a class="anchor" aria-label="anchor" href="#filenames-and-descriptions"></a>
+</h3>
+<p>Unprocessed files
+(<code>/home/as2-streaming-user/data/PET_Imaging/UnprocessedData/</code>):</p>
+<ul>
+<li>
+<code>rsub001_t1mri.nii</code> – T1-weighted MRI NIfTI image</li>
+<li>
+<code>sub001_mk6240.nii</code> – 4D [18F]MK-6240 PET NIfTI
+image</li>
+<li>
+<code>sub001_pib.nii</code> – 4D [11C]PiB PET NIfTI image</li>
+<li>
+<code>sub001_mk6240.json</code> – metadata for MK-6240 PET scan</li>
+<li>
+<code>sub001_pib.json</code> – metadata for PiB PET scan</li>
+</ul>
+<p>Processed files in order of tutorial creation
+(<code>/home/as2-streaming-user/data/PET_Imaging/ProcessedTutorial/</code>):</p>
+<ul>
+<li>PiB SUVR tutorial
+<ul>
+<li>
+<code>sub001_pib_SUM50-70min.nii</code> – PiB PET summed from 50-70
+min post-injection</li>
+<li>
+<code>sub001_pib_SUM0-20min.nii</code> – PiB PET summed from 0-20
+min post-injection</li>
+<li>
+<code>ssub001_pib_SUM50-70min.nii</code> – SUM50-70 min PiB image
+smoothed by 4mm kernel</li>
+<li>
+<code>ssub001_pib_SUM0-20min.nii</code> – SUM0-20 min PiB image
+smoothed by 4mm kernel</li>
+<li>
+<code>rssub001_pib_SUM50-70min.nii</code> – smoothed SUM50-70 min
+PiB image registered and resliced to T1-weighted MRI</li>
+<li>
+<code>rsub001_cblm_mask.nii.gz</code> – mask image of hand-drawn
+cerebellum ROI</li>
+<li>
+<code>rssub001_pib_SUVR50-70min.nii</code> – PiB SUVR image
+registered to T1-weighted MRI</li>
+</ul>
+</li>
+<li>MK-6240 SUVR tutorial
+<ul>
+<li>
+<code>sub001_mk6240_SUM70-90min.nii</code> – PiB PET summed from
+70-90 min post-injection</li>
+<li>
+<code>ssub001_mk6240_SUM70-90min.nii</code> – SUM70-90 min MK-6240
+image smoothed by 4mm kernel</li>
+<li>
+<code>rssub001_mk6240_SUM70-90min.nii</code> – smoothed SUM70-90 min
+MK-6240 image registered and resliced to T1-weighted MRI</li>
+<li>
+<code>rssub001_mk6240_SUVR70-90min.nii.gz</code> – MK-6240 SUVR
+image registered to T1-weighted MRI</li>
+</ul>
+</li>
+</ul>
+<p>Processed PiB DVR in order of creation
+(<code>/home/as2-streaming-user/data/PET_Imaging/ProcessedPiBDVR/</code>):</p>
+<ul>
+<li>
+<code>ssub001_pib.nii</code> – smoothed 4D PiB time series</li>
+<li>
+<code>sub001_pib_SUM0-70min.nii</code> – PiB SUM 0-70 min</li>
+<li>
+<code>rsub001_pib.nii</code> – realigned 4D PiB time series</li>
+<li>
+<code>hrsub001_pib.nii</code> – realigned 4D PiB time series with
+HYPR denoising applied</li>
+<li>
+<code>hrsub001_pib_SUM0-20min.nii</code> – denoised PiB SUM 0-20 min
+used for source image in SPM coregistration to T1-weighted MRI</li>
+<li>
+<code>cghrsub001_pib_SUM0-20min.nii</code> – denoised PiB SUM 0-20
+min image coregistered and resliced to T1-weighted MRI</li>
+<li>
+<code>cghrsub001_pib.nii</code> - denoised 4D PiB image coregistered
+and resliced to T1-weighted MRI</li>
+<li>
+<code>cghrsub001_pib_DVRlga.nii</code> – PiB DVR parametric image
+coregistered to T1-weighted MRI (Logan graphical analysis, <span class="math inline">\(t^*\)</span>=35 min, <span class="math inline">\(k_2’\)</span>=0.149 <span class="math inline">\(min^{-1}\)</span>, cerebellum mask reference
+region)</li>
+<li>See the file descriptions earlier in the appendix for remaining
+descriptions of images in this directory</li>
+</ul>
+</div>
+</section><section id="pib-dvr-pipeline"><h2 class="section-heading">PiB DVR Pipeline<a class="anchor" aria-label="anchor" href="#pib-dvr-pipeline"></a>
+</h2>
+<hr class="half-width">
+<p>Smooth 4D data (3 mm) -&gt; SUM 0-70 min for realignment reference
+-&gt; Interframe Realignment -&gt; HYPR Denoising -&gt; SUM 0-20 min for
+coregistration source image -&gt; Coregister to MRI -&gt; Extract
+cerebellum GM reference region time-activity curve -&gt; Generate
+parametric DVR image</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>PET Images are reconstructed from listmode data.</li>
+<li>The most commonly used PET tracers are sensitive to amyloid plaques
+and neurofibrillary tau tangles.</li>
+<li>Full dynamic scans are acquired from the time of injection, while
+static scans are acquired a fixed interval after injection when the
+tracer has or is approaching equilibrium</li>
+<li>Summing individual frames together reduces the level of noise</li>
+<li>SUVR images represent the relative uptake in each voxel to a
+reference region, where there is likely no specific binding</li>
 </ul>
 </div>
 </div>

@@ -186,6 +186,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -323,19 +332,199 @@ type commands <img src="../fig/aic_smri_launch_terminal.png" alt="Launch termina
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>sub-OAS30015_acq-TSE_T2w.json            sub-OAS30015_T1w_brain_seg.nii.gz
+sub-OAS30015_acq-TSE_T2w.nii.gz          sub-OAS30015_T1w.json
+sub-OAS30015_T1w_brain_mask.nii.gz       sub-OAS30015_T1w.nii.gz
+sub-OAS30015_T1w_brain_mixeltype.nii.gz  sub-OAS30015_T1w_orig.nii.gz
+sub-OAS30015_T1w_brain.nii.gz            sub-OAS30015_T2star.json
+sub-OAS30015_T1w_brain_pve_0.nii.gz      sub-OAS30015_T2star.nii.gz
+sub-OAS30015_T1w_brain_pve_1.nii.gz      sub-OAS30015_T2w.json
+sub-OAS30015_T1w_brain_pve_2.nii.gz      sub-OAS30015_T2w.nii.gz
+sub-OAS30015_T1w_brain_pveseg.nii.gz</code></pre>
+</div>
 <p>This means that we are going to be working in the
 <code>ImageDataVisualization</code> subfolder under <code>data</code> in
 your home directory (<code>~</code>). The <code>ls</code> command gives
 you a list of the files in this directory.</p>
 <p>Type</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w.nii.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w.nii.gz</span></code></pre>
 </div>
-<p>TODO: Add output and</p>
-<pre class="shell"><code>fslhd sub-OAS30015_T1w_brain_pve_0.nii.gz</code></pre>
-<p>TODO: Add output and let’s look at the most important fields:</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>filename	sub-OAS30015_T1w.nii.gz
+
+sizeof_hdr	348
+data_type	INT16
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	4
+nbyper		2
+bitpix		16
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">fslhd</span> sub-OAS30015_T1w_brain_pve_0.nii.gz</span></code></pre>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>filename	sub-OAS30015_T1w_brain_pve_0.nii.gz
+
+sizeof_hdr	348
+data_type	FLOAT32
+dim0		3
+dim1		176
+dim2		256
+dim3		170
+dim4		1
+dim5		1
+dim6		1
+dim7		1
+vox_units	mm
+time_units	s
+datatype	16
+nbyper		4
+bitpix		32
+pixdim0		1.000000
+pixdim1		1.000003
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		2.400000
+pixdim5		0.000000
+pixdim6		0.000000
+pixdim7		0.000000
+vox_offset	352
+cal_max		0.000000
+cal_min		0.000000
+scl_slope	1.000000
+scl_inter	0.000000
+phase_dim	0
+freq_dim	0
+slice_dim	0
+slice_name	Unknown
+slice_code	0
+slice_start	0
+slice_end	0
+slice_duration	0.000000
+toffset		0.000000
+intent		Unknown
+intent_code	0
+intent_name	
+intent_p1	0.000000
+intent_p2	0.000000
+intent_p3	0.000000
+qform_name	Scanner Anat
+qform_code	1
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qform_xorient	Left-to-Right
+qform_yorient	Posterior-to-Anterior
+qform_zorient	Inferior-to-Superior
+sform_name	Scanner Anat
+sform_code	1
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sform_xorient	Left-to-Right
+sform_yorient	Posterior-to-Anterior
+sform_zorient	Inferior-to-Superior
+file_type	NIFTI-1+
+file_code	1
+descrip		6.0.5:9e026117
+aux_file	OAS30015_MR_d2004</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Let’s look at the most important fields:</p>
 <ul><li>
 <strong>Data type</strong> (<code>data_type</code>): Note that some
 images (<code>sub-OAS30015_T1w</code>) are of <em>integer</em> datatype,
@@ -782,11 +971,11 @@ research as well as in clinical setting, we acquire multiple imaging
 modalities from the same individual to look at different brain
 characteristics. Even if we acquire all the modalities in the same
 session, the images may differ in orientation and resolution.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ExtraStructuralMRI</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ExtraStructuralMRI</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
 <p>Let’s take two imaging modalities from a different participant:
 <code>sub-OAS30003_T1w.nii.gz</code> and
@@ -795,10 +984,10 @@ session, the images may differ in orientation and resolution.</p>
 <li><em>Do they have the same resolution?</em></li>
 </ul><p>[Hint: use <code>fslhd</code> to answer]</p>
 <p>Now let’s have a look at them in FSLeyes:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz</span></code></pre>
 </div>
 <p>Change the intensity range for both images to be between 0 and 1000.
 Show/hide images with the eye button ( <img src="../fig/eye_icon.png" class="figure">
