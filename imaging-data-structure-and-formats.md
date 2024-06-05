@@ -507,24 +507,27 @@ images are aligned (_registered_) to a reference template so that each
 coordinate corresponds to the same point in the brain in all images. This 
 allows to perform group level analyses.
 
-Let's have a look at one of the most used templates, the MNI152. Unload all the
-images from `fsleyes` clicking on the minus (`-`) icon in the Overlay list 
-panel (or open a new instance if you closed it before), press 
-_File > Add standard_ and select the image `MNI152_T1_1mm`. As you can see it 
-looks very similar to the T1w image we looked at earlier. This is 
-basically an _average T1w_.
+Let's have a look at one of the most used templates, the MNI152. 
 
-Because we are in standard space, we can turn on the atlas tools with 
-_Settings &gt; Ortho View 1 &gt; Atlases_. Now as you click around in the 
-image you can see reporting of the probability of being in different brain 
-structures. You might want to resize the different FSLeyes panels to increase 
-the size of the Atlas information space (in general you do this by dragging 
-around the edges of the different FSLeyes panels).
+- Unload all the images from `fsleyes` clicking on the minus (`-`) icon in
+the Overlay list panel (or open a new instance if you closed it before), press 
+_File > Add standard_ and select the image `MNI152_T1_1mm`.
 
-The atlas panel is organized into three main sections - _Atlas information_, 
-_Atlas search_, and _Atlas management_. These sections are accessed by clicking 
-on the tabs at the top of the panel. We will only cover the first two sections 
-in this introductory practical.
+    As you can see it looks very similar to the T1w image we looked at earlier.
+    This is basically an _average T1w_.
+    
+    Because we are in standard space, we can turn on the atlas tools with 
+    _Settings &gt; Ortho View 1 &gt; Atlases_. 
+- Now as you click around in the image you can see reporting of the 
+probability of being in different brain  structures. You might want to resize 
+the different FSLeyes panels to increase the size of the Atlas information 
+space (in general you do this by dragging around the edges of the 
+different FSLeyes panels).
+
+    The atlas panel is organized into three main sections - _Atlas information_, 
+    _Atlas search_, and _Atlas management_. These sections are accessed by 
+    clicking on the tabs at the top of the panel. We will only cover the first 
+    two sections in this introductory practical.
 
 ### Atlas information
 
@@ -533,9 +536,9 @@ location, relative to one or more atlases:
 ![](fig/atlas_info_panel.png){alt="Atlas information panel" height='200px'}
 The list on the left allows you to select the atlases that you wish to query - 
 click the check boxes to the left of an atlas to toggle information on and off 
-for that atlas. The Harvard-Oxford cortical and sub-cortical structural atlases 
-are both selected by default.  These are formed by averaging careful hand 
-segmentations of structural images of many separate individuals.
+for that atlas. The **Harvard-Oxford cortical** and **sub-cortical** structural 
+atlases are both selected by default.  These are formed by averaging careful 
+hand segmentations of structural images of many separate individuals.
 
 The panel on the right displays information about the current display location 
 from each selected atlas. For probabilistic atlases, the region(s) corresponding 
@@ -573,12 +576,13 @@ highlighted in **bold**.
 
 ::::::::::::::::::::::challenge
 Use the atlas search feature to locate the thalamus (left or right).
-::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
+Here are the screenshots you should see:
+![](fig/aic_imdata_fsl_lthal.png){alt="Left Thalamus" width='800px'}
 
-TODO: Add example screenshots here
-
+![](fig/aic_imdata_fsl_rthal.png){alt="Right Thalamus" width='800px'}
+::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
 For more information about the atlases available please refer to the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases).
@@ -604,7 +608,7 @@ Let's take two imaging modalities from a different participant:
 - *Do they have the same dimension?*
 - *Do they have the same resolution?*
 
-[Hint: use `fslhd` to answer]
+
 
 Now let's have a look at them in FSLeyes:
 
@@ -612,23 +616,35 @@ Now let's have a look at them in FSLeyes:
 fsleyes sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz
 ```
 Change the intensity range for both images to be between 0 and 1000.
-Show/hide images with the eye button ( ![](fig/eye_icon.png)
-{alt="eye icon" height='24px'} ), or by double clicking on the image name in 
+Show/hide images with the eye button 
+( ![](fig/eye_icon.png){alt="eye icon" height='24px'} ), 
+or by double clicking on the image name in 
 the overlay list.
 
-- *Do they have the same orientation?* [Hint: look at the location panel]
+- *Do they have the same orientation?*
 - *Which brain characteristics are more visible in the T1w and which are more visible on FLAIR?*
-::::::::::::::::::::::
-:::::::::::::::::::::::: solution 
 
+:::::::::::::::::::::: hint
+- Use `fslhd` to get information on dimension and voxel size. 
+- Look at the location panel to help with information about orientation
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+#### _Do the T1 and the FLAIR have the same dimension?_
+
+#### _Do the T1 and the FLAIR have the same resolution?_
+
+#### _Do the T1 and the FLAIR have the same oreintation?_
+
+#### _What brain characteristics are more visible in these images?_
 TODO: Add example screenshots here
 
 :::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::
 
 In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
-to align (register)
-the two images together to be able to look at the same point in the brain in
-both images.
+to align (register) the two images together to be able to look at the same 
+point in the brain in both images.
 
 ## Additional material
 For a more extensive tutorial on FSLeyes features, please refer to the 
