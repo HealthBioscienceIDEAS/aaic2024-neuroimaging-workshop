@@ -62,6 +62,7 @@ episodes:
 - imaging-data-structure-and-formats.Rmd
 - structural-mri.Rmd
 - pet-imaging.Rmd
+- diffusion-weighted-imaging.Rmd
 
 # Information for Learners
 learners: 
