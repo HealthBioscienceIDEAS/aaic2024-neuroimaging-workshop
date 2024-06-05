@@ -471,7 +471,8 @@ TODO: Add example screenshots here
 
 :::::::::::::::::::::::::::::::::
 
-In the next lesson Structural MRI session we will learn how to align (register)
+In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
+to align (register)
 the two images together to be able to look at the same point in the brain in
 both images.
 
