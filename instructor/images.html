@@ -186,7 +186,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. introduction</a>
+        <a href="imaging-data-structure-and-formats.html">1. Imaging Data: Structure And Formats</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -198,7 +198,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imaging-data-structure-and-formats.html">2. Imaging Data: Structure And Formats</a>
+        <a href="structural-mri.html">2. Structural MRI: Bias Correction, Segmentation and Image Registration</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -262,17 +262,7 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">introduction</a></h2>
-<hr class="half-width">
-<h3 id="introduction-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘pie chart illusion of a pyramid’</p>
-<figure style="text-align: center"><img src="../fig/introduction-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid" class="figure mx-auto d-block"><figcaption>
-Sun arise each and every morning
-</figcaption></figure><hr>
-<h3 id="introduction-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Blue Carpentries hex person logo with no text.’</p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><hr></section><section id="imaging-data-structure-and-formats"><h2 class="section-heading"><a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></h2>
+<section id="imaging-data-structure-and-formats"><h2 class="section-heading"><a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></h2>
 <hr class="half-width">
 <h3 id="imaging-data-structure-and-formats-figure-1">Figure 1</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Launch terminal window’</p>
@@ -480,6 +470,135 @@ the regions that are displayed. <img src="../fig/atlas_region_search.png" alt="A
 Show/hide images with the eye button ( <img src="../fig/eye_icon.png" class="figure">
 {alt=“eye icon” height=‘24px’} ), or by double clicking on the image
 name in the overlay list.</p>
+<hr></section><section id="structural-mri"><h2 class="section-heading"><a href="structural-mri.html">Structural MRI: Bias Correction, Segmentation and Image Registration</a></h2>
+<hr class="half-width">
+<h3 id="structural-mri-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Launch the terminal’</p>
+<p>Clicking on the Applications in the upper left-hand corner and select
+the terminal icon. This will open a terminal window that you will use to
+type commands <img src="../fig/aic_smri_launch_terminal.png" alt="Launch the terminal" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Open FSL eyes’</p>
+<p>From the terminal window, type <code>fsleyes</code> to open up the
+image and have a look around. <img src="../fig/aic_smri_fsleyes.png" alt="Open FSL eyes" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 2: ‘Add file’</p>
+<p aria-hidden="true">Image 2 of 2: ‘Choose File’</p>
+<p>Now we choose the file <code>sub-OAS_30003_T1w.nii</code> by going to
+the File menu and choosing the Add Image command <img src="../fig/aic_smri_fsleyes_addfile.png" alt="Add file" class="figure"><img src="../fig/aic_smri_fsleyes_choosefile.png" alt="Choose File" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Launch SPM’</p>
+<li>Type <code>spm pet</code> to launch SPM (screenshot) <img src="../fig/aic_smri_terminal_window.png" alt="Launch SPM" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘SPM windows’</p>
+<li>SPM will then create a number of windows. You want to look at the
+Main Menu Window that has all of the buttons. <img src="../fig/aic_smri_spm.png" alt="SPM windows" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘SPM Batch editor’</p>
+<li>From main menu, select the Segment button (Screenshots). This will
+launch a window known as the <em>batch editor</em>, where you can adjust
+settings on the pipeline to be run. <img src="../fig/aic_smri_seg_batch.png" alt="SPM Batch editor" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-7">Figure 7</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Specify volumes’</p>
+<li>Under Data-&gt;Channels-&gt;Volume, click on “Specify…”. <img src="../fig/aic_smri_seg_volumes.png" alt="Specify volumes" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-8">Figure 8</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose T1 image’</p>
+<li>In the dialog box that opens up, please navigate to the folder
+<code>data</code> and then <code>StructuralMRI</code>. Then select the
+first image <code>sub-OAS30003_T1w.nii</code>. Once you click on it, you
+will notice the file move down to the bottom of the box which represents
+the list of selected files. <img src="../fig/aic_smri_seg_chooset1.png" alt="Choose T1 image" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-9">Figure 9</h3>
+<p aria-hidden="true">Image 1 of 1: ‘FSL eyes with NIH colormap’</p>
+<li>Change the image lookup table to <code>NIH</code> <img src="../fig/aic_smri_fsleyes_selectnih.png" alt="FSL eyes with NIH colormap" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-10">Figure 10</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Change min and max intensity’</p>
+<li>Then change the image minimum to 40 and the maximum to 600. This
+means that all intensities 40 and below will map to the first color in
+the lookup table, and all voxels 600 and above will map to the last
+color. The white matter should be yellow to red. <img src="../fig/aic_smri_fsleyes_minmax.png" alt="Change min and max intensity" class="figure"><br>
+</li>
+<hr>
+<h3 id="structural-mri-figure-11">Figure 11</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Bias in image using NIH map’</p>
+<li>Next add the bias corrected image, which is called
+<code>msub-OAS30003_T1w.nii</code>. Change the lookup table to NIH as
+you did in Step 2. Change the minimum to 40 and maximum intensity to 500
+similar to what you did in Step 2 and 3. <img src="../fig/aic_smri_fsleyes_biasnih.png" alt="Bias in image using NIH map" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-12">Figure 12</h3>
+<p aria-hidden="true">Image 1 of 2: ‘Bias correted image in greyscale’</p>
+<p aria-hidden="true">Image 2 of 2: ‘Looking at grey matter image’</p>
+<p>Now that we are happy with the bias correction, lets look at the
+tissue segmentation. 1. Use the icon to turn off the original image.
+Select the bias corrected image and make sure the colormap is back to
+the first option “Greyscale” <img src="../fig/aic_smri_fsleyes_orig.png" alt="Bias correted image in greyscale" class="figure"> 1. Now add the grey matter
+probability image <code>c1sub-OAS30003_T1w.nii</code>. 1. Choose the
+probability map and set the lookup table to Red. Change the minimum
+intensity to 0.2 and the maximum intensity to 0.9. This will eliminate
+some noise from very low probability voxels. 1. Use the opacity slider
+to make the grey matter probability map transparent. <img src="../fig/aic_smri_fsleyes_gm.png" alt="Looking at grey matter image" class="figure">
+1. Look around the image, zoom in places, and try turning the grey
+matter probability map off and on. The goal is to make sure the grey
+matter probability map is not: 1. Missing any grey matter 1. Not
+including other tissue (WM, CSF, non-brain tissue that has a similar
+intensity to GM)</p>
+<hr>
+<h3 id="structural-mri-figure-13">Figure 13</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Skull stripped image’</p>
+<p>This command masks our bias corrected image with the brain mask and
+makes a new file which has the name
+<code>msub-OAS30003_T1w_brain.nii</code>. Take a look at the image in
+<code>fsleyes</code>. <img src="../fig/aic_smri_fsleyes_skullstripped.png" alt="Skull stripped image" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-14">Figure 14</h3>
+<p aria-hidden="true">Image 1 of 1: ‘FLIRT window’</p>
+<p>We will then use the FSL registration program <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT" class="external-link">FLIRT</a> to align
+our image to the standard space MNI152. Please follow the steps below:
+1. On the terminal window, please type in the following command
+<code>Flirt</code> 1. This will open a dialog box. We will change the
+following settings: 1. For reference image, click on the folder icon and
+choose the image <code>MNI152_T1_1mm_brain</code> 1. For the input
+image, please select the mask we created above
+<code>msub-OAS30003_T1w_brain.nii</code> 1. For the output image, please
+type in a new name <code>msub-OAS30003_T1w_brain_MNI.nii</code> The
+final command setup should look like the screenshot below. <img src="../fig/aic_smri_flirt.png" alt="FLIRT window" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-15">Figure 15</h3>
+<p aria-hidden="true">Image 1 of 1: ‘T1w in MNI space’</p>
+<p>Let’s open <code>fsleyes</code> and open the output from the
+co-registration <code>msub-OAS30003_T1w_brain_MNI.nii</code>. <img src="../fig/aic_smri_fsleyes_mnispace.png" alt="T1w in MNI space" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-16">Figure 16</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Add standard function’</p>
+<p>Now click on the Add Standard function. This is where fsleyes keeps
+all of the standard atlases and templates so that you can quickly access
+them. <img src="../fig/aic_smri_fsleyes_addstd.png" alt="Add standard function" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-17">Figure 17</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose MNI image’</p>
+<p>Select the <code>MNI152_T1_1mm_brain</code> from this list of files.
+<img src="../fig/aic_smri_fsleyes_choosemni.png" alt="Choose MNI image" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-18">Figure 18</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Coregistration of T1 and FLAIR’</p>
+<p>The final command setup should look like the screenshot below: <img src="../fig/aic_smri_flirt_T1FLAIR.png" alt="Coregistration of T1 and FLAIR" class="figure"></p>
 <hr></section>
 </div>
     </main>
@@ -528,8 +647,8 @@ name in the overlay list.</p>
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/images.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/images.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-06-04",
-  "datePublished": "2024-06-04"
+  "dateModified": "2024-06-05",
+  "datePublished": "2024-06-05"
 }
 
   </script><script>
