@@ -867,32 +867,37 @@ be different for each of them.</p>
 that images are aligned (<em>registered</em>) to a reference template so
 that each coordinate corresponds to the same point in the brain in all
 images. This allows to perform group level analyses.</p>
-<p>Let’s have a look at one of the most used templates, the MNI152.
-Unload all the images from <code>fsleyes</code> clicking on the minus
-(<code>-</code>) icon in the Overlay list panel (or open a new instance
-if you closed it before), press <em>File &gt; Add standard</em> and
-select the image <code>MNI152_T1_1mm</code>. As you can see it looks
-very similar to the T1w image we looked at earlier. This is basically an
-<em>average T1w</em>.</p>
+<p>Let’s have a look at one of the most used templates, the MNI152.</p>
+<ul><li>
+<p>Unload all the images from <code>fsleyes</code> clicking on the
+minus (<code>-</code>) icon in the Overlay list panel (or open a new
+instance if you closed it before), press <em>File &gt; Add standard</em>
+and select the image <code>MNI152_T1_1mm</code>.</p>
+<p>As you can see it looks very similar to the T1w image we looked at
+earlier. This is basically an <em>average T1w</em>.</p>
 <p>Because we are in standard space, we can turn on the atlas tools with
-<em>Settings &gt; Ortho View 1 &gt; Atlases</em>. Now as you click
-around in the image you can see reporting of the probability of being in
-different brain structures. You might want to resize the different
-FSLeyes panels to increase the size of the Atlas information space (in
-general you do this by dragging around the edges of the different
-FSLeyes panels).</p>
+<em>Settings &gt; Ortho View 1 &gt; Atlases</em>.</p>
+</li>
+<li>
+<p>Now as you click around in the image you can see reporting of the
+probability of being in different brain structures. You might want to
+resize the different FSLeyes panels to increase the size of the Atlas
+information space (in general you do this by dragging around the edges
+of the different FSLeyes panels).</p>
 <p>The atlas panel is organized into three main sections - <em>Atlas
 information</em>, <em>Atlas search</em>, and <em>Atlas management</em>.
 These sections are accessed by clicking on the tabs at the top of the
 panel. We will only cover the first two sections in this introductory
 practical.</p>
-<div class="section level3">
+</li>
+</ul><div class="section level3">
 <h3 id="atlas-information">Atlas information<a class="anchor" aria-label="anchor" href="#atlas-information"></a></h3>
 <p>The <strong>Atlas information</strong> tab displays information about
 the current display location, relative to one or more atlases: <img src="fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure"> The list on the left allows you to select the atlases
 that you wish to query - click the check boxes to the left of an atlas
-to toggle information on and off for that atlas. The Harvard-Oxford
-cortical and sub-cortical structural atlases are both selected by
+to toggle information on and off for that atlas. The
+<strong>Harvard-Oxford cortical</strong> and
+<strong>sub-cortical</strong> structural atlases are both selected by
 default. These are formed by averaging careful hand segmentations of
 structural images of many separate individuals.</p>
 <p>The panel on the right displays information about the current display
@@ -922,12 +927,12 @@ will be filtered, so that only those regions with a name that contains
 the characters you entered are displayed. The atlas list on the left
 will also be updated so that any atlases which contain regions matching
 the search term are highlighted in <strong>bold</strong>.</p>
-<div id="discussion1" class="callout discussion">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
 <p>Use the atlas search feature to locate the thalamus (left or
@@ -942,8 +947,8 @@ right).</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>TODO: Add example screenshots here</p>
-</div>
+<p>Here are the screenshots you should see: <img src="fig/aic_imdata_fsl_lthal.png" alt="Left Thalamus" width="800" class="figure"></p>
+<figure><img src="fig/aic_imdata_fsl_rthal.png" alt="Right Thalamus" width="800" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 </div>
@@ -951,9 +956,9 @@ right).</p>
 <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases" class="external-link">FSL
 Wiki</a>.</p>
 <p>Quit FSLeyes when you have finished looking at the atlases.</p>
-<div id="bonus-exercise-viewing-different-imaging-modalities" class="callout discussion">
+<div id="bonus-exercise-viewing-different-imaging-modalities" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="bonus-exercise-viewing-different-imaging-modalities" class="callout-inner">
 <h3 class="callout-title">BONUS EXERCISE: Viewing different imaging modalities<a class="anchor" aria-label="anchor" href="#bonus-exercise-viewing-different-imaging-modalities"></a>
@@ -975,33 +980,54 @@ session, the images may differ in orientation and resolution.</p>
 <code>sub-OAS30003_FLAIR.nii.gz</code></p>
 <ul><li><em>Do they have the same dimension?</em></li>
 <li><em>Do they have the same resolution?</em></li>
-</ul><p>[Hint: use <code>fslhd</code> to answer]</p>
-<p>Now let’s have a look at them in FSLeyes:</p>
+</ul><p>Now let’s have a look at them in FSLeyes:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz</span></code></pre>
 </div>
 <p>Change the intensity range for both images to be between 0 and 1000.
-Show/hide images with the eye button ( <img src="fig/eye_icon.png" class="figure">
-{alt=“eye icon” height=‘24px’} ), or by double clicking on the image
-name in the overlay list.</p>
-<ul><li>
-<em>Do they have the same orientation?</em> [Hint: look at the
-location panel]</li>
+Show/hide images with the eye button ( <img src="fig/eye_icon.png" alt="eye icon" height="24" class="figure"> ), or by double clicking on the image name
+in the overlay list.</p>
+<ul><li><em>Do they have the same orientation?</em></li>
 <li><em>Which brain characteristics are more visible in the T1w and
 which are more visible on FLAIR?</em></li>
 </ul></div>
 </div>
 </div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div class="accordion-body">
+<ul><li>Use <code>fslhd</code> to get information on dimension and voxel
+size.</li>
+<li>Look at the location panel to help with information about
+orientation</li>
+</ul></div>
+</div>
+</div>
+</div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Do the T1 and the FLAIR have the same dimension? </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
+<div class="section level4">
+<h4 id="do-the-t1-and-the-flair-have-the-same-resolution"><em>Do the T1 and the FLAIR have the same resolution?</em><a class="anchor" aria-label="anchor" href="#do-the-t1-and-the-flair-have-the-same-resolution"></a></h4>
+</div>
+<div class="section level4">
+<h4 id="do-the-t1-and-the-flair-have-the-same-oreintation"><em>Do the T1 and the FLAIR have the same oreintation?</em><a class="anchor" aria-label="anchor" href="#do-the-t1-and-the-flair-have-the-same-oreintation"></a></h4>
+</div>
+<div class="section level4">
+<h4 id="what-brain-characteristics-are-more-visible-in-these-images"><em>What brain characteristics are more visible in these
+images?</em><a class="anchor" aria-label="anchor" href="#what-brain-characteristics-are-more-visible-in-these-images"></a></h4>
 <p>TODO: Add example screenshots here</p>
+</div>
 </div>
 </div>
 </div>
