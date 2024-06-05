@@ -63,6 +63,7 @@ episodes:
 - structural-mri.Rmd
 - pet-imaging.Rmd
 - diffusion-weighted-imaging.Rmd
+- functional-mri.Rmd
 
 # Information for Learners
 learners: 
