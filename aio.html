@@ -218,6 +218,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="diffusion-weighted-imaging.html">4. Diffusion-weighted imaging (DWI)</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -2595,6 +2607,584 @@ tracer has or is approaching equilibrium</li>
 <li>Summing individual frames together reduces the level of noise</li>
 <li>SUVR images represent the relative uptake in each voxel to a
 reference region, where there is likely no specific binding</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-diffusion-weighted-imaging"><p>Content from <a href="diffusion-weighted-imaging.html">Diffusion-weighted imaging (DWI)</a></p>
+<hr>
+<p>Last updated on 2024-06-05 |
+        
+        <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What does diffusion weighted imaging measure?</li>
+<li>What processing steps are needed when working with diffusion
+weigthed imaging data?</li>
+<li>What types of analyses are used with diffusion imaging in dementia
+resaerch?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the processing steps in diffusion-weighted MRI scans</li>
+<li>Perform basic analyses on white matter microstructure.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>We will use the FSL diffusion toolbox to perform the processing steps
+that are core to most diffusion weighted imaging analyses:</p>
+<ul>
+<li>image visualization of raw data and analysis outputs,</li>
+<li>eddy correction,</li>
+<li>generation of diffusion tensor metrics brain maps,</li>
+<li>tract-based spatial statistics,</li>
+<li>you can also stretch your knowledge and familiarize yourself with
+loops to run these commands on multiple subjects, all shown at the end
+of this tutorial</li>
+</ul>
+<p>We are going to be working in the DiffusionMRI subfolder under data
+in your home directory, <code>~/data/DiffusionMRI</code>.</p>
+</section><section id="looking-at-the-raw-data"><h2 class="section-heading">Looking at the raw data<a class="anchor" aria-label="anchor" href="#looking-at-the-raw-data"></a>
+</h2>
+<hr class="half-width">
+<p>From the previous lessons, you learned how to view and navigate
+images, let’s first look at the raw data, which can all be found under
+<code>~/data/DiffusionMRI/sourcedata</code>.</p>
+<p>To go to this directory using the terminal, use the command
+<code>cd</code> to change directory. Type
+<code>cd  ~/data/DiffusionMRI/sourcedata</code> to go this
+directory.</p>
+<p>Let’s inspect what each participant’s dwi directory should
+contain:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">ls</span> sub-OAS30001/dwi</span></code></pre>
+</div>
+<p>or</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">ls</span> sub-OAS<span class="pp">*</span>/dwi</span></code></pre>
+</div>
+<p>The <code>*</code> will match any following text, which here will
+list the contents of any directory starting with “sub-OAS”.</p>
+<p>Each directory should contain 4 files:</p>
+<ul>
+<li>one <code>.bval</code> text file</li>
+<li>one <code>.bvec</code> text file</li>
+<li>one <code>.json</code> text file</li>
+<li>one nifti (<code>.nii.gz</code>) image file</li>
+</ul>
+<p>All files are required for processing DWI data except the .json file.
+The <code>.json</code> file is specific to the <a href="https://bids.neuroimaging.io/" class="external-link">BIDS</a> data organization, and is
+a useful way to access data description. More and more software are also
+relying on data organized according to the BIDS structure.</p>
+<p>Let’s look at those files:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Change directory to go in one participant's folder</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">cd</span> sub-OAS30001/dwi</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">## Image file</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30001_dwi.nii.gz</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a> </span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">## Text files</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="fu">cat</span> sub-OAS30001_ses-d2430_dwi.bval</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="fu">cat</span> sub-OAS30001_ses-d2430_dwi.bvec</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>TODO: bval bvec cat output</code></pre>
+</div>
+<ul>
+<li>The nifti file is a 4D file of all the directions acquired.</li>
+<li>The <code>.bval</code> file refers to the <em>b-value</em> applied
+to each image.</li>
+<li>The <code>.bvec</code> file refers to the <em>vector</em> applied to
+each image, with the coordinates in x, y and z.</li>
+</ul>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+</h3>
+<div class="callout-content">
+<p>Use the “movie” option in fsleyes to look at all frames of the nifti
+file. How can you know how many directions it contains?</p>
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div class="accordion-body">
+<p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
+session</a> for more details!</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>TODO: Add the number of files and how you can tell</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="data-preprocessing"><h2 class="section-heading">Data preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"></a>
+</h2>
+<hr class="half-width">
+<p>We are now ready to start data pre-processing, which we will do using
+the FSL Diffusion Toolbox. Most of the steps and explanation below are
+adapted from the excellent tutorial provided FSL, please refer to it for
+more details: <a href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/fdt1/index.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fslcourse/practicals/fdt1/index.html</a></p>
+<p>All the steps below will be done on one subject only, but if you wish
+to loop the different steps across multiple participants, refer to the
+section <a href="#stretch-your-knowledge">Stretch your knowledge</a> at
+the end.</p>
+<div class="section level3">
+<h3 id="creating-a-brain-mask-from-the-b0-images">1. Creating a brain mask from the b0 images<a class="anchor" aria-label="anchor" href="#creating-a-brain-mask-from-the-b0-images"></a>
+</h3>
+<p>We often use the b0 images (there is only 1 b0 image in this dataset)
+to create a brain mask that is needed in future steps. First select the
+b0 image, extract the brain only and binarize it to make a mask.</p>
+<ul>
+<li>
+<p>Extract the b0 image only with select_dwi_vols or fslroi</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Usage: select_dwi_vols &lt;data&gt; &lt;bvals&gt; &lt;output&gt; &lt;approx_bval&gt; [other options]</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">select_dwi_vols</span> sub-OAS30001_dwi.nii.gz sub-OAS30001_dwi.bval sub-OAS30001_b0.nii.gz <span class="at">-b</span> 0</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># Another option would be to use: fslroi dwidata nodif 0 1</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>Brain extraction and binarization with bet</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Usage: bet &lt;input&gt; &lt;output&gt; [options] </span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># the -m option will automatically create a binarized mask after brain extraction</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="ex">bet</span> sub-OAS30001_b0.nii.gz sub-OAS30001_b0_bet <span class="at">-m</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>Load the mask you just created to make sure it is adequate!</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30001_b0_bet_mask.nii.gz</span></code></pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="correcting-for-susceptibility-induced-distortions">2. Correcting for susceptibility-induced distortions<a class="anchor" aria-label="anchor" href="#correcting-for-susceptibility-induced-distortions"></a>
+</h3>
+<p>Some parts of the brain can appear distorted depending on their
+magnetic properties. One common way to correct the distortions with DWI
+data is by acquiring a b0 image acquired with a different
+phase-encoding, and merging the two types of images running <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup" class="external-link">TOPUP</a>.</p>
+<p>In this dataset we don’t have the data required for TOPUP so we will
+skip this step.</p>
+<p><em>Note however that you should run it if your data allows.</em></p>
+</div>
+<div class="section level3">
+<h3 id="correcting-for-eddy-currents-and-movement">3. Correcting for eddy currents and movement<a class="anchor" aria-label="anchor" href="#correcting-for-eddy-currents-and-movement"></a>
+</h3>
+<p>Eddy is a tool to correct for eddy current-induced distortions and
+movement on the image. Eddy currents arise from electric current due to
+strong and fast changing gradients. Eddy also does outlier detection and
+will replace signal loss by non-parametric predictions.</p>
+<p>We need to create 2 files to be able to run eddy:</p>
+<ul>
+<li>an index file corresponding to the directions with the same phase
+encoding</li>
+<li>a file with some acquisition parameters</li>
+</ul>
+<p>Run the following lines to create the index file. Since all images
+are obtained with the same phase encoding, it will just be a vector with
+values of 1 of the same length of the bval file.</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="va">myVar</span><span class="op">=</span><span class="kw">`</span><span class="fu">wc</span> <span class="at">-w</span> sub-OAS30001_dwi.bval<span class="kw">`</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="va">indx</span><span class="op">=</span><span class="st">""</span> </span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="cf">for</span> <span class="kw">((</span><span class="va">i</span><span class="op">=</span><span class="dv">1</span><span class="kw">;</span> <span class="va">i</span><span class="op">&lt;=</span><span class="va">$myVar</span><span class="kw">;</span> <span class="va">i</span><span class="op">+=</span><span class="dv">1</span><span class="kw">));</span> <span class="cf">do</span> <span class="va">indx</span><span class="op">=</span><span class="st">"</span><span class="va">$indx</span><span class="st"> 1"</span><span class="kw">;</span> <span class="cf">done</span> </span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$indx</span> <span class="op">&gt;</span> index.txt</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>TODO: Put in output</code></pre>
+</div>
+<p>The acquisition parameter file is a vector containing the phase
+encoding and the total read out time, which can all be found in the
+<code>.json</code> file. Do <code>cat sub-OAS30001_dwi.json</code> and
+see if you can find the following information.</p>
+<ul>
+<li>TotalReadoutTime: 0.0451246</li>
+<li>PhaseEncodingDirection: j- : This corresponds to the AP direction
+and is coded as -1 for the acquisition parameter file.</li>
+</ul>
+<p>You can also try
+<code>cat sub-OAS30001_dwi.json | grep 'Total'</code> to directly find
+the entry you need!</p>
+<p>The acquisition parameter file first includes the phase encoding,
+with the first 3 numbers corresponding to the x, y, and z directions.
+Here we are acquiring along the y direction (being -1), and x and z
+being 0. The last number is the total read out time.</p>
+<p>To create it you can do:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="bu">printf</span> <span class="st">"0 -1 0 0.0451246"</span> <span class="op">&gt;</span> acqparams.txt</span></code></pre>
+</div>
+<p>We are ready to run eddy! Please refer to <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy" class="external-link uri">https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy</a> for all the
+details</p>
+<p>However, eddy takes a long time to run (about 40 minutes either on
+the VM or on a MacBook Pro), so we’ve run it for a few subjects already.
+The outputs can be found in
+<code>~/data/diffusionMRI/processed_sourcedata</code>.</p>
+<p>As eddy creates a lot of output files, it can be good practice to
+create a separate directory to store the outputs so we keep things more
+organized, as done in the <code>processed_sourcedata</code> directory.
+For example, if you type
+<code>ls</code>~/data/diffusionMRI/processed_sourcedata/sub-OAS30001/eddy/`
+you will see all the eddy outputs for this given participant.</p>
+<p>Eddy also takes a lot of input arguments, as depicted below<br><img width="570" alt="eddy" src="https://user-images.githubusercontent.com/19730876/177518376-64bceb1e-d1ee-4a29-b694-7f0aa8095019.png" class="figure"><br><em>Image adapted from <a href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/fdt1/index.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fslcourse/practicals/fdt1/index.html</a></em></p>
+<p>If you want to try to run it on one participant, you can try the
+following command.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">eddy</span> <span class="at">--imain</span><span class="op">=</span>sub-OAS30001_dwi.nii.gz <span class="at">--mask</span><span class="op">=</span>sub-OAS30001_b0_bet_mask.nii.gz <span class="at">--acqp</span><span class="op">=</span>acqparams.txt <span class="at">--index</span><span class="op">=</span>index.txt <span class="at">--bvecs</span><span class="op">=</span>sub-OAS30001_dwi.bvec <span class="at">--bvals</span><span class="op">=</span>sub-OAS30001_dwi.bval <span class="at">--out</span><span class="op">=</span>../eddy/eddy_corrected</span></code></pre>
+</div>
+<p>To be able to run the next step, we will copy the eddy-corrected DWI
+scan for one subject into our working directory. Make sure you are in
+this directory:
+<code>~/data/diffusionMRI/sourcedata/sub-OAS30001/dwi</code> (you can
+use the command <code>pwd</code> to print your working directory and
+know where you are), and then type this command:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">cp</span> ../../../processed_sourcedata/sub-OAS30001/eddy/sub-OAS30001_eddy_corrected.nii.gz .</span></code></pre>
+</div>
+<p>Now let’s compare the raw DWI scan vs. after eddy correction, can you
+see differences? You can load the two images (sub-OAS30001_dwi.nii.gz
+and sub-OAS30001_eddy_corrected.nii.gz) with <code>fsleyes</code>.</p>
+<p>** <strong>It’s always important to inspect images after
+preprocessing steps! Many software (including FSL) have automated QC
+frameworks available to help go through all the outputs. You can find
+more information on eddyQC from the <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddyqc" class="external-link">FSL
+documentation</a> if you want to try it</strong></p>
+</div>
+<div class="section level3">
+<h3 id="generating-dti-outputs">4. Generating DTI outputs<a class="anchor" aria-label="anchor" href="#generating-dti-outputs"></a>
+</h3>
+<p>We can now fit the diffusion tensor model to the preprocessed data.
+This will generate all the standard DTI outputs, like fractional
+anisotropy (FA), mean diffusivity (MD), radial diffusivity (RD) and
+axial diffusivity (AD), along with eigenvectors.</p>
+<p>As this will also generate many outputs, to keep things organized
+let’s create a directory for storing the outputs.</p>
+<p>The command is <code>dtifit</code>, and uses the eddy-corrected data
+as input. All the inputs required are detailed in the command usage.</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#Usage: Compulsory arguments (You MUST set one or more of):</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#	-k,--data	dti data file</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co"># -o,--out	Output basename</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># -m,--mask	Bet binary mask file</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co"># -r,--bvecs	b vectors file</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co"># -b,--bvals	b values file</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="ex">dtifit</span> <span class="at">--data</span><span class="op">=</span>sub-OAS30001_eddy_corrected.nii.gz <span class="at">--mask</span><span class="op">=</span>sub-OAS30001_b0_bet_mask.nii.gz <span class="at">--bvecs</span><span class="op">=</span>sub-OAS30001_dwi.bvec <span class="at">--bvals</span><span class="op">=</span>sub-OAS30001_dwi.bval <span class="at">--out</span><span class="op">=</span>../dti/sub-OAS30001_</span></code></pre>
+</div>
+<p>Many files have been created, let’s look at the ones most commonly
+used, i.e. FA, MD and V1.<br>
+V1 is the principal eigenvector and corresponds to the direction along
+the principal diffusion direction and allows us to visualize the
+underlying orientation of white matter fibers.</p>
+<p>V1 should open as an RGB map where the colors represent directions: *
+Red= left - right axis * Green= anterior - posterior axis * Blue=
+superior - inferior axis</p>
+<p>You can also change the overlay type and visualize the image as lines
+with ‘3-direction vector image (Line)’ in the top left corner, which
+will show the vector field.</p>
+<p>Example of the V1 file in RGB:<br><img width="863" alt="example_RGB_V1" src="https://user-images.githubusercontent.com/19730876/177555280-8ac7ec4b-b1bc-4b0d-9a6a-0a69a01d6dc3.png" class="figure"></p>
+<p>We have now completed the basic steps required for all diffusion
+data! Those allow to continue with further processing
+(e.g. tractography) or to continue with group-level analyses, which
+require processing a few subjects.</p>
+<p>In the next section, you have a few options to go further:</p>
+<ul>
+<li>There is some example of code to perform the same steps as we did
+above, this time looping across subjects.</li>
+<li>A common analyses is <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/TBSS" class="external-link">Tract-Based Spatial
+Statistics (TBSS)</a>, which allows for voxel-wise analyses on a
+skeletonized white matter template. We provided the command lines below
+to do such analyses. Some steps can take some time to run, and thus we
+provided the outputs in <code>~/data/DiffusionMRI/tbss</code> if you
+want to examine the different steps and the final outputs.</li>
+</ul>
+</div>
+</section><section id="stretch-your-knowledge"><h2 class="section-heading">Stretch your knowledge<a class="anchor" aria-label="anchor" href="#stretch-your-knowledge"></a>
+</h2>
+<hr class="half-width">
+<div id="do-you-want-to-process-multiple-subjects" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="do-you-want-to-process-multiple-subjects" class="callout-inner">
+<h3 class="callout-title">Do you want to process multiple subjects?<a class="anchor" aria-label="anchor" href="#do-you-want-to-process-multiple-subjects"></a>
+</h3>
+<div class="callout-content">
+<p>An easy way to do this is through multiple bash loops, introduced
+this morning. You will have examples below of loops for the different
+steps we did above if you want to try it.</p>
+<p>Make sure you are in the following directory:
+<code>~/data/DiffusionMRI/sourcedata</code></p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Extract the b0 image</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> sub-OAS30<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$x</span><span class="kw">;</span> <span class="ex">select_dwi_vols</span> <span class="va">$x</span>/dwi/<span class="pp">*</span>_dwi.nii.gz <span class="va">$x</span>/dwi/<span class="pp">*</span>_dwi.bval <span class="va">$x</span>/dwi/<span class="va">${x}</span>_b0.nii.gz <span class="at">-b</span> 0<span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#Create the brain mask from the b0 image</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> sub-OAS30<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$x</span><span class="kw">;</span> <span class="ex">bet</span> <span class="va">$x</span>/dwi/<span class="pp">*</span>_b0.nii.gz <span class="va">$x</span>/dwi/<span class="va">${x}</span>_b0_bet <span class="at">-m</span><span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co"># Run eddy - Don't try this on multiple subjects; it will take too long to run!</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> sub-OAS30<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$x</span><span class="kw">;</span> <span class="ex">eddy</span> <span class="at">--imain</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_dwi.nii.gz <span class="at">--mask</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_b0_bet_mask.nii.gz <span class="at">--acqp</span><span class="op">=</span>acqparams.txt <span class="at">--index</span><span class="op">=</span>index.txt <span class="at">--bvecs</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_dwi.bvec <span class="at">--bvals</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_dwi.bval <span class="at">--out</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_eddy_corrected<span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co"># Run dtifit</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> sub-OAS30<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$x</span><span class="kw">;</span> <span class="ex">dtifit</span> <span class="at">--data</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_eddy_corrected.nii.gz <span class="at">--mask</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_b0_bet_mask.nii.gz <span class="at">--bvecs</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_dwi.bvec <span class="at">--bvals</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span>_dwi.bval <span class="at">--out</span><span class="op">=</span><span class="va">$x</span>/dwi/<span class="va">${x}</span> <span class="kw">;</span> <span class="cf">done</span></span></code></pre>
+</div>
+<p><em>Note that all processed data can be found in
+<code>~/data/DiffusionMRI/processed_sourcedata</code> if you want to
+access it</em></p>
+</div>
+</div>
+</div>
+<div id="do-you-want-to-investigate-microstructure-differences-between-groups" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="do-you-want-to-investigate-microstructure-differences-between-groups" class="callout-inner">
+<h3 class="callout-title">Do you want to investigate microstructure differences between groups?<a class="anchor" aria-label="anchor" href="#do-you-want-to-investigate-microstructure-differences-between-groups"></a>
+</h3>
+<div class="callout-content">
+<p>Let’s investigate FA differences between 4 Controls and 4 AD subjects
+using <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/TBSS/UserGuide" class="external-link">TBSS</a>.
+This involves a few easy steps, which are outline below, but please
+refer to the original description of TBSS for all details.</p>
+<p>It can take some time to run, so we placed all outputs in
+<code>~/data/DiffusionMRI/tbss</code> if you want to explore the outputs
+from each step.<br></p>
+<p>If you want to try it on your own, you can follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Create a new directory for TBSS and copy all FA maps in it</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">mkdir</span> tbss_tutorial</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="fu">cp</span> ~/data/DiffusionMRI/processed_sourcedata/sub-OAS30<span class="pp">*</span>/dti/<span class="pp">*</span>FA.nii.gz tbss_tutorial/</span></code></pre>
+</div>
+<p>You can run <code>slicesdir *.nii.gz</code> and open the resulting
+web page report; this is a quick way to check your images.</p>
+<p>Run all the next commands directly from the tbss_tutorial directory
+you created.</p>
+</li>
+<li>
+<p>Quick preprocessing of the data</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">tbss_1_preproc</span> <span class="pp">*</span>.nii.gz</span></code></pre>
+</div>
+</li>
+<li>
+<p>Register all FA maps to standard space</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">tbss_2_reg</span> <span class="at">-T</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>Apply transformation to all images and create mean FA
+skeleton</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">tbss_3_postreg</span> <span class="at">-S</span></span></code></pre>
+</div>
+<p>You can load the 4D file created <code>all_FA</code> with the overlay
+<code>mean_FA_skeleton</code> on top to verify that all images are
+aligned correctly.</p>
+</li>
+<li>
+<p>threshold FA skeleton<br>
+This last step is to threshold the FA skeleton that was created, inspect
+it before and adapt accordingly (here we used the recommended 0.2
+threshold)</p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">tbss_4_prestats</span> 0.2</span></code></pre>
+</div>
+</li>
+</ol>
+<p>We are now ready to do the statistical comparisons!</p>
+<div class="section level3">
+<h3 id="statistical-comparisons-between-two-groups">Statistical comparisons between two groups<a class="anchor" aria-label="anchor" href="#statistical-comparisons-between-two-groups"></a>
+</h3>
+<p>We will use the tool <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Randomise/UserGuide" class="external-link">randomise</a>,
+for which we need to create two text files: design.mat and design.con.
+<strong>Design.mat</strong> specifies which groups the participants
+belong to and other covariates of interest. <strong>Design.con</strong>
+specifies the contrasts we want to perform for our statistical
+analyses.</p>
+<p>You need to make sure of the order of your FA images to create the
+design matrix files, which is the alphabetical order. In this example,
+we will compare Controls vs. AD patients. The diagnosis for each
+participant is as follows:<br>
+sub-OAS30001 : Control<br>
+sub-OAS30003 : Control<br>
+sub-OAS30006 : Control<br>
+sub-OAS30024 : AD<br>
+sub-OAS30025 : Control<br>
+sub-OAS30128 : AD<br>
+sub-OAS30217 : AD<br>
+sub-OAS30262 : AD</p>
+<p>We want to perform 2-sample t-test. We can create the files we need
+easily with:</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Move to the stats directory</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ex">design_ttest2</span> design 4 4</span></code></pre>
+</div>
+<p><strong>Since the order of our participants do not perfectly follow
+the Diagnosis categories, make sure you fix the design.mat accordingly
+if you used the automated command.</strong> The final one should
+be:<br>
+1 0<br>
+1 0<br>
+1 0<br><strong>0 1</strong><br><strong>1 0</strong><br>
+0 1<br>
+0 1<br>
+0 1</p>
+<p>For the design.con, the first contrast ‘1 -1’ will give results where
+CU &gt; AD and the second contrast ‘-1 1’ will give results where the CU
+&lt; AD. <em>Remember: we are looking at differences in FA, so we
+expected smaller FA values in AD than Controls. It would be the opposite
+if we were to look differences in MD.</em></p>
+<p>We are ready do run the command <code>randomise</code> to compare
+groups. There are a lot of options you can choose to generate your
+results, with different thresholding options. Please refer to the full
+description of the command</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co">#Usage: randomise -i &lt;input&gt; -o &lt;output&gt; -d &lt;design.mat&gt; -t &lt;design.con&gt; [options]</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="co"># Since we have only a few subjects we can apply a less stringent threshold, setting a cluster-based threshold at t= 1.5</span></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="ex">randomise</span> <span class="at">-i</span> all_FA_skeletonised <span class="at">-o</span> tbss <span class="at">-m</span> mean_FA_skeleton_mask <span class="at">-d</span> design.mat <span class="at">-t</span> design.con <span class="at">-c</span> 1.5</span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="co"># Here is the example to apply the preferred method of TFCE (threshold free cluster enhancement; option T2)</span></span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a><span class="ex">randomise</span> <span class="at">-i</span> all_FA_skeletonised <span class="at">-o</span> tbss <span class="at">-m</span> mean_FA_skeleton_mask <span class="at">-d</span> design.mat <span class="at">-t</span> design.con <span class="at">-n</span> 100 <span class="at">--T2</span> <span class="at">-V</span></span></code></pre>
+</div>
+<p>We generated outputs using the two methods (cluster based threshold
+of TFCE), which you can access under
+<code>~/data/DiffusionMRI/tbss/stats</code>. You have: * unthresholded
+t-statistical maps, <code>tbss_tstat1 and tbss_tstat2</code>, where 1
+and 2 refer to the different contrasts * p-values maps corrected for
+multiple comparisons (either tbss_clustere_corrp_tstatX or
+tbss_tfce_corrp_tstatX)<br>
+Note that the p-values maps are outputted as 1-p for convenience of
+display (so that higher values are more significant). You can threshold
+those from 0.95 to 1.</p>
+<p>Here is one example of how you can overlay different outputs images
+to visualize results.</p>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">fsleyes</span> <span class="at">-std1mm</span> mean_FA_skeleton <span class="at">-cm</span> green <span class="at">-dr</span> .3 .7 tbss_tstat1 <span class="at">-cm</span> red-yellow <span class="at">-dr</span> 1.5 3 tbss_clustere_corrp_tstat1 <span class="at">-cm</span> blue-lightblue <span class="at">-dr</span> 0.90 1</span></code></pre>
+</div>
+<p>This will display the standard MNI brain, the average FA skeleton
+used for TBSS, the t-map for contrast 1 and the p-value maps after
+cluster-based thresholding. <em>Note that I am thresholding the latter
+from 0.90 to 1 since we have weak results in this example; this will
+show voxels where CU have greater FA than AD patients from
+p=0.10.</em></p>
+<p>Try the same thing with the other contrast to confirm if results are
+as expected.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Diffusion imaging is used to obtain measurements of tissue
+microstructure</li>
+<li>DWI consists of a 4D volume, and files describing the vectors and
+b-values that each volume is encoding</li>
+<li>The common core processing steps are: brain masking, susceptibility
+correction, eddy/motion correction, and modelling (tensor fitting,
+NODDI, etc)</li>
 </ul>
 </div>
 </div>
