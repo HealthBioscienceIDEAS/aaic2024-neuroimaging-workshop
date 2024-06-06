@@ -6,14 +6,17 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- What generates the signal that fMRI is measuring?
+- What preprocessing steps are needed before analysing fMRI data?
+- How can I extract brain network information from the images.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Explain how the BOLD signal works
+- Demonstrate the pre-processing steps commonly used in fMRI
+- Identify common resting state networks
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -263,10 +266,13 @@ Ciao!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
+- fMRI measures small signal fluctations associated with oxyhaemoglobin in the 
+blood resulting from brain activation
+- Images can either be acquired during a task or with no task involved 
+(resting state)
+- Key preprocessing steps include: EPI distortion correction, brain masking, 
+smoothing, and temporal fitering 
+- Network components extracted from techniques like Melodic can show
+key network components, but also potentially components that represent noise.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
