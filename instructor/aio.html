@@ -231,6 +231,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="functional-mri.html">5. Functional Magnetic Resonance Imaging (fMRI)</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -288,7 +300,7 @@
         
 <section id="aio-imaging-data-structure-and-formats"><p>Content from <a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></p>
 <hr>
-<p>Last updated on 2024-06-05 |
+<p>Last updated on 2024-06-06 |
         
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 32 minutes</p>
@@ -395,7 +407,7 @@ you a list of the files in this directory.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -482,7 +494,7 @@ aux_file	OAS30015_MR_d2004</code></pre>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Let’s look at the output </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -592,7 +604,7 @@ other (different <code>pixdim3</code>).</em></p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>If the voxel dimension is the same in all directions (e.g. 1x1x1 mm)
 we talk about <em>isotropic</em> voxels. Having images with isotropic
@@ -1041,7 +1053,7 @@ right).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Here are the screenshots you should see: <img src="../fig/aic_imdata_fsl_lthal.png" alt="Left Thalamus" width="800" class="figure"></p>
 <figure><img src="../fig/aic_imdata_fsl_rthal.png" alt="Right Thalamus" width="800" class="figure mx-auto d-block"></figure>
@@ -1101,7 +1113,7 @@ which are more visible on FLAIR?</em></li>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <ul>
 <li>Use <code>fslhd</code> to get information on dimension and voxel
@@ -1118,7 +1130,7 @@ orientation</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Do the T1 and the FLAIR have the same dimension? </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="do-the-t1-and-the-flair-have-the-same-resolution">
@@ -1188,7 +1200,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-structural-mri"><p>Content from <a href="structural-mri.html">Structural MRI: Bias Correction, Segmentation and Image Registration</a></p>
 <hr>
-<p>Last updated on 2024-06-05 |
+<p>Last updated on 2024-06-06 |
         
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/structural-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -1605,7 +1617,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>TODO: add the solution of the three tissue volumes</p>
 </div>
@@ -1691,7 +1703,7 @@ done before. Now open up both standard space images in
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>TODO: Provide solution</p>
 </div>
@@ -1768,7 +1780,7 @@ or FLAIR as your reference?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>TODO: add key points to solution</p>
 </div>
@@ -1801,7 +1813,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-pet-imaging"><p>Content from <a href="pet-imaging.html">Processing and analysing PET brain images</a></p>
 <hr>
-<p>Last updated on 2024-06-05 |
+<p>Last updated on 2024-06-06 |
         
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1901,7 +1913,7 @@ type the following into the terminal:</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -2385,7 +2397,7 @@ outputs DVR instead of SUVR. Compare the DVR and SUVR images.</path></p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -2398,7 +2410,7 @@ colormap.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>TODo put solution here</p>
 </div>
@@ -2673,7 +2685,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-diffusion-weighted-imaging"><p>Content from <a href="diffusion-weighted-imaging.html">Diffusion-weighted imaging (DWI)</a></p>
 <hr>
-<p>Last updated on 2024-06-05 |
+<p>Last updated on 2024-06-06 |
         
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2806,7 +2818,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -2819,7 +2831,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>TODO: Add the number of files and how you can tell</p>
 </div>
@@ -3250,6 +3262,420 @@ NODDI, etc)</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
+</section></section><section id="aio-functional-mri"><p>Content from <a href="functional-mri.html">Functional Magnetic Resonance Imaging (fMRI)</a></p>
+<hr>
+<p>Last updated on 2024-06-06 |
+        
+        <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/functional-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What generates the signal that fMRI is measuring?</li>
+<li>What preprocessing steps are needed before analysing fMRI data?</li>
+<li>How can I extract brain network information from the images.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain how the BOLD signal works</li>
+<li>Demonstrate the pre-processing steps commonly used in fMRI</li>
+<li>Identify common resting state networks</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Functional Magnetic Resonance Imaging (fMRI) is a technique that
+captures a “movie” of brain activation over a certain period of time.
+fMRI sequences are <em>time series</em> (4D acquisitions) of 3D brain
+volumes. fMRI measures the blood-oxygen-level-dependent
+(<strong>BOLD</strong>) signal, an indirect measure of regional brain
+metabolism.</p>
+<p>Raw resting-state functional MRI images are prone to several
+artifacts and variability sources. For this reason, before performing
+our statistical analysis, we need to apply a series of procedures that
+aim at removing the sources of signal that we are not interested in, to
+clean the ones we want to study. All these procedures together are
+called <em>pre-processing</em>. This document will guide you through the
+basic steps that are usually taken in the rs-fMRI pre-processing
+phase.</p>
+</section><section id="pre-processing-software"><h2 class="section-heading">Pre-processing Software<a class="anchor" aria-label="anchor" href="#pre-processing-software"></a>
+</h2>
+<hr class="half-width">
+<p>To date, a large amount of pre-processing software packages are
+available and can be freely used. In this course, we will use <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki" class="external-link">FSL</a> to perform
+pre-processing steps directly from the command line.</p>
+</section><section id="data"><h2 class="section-heading">Data<a class="anchor" aria-label="anchor" href="#data"></a>
+</h2>
+<hr class="half-width">
+<p>In this tutorial, we are going to use data from one participant of
+the OASIS study. Data can be found in the folder
+<code>oasis/fMRI_tutorial_orig</code> First, let’s go into the directory
+where the functional data are!</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span>   data/FunctionalMRI </span></code></pre>
+</div>
+<p>Now go into the subject folder and list the content to have an idea
+of what data we are going to use.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">cd</span> OAS30015</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">ls</span> </span></code></pre>
+</div>
+<p>As you can see, for fMRI processing we need high-resolution
+structural data (T1w in the subfolder called <code>anat</code>) and fMRI
+files, in the <code>func</code> subfolder.</p>
+</section><section id="overview"><h2 class="section-heading">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<hr class="half-width">
+<p>Modern fMRI pre-processing pipelines include a variety of processes
+that can, or cannot, be performed depending on the acquired data
+quality, and study design. Today, we will have a look at some of these
+pre-processing steps that are most commonly used. Typical pre-processing
+steps include:</p>
+<ul>
+<li>EPI Distortion Correction</li>
+<li>Motion Correction</li>
+<li>Standard Space Mapping</li>
+<li>Spatial Smoothing</li>
+<li>Temporal Filtering</li>
+<li>Denoising</li>
+</ul></section><section id="hands-on"><h2 class="section-heading">Hands-on<a class="anchor" aria-label="anchor" href="#hands-on"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="structural-processing">Structural Processing<a class="anchor" aria-label="anchor" href="#structural-processing"></a>
+</h3>
+<p>Given the low spatial resolution and SNR of fMRI images, some
+registration steps in functional processing involve the use of
+previously computed transformation during the T1w processing. Important
+steps to have performed are:</p>
+<p><strong>In this course, these steps have already been performed for
+you as they can take quite some time. Please don’t run these
+commands!</strong></p>
+<ul>
+<li>
+<p>Brain extraction with BET</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">bet</span> sub-OAS30015_T1w.nii.gz sub-OAS30015_T1w_bet <span class="at">-f</span> 0.4</span></code></pre>
+</div>
+</li>
+<li>
+<p>Tissue Segmentation with FAST</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">fast</span> <span class="at">-n</span> 3 <span class="at">-b</span> <span class="at">-o</span> sub-OAS30015_T1w_bet_FAST sub-OAS30015_T1w_bet.nii.gz</span></code></pre>
+</div>
+</li>
+<li>
+<p>Linear and Non linear T1w to MNI Standard Space Mapping</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> sub-OAS30015_T1w_bet.nii.gz  <span class="at">-ref</span> /usr/local/fsl/data/standard/MNI152_T1_2mm_brain <span class="at">-out</span> highres2standard <span class="at">-omat</span> highres2standard.mat <span class="at">-cost</span> corratio <span class="at">-dof</span> 12 <span class="at">-searchrx</span> <span class="at">-90</span> 90 <span class="at">-searchry</span> <span class="at">-90</span> 90 <span class="at">-searchrz</span> <span class="at">-90</span> 90 <span class="at">-interp</span> trilinear</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">fnirt</span> <span class="at">--iout</span><span class="op">=</span>highres2standard_head <span class="at">--in</span><span class="op">=</span>sub-OAS30015_T1w.nii.gz <span class="at">--aff</span><span class="op">=</span>highres2standard.mat <span class="at">--cout</span><span class="op">=</span>highres2standard_warp  <span class="at">--jout</span><span class="op">=</span>highres2highres_jac <span class="at">--config</span><span class="op">=</span>T1_2_MNI152_2mm <span class="at">--ref</span><span class="op">=</span>/usr/local/fsl/data/standard/MNI152_T1_2mm <span class="at">--refmask</span><span class="op">=</span>/usr/local/fsl/data/standard/MNI152_T1_2mm_brain_mask.nii.gz <span class="at">--warpres</span><span class="op">=</span>10,10,10</span></code></pre>
+</div>
+</li>
+</ul>
+<p>The results from these commands can be found in the /anat folder
+within the subject directory</p>
+</div>
+<div class="section level3">
+<h3 id="look-at-the-raw-data">Look at the raw data!<a class="anchor" aria-label="anchor" href="#look-at-the-raw-data"></a>
+</h3>
+<p>To have an idea of how the raw data looks before any pre-processing
+is performed, let us visually review the images. To do so,
+<code>fsleyes</code> is a great toolbox that can be used by typing on
+the command line:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">fsleyes</span> func/sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="kw">&amp;</span></span></code></pre>
+</div>
+<p>As mentioned in the <a href="./imaging-data-structure-and-formats.html">imaging data</a>
+section, the <code>&amp;</code> at the end of the command allows us to
+keep working on the command line while having a graphical application
+(such as <code>fsleyes</code>) opened. Helpful options for reviewing
+fMRI data in fsleyes are the movie option ( <img src="../fig/movie_icon.png" alt="movie" height="24" class="figure"> ) and the timeseries
+option (-&gt; view -&gt; timeseries or keyboard shortcut ⌘-3). Check
+them out!</p>
+</div>
+<div class="section level3">
+<h3 id="epi-distortion-correction">EPI Distortion Correction<a class="anchor" aria-label="anchor" href="#epi-distortion-correction"></a>
+</h3>
+<p>Some parts of the brain can appear distorted depending on their
+magnetic properties. One common way to correct the distortions with fMRI
+data is by acquiring one volume with an opposite phase-encoding
+direction, and merging the two types of images running <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup" class="external-link">TOPUP</a>. In this
+dataset we don’t have the data required for TOPUP so we will skip this
+step. <em>Note however that you should run it if your data
+allows.</em></p>
+</div>
+<div class="section level3">
+<h3 id="preliminary-steps">Preliminary steps<a class="anchor" aria-label="anchor" href="#preliminary-steps"></a>
+</h3>
+<p>For some registrations steps we will need only one volume from our
+fMRI timeseries. Run the following code to cut 1 volume in the middle of
+the functional file:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">fslroi</span> func/sub-OAS30015_task-rest_run-01_bold.nii.gz func/sub-OAS30015_task-rest_run-01_bold_1volume  80 1</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="motion-correction">Motion Correction<a class="anchor" aria-label="anchor" href="#motion-correction"></a>
+</h3>
+<p>A big issue in raw rs-fMRI scans is the fact that participants
+usually tend to move during the length of the scanning session,
+therefore producing artifacts in the images. Head motion results in
+lower quality (more blurry) images, as well as creating spurious
+correlations between voxels in the brain. Rs-fMRI pre-processing takes
+care of the motion during the scan by realigning each volume within a
+scan to a reference volume. The reference volume is usually the first or
+the middle volume of the whole sequence.</p>
+<p>To perform motion correction with fsl we use the <code>mcflirt</code>
+command:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">mcflirt</span> <span class="at">-in</span>  func/sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-out</span> func/mc_sub-OAS30015_task-rest_run-01_bold</span></code></pre>
+</div>
+<p>To keep track of what we are doing, it is good to add a prefix to the
+output describing the preprocessing steps run on it. So in this case we
+add <code>mc_</code> (motion corrected) to our original functional
+file.</p>
+<p>we can now have a look at original and motion corrected image by
+typing</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fsleyes</span> func/sub-OAS30015_task-rest_run-01_bold.nii.gz func/mc_sub-OAS30015_task-rest_run-01_bold <span class="kw">&amp;</span></span></code></pre>
+</div>
+<p>In <code>fsleyes</code> we can use the options in the lower left
+panel to hide or move images up. Can you guess which are the spots of
+the images that differ most between the two scans?</p>
+</div>
+<div class="section level3">
+<h3 id="standard-space-mapping">Standard Space Mapping<a class="anchor" aria-label="anchor" href="#standard-space-mapping"></a>
+</h3>
+<p>Brain shape and size strongly vary across different individuals.
+However, to perform group level analysis, voxels between different
+brains need to correspond. This can be achieved by <em>registering</em>
+or <em>normalizing</em> rs-fMRI scans in <em>native-space</em> to a
+standard template. This processing step is actually made of three
+different steps.</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Compute the registration of the subject T1w scan to MNI
+space:</p>
+<p>This has been previously run using <code>flirt</code> and
+<code>fnirt</code> (see above). The output transformation matrix is
+stored in the <code>anat</code> subfolder and called
+<code>highres2standard_warp.mat</code></p>
+</li>
+<li>
+<p>Register the fMRI to the T1w file</p>
+<p>With the following function we compute the transformation matrix
+needed to bring the fMRI file to the T1w space</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">epi_reg</span> <span class="at">--epi</span><span class="op">=</span>func/sub-OAS30015_task-rest_run-01_bold_1volume.nii.gz <span class="at">--t1</span><span class="op">=</span>anat/sub-OAS30015_T1w.nii.gz <span class="at">--t1brain</span><span class="op">=</span>anat/sub-OAS30015_T1w_bet.nii.gz <span class="at">--out</span><span class="op">=</span>func/func2highres</span></code></pre>
+</div>
+</li>
+<li>
+<p>Combine fMRI2T1w and T12MNI transformation, and apply in one go
+to our timeseries</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># concatenate T12standard and fMRI2T1w affine transform</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">convert_xfm</span> <span class="at">-omat</span> func/func2standard  <span class="at">-concat</span> anat/highres2standard.mat func/func2highres.mat  </span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co"># concatenate T12standard non-linear and fMRI2T1w affine transform</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="ex">convertwarp</span> <span class="at">--ref</span><span class="op">=</span><span class="va">$FSLDIR</span>/data/standard/MNI152_T1_2mm_brain <span class="at">--premat</span><span class="op">=</span>func/func2highres.mat <span class="at">--warp1</span><span class="op">=</span>anat/highres2standard_warp <span class="at">--out</span><span class="op">=</span>func/func2standard_warp </span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="ex">applywarp</span> <span class="at">--ref</span><span class="op">=</span><span class="va">$FSLDIR</span>/data/standard/MNI152_T1_2mm_brain <span class="at">--in</span><span class="op">=</span>func/mc_sub-OAS30015_task-rest_run-01_bold.nii.gz  <span class="at">--out</span><span class="op">=</span>func/MNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz  <span class="at">--warp</span><span class="op">=</span>func/func2standard_warp</span></code></pre>
+</div>
+</li>
+</ol>
+<p>The output of these functions is stored in
+<code>func/MNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz</code> .
+This is our fMRI scan in MNI space. You can check this by typing</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># check characteristics (dimensions) of the MNI functional file </span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">fslinfo</span> func/MNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz  </span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># check characteristics (dimensions) of the native-space functional file </span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="ex">fslinfo</span> func/sub-OAS30015_task-rest_run-01_bold.nii.gz </span></code></pre>
+</div>
+<p>Let’s also have a look at the MNI file!</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">fsleyes</span> func/MNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="kw">&amp;</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="spatial-smoothing">Spatial Smoothing<a class="anchor" aria-label="anchor" href="#spatial-smoothing"></a>
+</h3>
+<p>With spatial smoothing, we are referring to the process of averaging
+the data points (voxels) with their neighbors. The downside of smoothing
+is that we lose spatial specificity (resolution). However, this process
+has the effect of a low-pass filter, removing high frequency and
+enhancing low frequency. Moreover, spatial correlations within the data
+are more pronounced and activation can be more easily detected.</p>
+<p>In other words: Smoothing fMRI data increases signal-to-noise
+ratio.</p>
+<p>The standard procedure for spatial smoothing is applying a gaussian
+function of a specific width, called the gaussian kernel. The size of
+the gaussian kernel determines how much the data is smoothed and is
+expressed as the Full Width at Half Maximum (FWHM). <img src="../fig/FWHM.png" alt="Example of full-with at half maximum" class="figure"></p>
+<p>There is no standard value for smoothing fMRI data, FWHM usually
+varies from 2mm to 8mm. A good compromise is to use a FWHM of 4. This
+can be applied with <code>fslmaths</code> :</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">fslmaths</span> func/MNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-s</span> 4 func/sMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz</span></code></pre>
+</div>
+<p>By changing the “-s” option we can change the FWHM, increasing or
+decreasing the smoothing. Try it out and check the results with
+<code>fsleyes</code>!</p>
+</div>
+<div class="section level3">
+<h3 id="temporal-filtering">Temporal Filtering<a class="anchor" aria-label="anchor" href="#temporal-filtering"></a>
+</h3>
+<p>Rs-fMRI timeseries are also characterized by non-interesting
+low-frequency drift due to physiological (e.g. respiration) or physical
+(scanner-related) noise. For this reason, we usually apply an high-pass
+filter that eliminates signal variations due to low-frequency. To do so,
+a voxel timeseries can be represented in the frequency domain, and low
+frequency can be set to 0.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">fslmaths</span> func/sMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-bptf</span> 45.45 1 func/hpsMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="resting-state-networks-and-noise-components">Resting state Networks and Noise Components<a class="anchor" aria-label="anchor" href="#resting-state-networks-and-noise-components"></a>
+</h3>
+<p>Once the data is processed we can try to run an independent component
+analysis (ICA) on the fMRI timeseries. ICA is usually performed for two
+reasons: 1. Identify resting state networks, i.e. groups of areas that
+covary (work) together. This step is often done at the group level. 2.
+Identify further sources of noise from the data, and further remove them
+(this is called denoising).</p>
+<p>ICA can be run using the <code>melodic</code> command from FSL.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">melodic</span> <span class="at">-i</span> func/hpsMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-o</span> func/ICA <span class="at">-m</span> /usr/local/fsl/data/standard/MNI152_T1_2mm_brain_mask.nii.gz</span></code></pre>
+</div>
+<p>The <code>-m</code> option specifies a mask that we want to run the
+analysis in. In this case we use a standard brain mask provided by FSL
+but you could also create your own mask using the structural
+segmentation.</p>
+<p>Melodic will create a directory called “ICA” in our func folder</p>
+<p>Open the melodic_IC.nii.gz file in the output folder using
+<code>fsleyes</code>, threshold the values to 3 (this value is commonly
+used as a threshold for this task).</p>
+<p>Now chose a nice colormap (usually red) and overlay this to a
+standard brain template (-&gt; File -&gt; Add Standard).</p>
+<p>Can you recognize some of the canonical resting-state networks?</p>
+<figure><img src="../fig/RSN.png" alt="Output components from FSL Melodic" class="figure mx-auto d-block"></figure><p>Do you see some components that you think might be linked to
+artefacts?</p>
+<p>You can clean the original signal by writing them down and
+running:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">fslregfilt</span> <span class="at">-i</span> func/sMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-o</span> func/denosised_sMNI_mc_sub-OAS30015_task-rest_run-01_bold.nii.gz <span class="at">-d</span> func/ICA/melodic_mix <span class="at">-f</span> <span class="st">" 1,2,3"</span></span></code></pre>
+</div>
+<p>with the <code>-f</code> option you can specify the components number
+that you want to clean from the signal.</p>
+</div>
+</section><section id="conclusion"><h2 class="section-heading">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
+</h2>
+<hr class="half-width">
+<p>You should now be able to fully process one fMRI scan yourself! As
+you know, we usually work with a bunch of data and want to automatize
+the pre-processing for all the scans, so that we can run it in one
+go.</p>
+<p>Also following the other sections of this course, try to put all
+these commands in a <em>for</em> loop and use variables to run commands
+on your files.</p>
+<p>If you want to discover some type of analysis that you can do on the
+processed data, check out some of these websites:</p>
+<ul>
+<li>
+<a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLNets" class="external-link">FSLnets</a>
+for network analysis of fMRI scans</li>
+<li>
+<a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/MELODIC" class="external-link">Melodic
+ICA</a> and <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/DualRegression" class="external-link">Dual
+regression</a> for resting-state network connectivity</li>
+<li>Graph Analysis of connectivity metrics with <a href="https://sites.google.com/site/bctnet/" class="external-link">Brain COnnectivity
+Toolbox</a>
+</li>
+</ul>
+<p>Ciao!</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>fMRI measures small signal fluctations associated with
+oxyhaemoglobin in the blood resulting from brain activation</li>
+<li>Images can either be acquired during a task or with no task involved
+(resting state)</li>
+<li>Key preprocessing steps include: EPI distortion correction, brain
+masking, smoothing, and temporal fitering</li>
+<li>Network components extracted from techniques like Melodic can show
+key network components, but also potentially components that represent
+noise.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
 </section></section>
 </div>
     </main>
@@ -3298,8 +3724,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/aio.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/aio.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-06-05",
-  "datePublished": "2024-06-05"
+  "dateModified": "2024-06-06",
+  "datePublished": "2024-06-06"
 }
 
   </script><script>
