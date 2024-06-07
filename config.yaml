@@ -64,6 +64,7 @@ episodes:
 - pet-imaging.Rmd
 - diffusion-weighted-imaging.Rmd
 - functional-mri.Rmd
+- command-line.Rmd
 
 # Information for Learners
 learners: 
