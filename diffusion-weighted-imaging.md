@@ -109,11 +109,9 @@ First select the b0 image, extract the brain only and binarize it to make a mask
 * Extract the b0 image only with select_dwi_vols or fslroi
 
    ```bash
-   # Usage: select_dwi_vols <data> <bvals> <output> <approx_bval> [other options]
+   # Usage: fslroi <input> <output> <tmin> <tsize>
 
-   select_dwi_vols sub-OAS30001_dwi.nii.gz sub-OAS30001_dwi.bval sub-OAS30001_b0.nii.gz -b 0
-
-   # Another option would be to use: fslroi dwidata nodif 0 1
+   fslroi sub-OAS30001_dwi.nii.gz sub-OAS30001_b0.nii.gz 0 1
    ```
 
 * Brain extraction and binarization with bet
