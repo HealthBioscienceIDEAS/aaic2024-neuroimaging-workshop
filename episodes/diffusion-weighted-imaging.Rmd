@@ -71,13 +71,15 @@ fsleyes sub-OAS30001_dwi.nii.gz
 cat sub-OAS30001_ses-d2430_dwi.bval
 cat sub-OAS30001_ses-d2430_dwi.bvec
 ```
-```output
-@Dave can you insert the bval_bvec.png please?
-```
- 
+:::::::::::::::::::: spoiler
+### The command should show the following content
+
+![](fig/bval_bvec.png){alt="example of bval and bvec file"}
+
 * The nifti file is a 4D file of all the directions acquired.
 * The `.bval` file refers to the *b-value* applied to each image.
 * The `.bvec` file refers to the *vector* applied to each image, with the coordinates in x, y and z.
+::::::::::::::::::::
 
 :::::::::::::::::::: challenge
 Use the "movie" option in fsleyes to look at all frames of the nifti file. 
@@ -90,7 +92,8 @@ for more details!
 
 :::::::::::::::::::: solution
 There is 1 b0 image and 64 gradient images! You can check for the maximum number as you move through the "Volume" box as shown below.
-@Dave can you insert fsleyes.png please?
+
+![](fig/fsleyes_b0.png){alt="FSLeyes of B0 image"}
 :::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::
