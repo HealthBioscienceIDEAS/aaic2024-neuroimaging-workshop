@@ -949,7 +949,7 @@ name.</li>
 <li>Identify the currently selected overlay (highlighted in blue).</li>
 <li>Add/remove overlays with the + and - buttons.</li>
 <li>Change the overlay display order with the ▲ and ▼ buttons.</li>
-<li>Show/hide each overlay with the eye button ( <img src="../fig/eye_icon.png" class="figure"> {alt=“eye icon” height=‘24px’} ), or by double
+<li>Show/hide each overlay with the eye button ( <img src="../fig/eye_icon.png" alt="eye icon" height="24" class="figure"> ), or by double
 clicking on the overlay name.</li>
 <li>Link overlay display properties with the chainlink button ( <img src="../fig/chainlink_icon.png" alt="chain icon" height="24" class="figure"> ).</li>
 <li>Save an overlay if it has been edited, with the floppy disk button (
@@ -1601,7 +1601,7 @@ co-registration <code>msub-OAS30003_T1w_brain_MNI.nii</code>. <img src="../fig/a
 all of the standard atlases and templates so that you can quickly access
 them. <img src="../fig/aic_smri_fsleyes_addstd.png" alt="Add standard function" class="figure"></p>
 <p>Select the <code>MNI152_T1_1mm_brain</code> from this list of files.
-<img src="../fig/aic_smri_fsleyes_choosemni.png" alt="Choose MNI image" class="figure"></p>
+<img src="../fig/aic_smri_fsleyes_choosemni.png%20%7Balt=%22Choose%20MNI%20image%22%7D" class="figure"></p>
 <p>We can now check if our image is registered by flicking back and
 forth between the MNI image and our image.</p>
 </div>
@@ -1629,7 +1629,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>TODO: add the solution of the three tissue volumes</p>
 </div>
@@ -1715,7 +1715,7 @@ done before. Now open up both standard space images in
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>TODO: Provide solution</p>
 </div>
@@ -1792,7 +1792,7 @@ or FLAIR as your reference?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>TODO: add key points to solution</p>
 </div>
@@ -2830,7 +2830,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -2843,7 +2843,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>TODO: Add the number of files and how you can tell</p>
 </div>
@@ -3293,7 +3293,7 @@ any links that you are not going to use.
 <ul>
 <li>What generates the signal that fMRI is measuring?</li>
 <li>What preprocessing steps are needed before analysing fMRI data?</li>
-<li>How can I extract brain network information from the images.</li>
+<li>What type of analysis can I perform on pre-processed fMRI data?</li>
 </ul>
 </div>
 </div>
@@ -3303,9 +3303,11 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how the BOLD signal works</li>
-<li>Demonstrate the pre-processing steps commonly used in fMRI</li>
-<li>Identify common resting state networks</li>
+<li>Explain main sources of variability in BOLD signal and how to handle
+them</li>
+<li>Demonstrate basic pre-processing steps commonly used in fMRI</li>
+<li>Get to know what type of information we can obtain from
+pre-processed data (e.g. resting state networks)</li>
 </ul>
 </div>
 </div>
@@ -4016,7 +4018,7 @@ files.</p>
   That just flew off the screen1!
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
