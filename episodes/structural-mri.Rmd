@@ -302,7 +302,7 @@ standard atlases and templates so that you can quickly access them.
 ![Add Standard image](fig/aic_smri_fsleyes_addstd.png){alt="Add standard function"}
 
 Select the `MNI152_T1_1mm_brain` from this list of files.
-![Choose MNI image](fig/aic_smri_fsleyes_choosemni.png)
+![](fig/aic_smri_fsleyes_choosemni.png {alt="Choose MNI image"})
 
 We can now check if our image is registered by flicking back and forth between 
 the MNI image and our image. 

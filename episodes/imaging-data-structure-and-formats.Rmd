@@ -471,8 +471,7 @@ The overlay list allows you to do the following:
 * Identify the currently selected overlay (highlighted in blue).
 * Add/remove overlays with the + and - buttons.
 * Change the overlay display order with the &#x25B2; and &#x25BC; buttons.
-* Show/hide each overlay with the eye button ( ![](fig/eye_icon.png)
-{alt="eye icon" height='24px'} ), or by double clicking on the overlay name.
+* Show/hide each overlay with the eye button ( ![](fig/eye_icon.png){alt="eye icon" height='24px'} ), or by double clicking on the overlay name.
 * Link overlay display properties with the chainlink button
   ( ![](fig/chainlink_icon.png){alt="chain icon" height='24px'} ).
 * Save an overlay if it has been edited, with the floppy disk button

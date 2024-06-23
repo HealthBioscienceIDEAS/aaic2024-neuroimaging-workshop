@@ -8,15 +8,15 @@ exercises: 2
 
 - What generates the signal that fMRI is measuring?
 - What preprocessing steps are needed before analysing fMRI data?
-- How can I extract brain network information from the images.
+- What type of analysis can I perform on pre-processed fMRI data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how the BOLD signal works
-- Demonstrate the pre-processing steps commonly used in fMRI
-- Identify common resting state networks
+- Explain main sources of variability in BOLD signal and how to handle them
+- Demonstrate basic pre-processing steps commonly used in fMRI
+- Get to know what type of information we can obtain from pre-processed data (e.g. resting state networks)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
