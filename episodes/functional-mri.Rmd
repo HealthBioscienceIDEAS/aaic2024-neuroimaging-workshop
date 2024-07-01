@@ -43,7 +43,7 @@ cd   data/FunctionalMRI
 Now go into the subject folder and list the content to have an idea of what data we are going to use. 
 
 ```bash
-cd OAS30015
+cd sub-OAS30015
 
 ls 
 ```
