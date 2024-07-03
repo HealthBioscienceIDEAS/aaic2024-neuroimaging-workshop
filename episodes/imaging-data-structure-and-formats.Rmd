@@ -228,25 +228,52 @@ aux_file	OAS30015_MR_d2004
 
 Let's look at the most important fields:
 
-* **Data type** (`data_type`): Note that some images (`sub-OAS30015_T1w`) are of _integer_ datatype, while others (`sub-OAS30015_T1w_brain_pve_0`) are of _floating point_ datatype. Integer means that the intensity values can only take on whole numbers - no fractions - raw image data is normally of this type. Floating point means that intensity values can be fractional - the result of applying most statistical processing algorithms to image data results in images of floating point type.
-* **Image dimension** (`dim1`, `dim2`,`dim3`): this is the number of voxels in the image in the x,y,z dimension. This means that we have a cube of imaging data in the file that contains `dim1` columns, `dim2` rows, and `dim3` slices.
-* **Image resolution (Voxel size)** (`pixdim1`,`pixdim2`,`pixdim3`) : this tells us the size that each voxel represents (in mm) in the x,y,z dimension. 
+* **Data type** (`data_type`): Note that some images (`sub-OAS30015_T1w`) are 
+of _integer_ datatype, while others (`sub-OAS30015_T1w_brain_pve_0`) are of 
+_floating point_ datatype. Integer means that the intensity values can only 
+take on whole numbers - no fractions - raw image data is normally of this type. 
+Floating point means that intensity values can be fractional - the result of 
+applying most statistical processing algorithms to image data results in 
+images of floating point type.
+* **Image dimension** (`dim1`, `dim2`,`dim3`): this is the number of voxels in 
+the image in the x,y,z dimension. This means that we have a cube of imaging 
+data in the file that contains `dim1` columns, `dim2` rows, and `dim3` slices.
+* **Image resolution (Voxel size)** (`pixdim1`,`pixdim2`,`pixdim3`) : this 
+tells us the size that each voxel represents (in mm) in the x,y,z dimension. 
 
-_As an example to understand the difference between image dimension and image resolution, an MRI of a fruit fly or an elephant could contain 256 slices (same `dim3` value), but one image would have to represent a much larger size in the real world than the other (different `pixdim3`)._
+_As an example to understand the difference between image dimension and image 
+resolution, an MRI of a fruit fly or an elephant could contain 256 slices 
+(same `dim3` value), but one image would have to represent a much larger size 
+in the real world than the other (different `pixdim3`)._
 
 ::::::::::::::::::::::::instructor
-If the voxel dimension is the same in all directions (e.g. 1x1x1 mm) we talk about _isotropic_ voxels. Having images with isotropic (or with very similar voxel size in the 3 directions) is desireable to perform reliable quantitative analyses."
+If the voxel dimension is the same in all directions (e.g. 1x1x1 mm) we talk 
+about _isotropic_ voxels. Having images with isotropic (or with very similar 
+voxel size in the 3 directions) is desirable to perform reliable quantitative 
+analyses.
 ::::::::::::::::::::::::
 
-* **Affine transformation** (`qform`): this field encodes a transformation or mapping that tells us **how to convert the voxel location (i,j,k) to the real-world coordinates (x,y,z)** (i.e. the coordinate system of the MRI scanner in which the image was acquired). The real-world coordinate system tends to be defined according to the patient. The x-axis tends to go from patient left to patient right, the y axis tends to go from anterior to posterior, and the z-axis goes from top to bottom of the patient.
-This mapping is very important, as this information will be needed to correctly visualize images and also to align them later. 
-![Figure courtesy of Slicer (addlink)](fig/coordinates_affine.png){alt="Display toolbar"}
-An alternative command to `fslinfo` is `fslhd`, which displays a reduced set of properties about the images (mainly data type, dimension and resolution).
+* **Affine transformation** (`qform`): this field encodes a transformation or
+mapping that tells us **how to convert the voxel location (i,j,k) to the 
+real-world coordinates (x,y,z)** (i.e. the coordinate system of the MRI scanner 
+in which the image was acquired). The real-world coordinate system tends to be 
+defined according to the patient. The x-axis tends to go from patient left to 
+patient right, the y axis tends to go from anterior to posterior, and the 
+z-axis goes from top to bottom of the patient.
+This mapping is very important, as this information will be needed to 
+correctly visualize images and also to align them later. 
+![](fig/coordinates_affine.png){alt="Coordinate systems"}
+Figure from [Slicer](https://slicer.readthedocs.io/en/latest/user_guide/coordinate_systems.html)
+
+An alternative command to `fslinfo` is `fslhd`, which displays a reduced set of
+properties about the images (mainly data type, dimension and resolution).
 
 ## Neuroimaging data analysis
 
 ### Generic blueprint of a neuroimaging study
-The steps to conduct a neuroimaging study are very similar to any other scientific experiment. As we go through the workshop today, think about where a certain analysis or tool falls in this generic pipeline:
+The steps to conduct a neuroimaging study are very similar to any other 
+scientific experiment. As we go through the workshop today, think about where a
+certain analysis or tool falls in this generic pipeline:
 
 | Step | Aim | Challenges and considerations |
 |---|------|---------|
@@ -288,7 +315,7 @@ For a full overview of what FSLeyes can do, take a look at the [FSLeyes user gui
 Assuming you are still in the `~/data/ImageDataVisualization` directory,
 
 Start FSLeyes by typing in the terminal:
-```shell
+```bash
 fsleyes &
 ```
 
@@ -584,7 +611,8 @@ Here are the screenshots you should see:
 ::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
-For more information about the atlases available please refer to the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases).
+For more information about the atlases available please refer to the 
+[FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases).
 
 Quit FSLeyes when you have finished looking at the atlases.
 
@@ -614,6 +642,7 @@ Now let's have a look at them in FSLeyes:
 ```bash
 fsleyes sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz
 ```
+
 Change the intensity range for both images to be between 0 and 1000.
 Show/hide images with the eye button 
 ( ![](fig/eye_icon.png){alt="eye icon" height='24px'} ), 
@@ -629,15 +658,30 @@ the overlay list.
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
-#### _Do the T1 and the FLAIR have the same dimension?_
 
-#### _Do the T1 and the FLAIR have the same resolution?_
+*Do the T1 and the FLAIR have the same dimension?*
+    
+**No**-Using `fslhd`, we can see that the dimensions (`dim1`, `dim2`, and 
+`dim3`) of the T1 are 176 x 240 x 161 and the dimensions of the FLAIR 
+image are 256 x 256 x 35.
 
-#### _Do the T1 and the FLAIR have the same oreintation?_
+*Do the T1 and the FLAIR have the same resolution?*
 
-#### _What brain characteristics are more visible in these images?_
-TODO: Add example screenshots here
+**No**-From the same `fslhd` commands, the resolution can be found in 
+the fields `pixdim1`, `pixdim2`, and `pixdim3`. For the T1 the resolution is
+1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm
+    
+*Do the T1 and the FLAIR have the same orientation?*
 
+**No** In the bottom right panel you should see the warning: 
+“Images have different orientations/fields of view”
+
+*What brain characteristics are more visible in the T1w and which are more 
+visible on FLAIR?*
+
+On T1w, grey and white matter are more easily distinguishable. On FLAIR, 
+brain lesions – white matter hyperintensities – are more clearly visible
+  
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
@@ -660,8 +704,11 @@ FSLeyes manual: https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/inde
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Images are sheets or cubes of numbers.
-- Medical image datais typically storedin DICOM or Nifti format.
+- Medical image data is typically stored in DICOM or Nifti format. They include
+a header that contains information on the patient and/or the image characteristics.
 - An affine transformation maps the voxel location to real-world coordinates.
+- Medical image viewers allow to navigate an image, adjust contrast, and 
+localise brain regions with respect to an atlas.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
