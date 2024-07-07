@@ -23,36 +23,53 @@ segmentation
 
 ## Introduction
 
-In this section, you will be learning how to process and quantify structural MRI scans. T1-weighted structural MRI scans are the "workhorse" scan of dementia research. They provide high-resolution, detailed pictures of a patient's anatomy, allowing researchers to visualize where atrophy caused by Alzheimer's disease or other dementias is occurring. In addition, it provides anatomical reference to other imaging modalities, such as functional MRI and positron emission tomography (PET), that provide lower-resolution maps of brain function and pathology, so that regional quantification of key areas can be assessed in these scans.
+In this section, you will be learning how to process and quantify structural 
+MRI scans. T1-weighted structural MRI scans are the "workhorse" scan of dementia
+research. They provide high-resolution, detailed pictures of a patient's 
+anatomy, allowing researchers to visualize where atrophy caused by Alzheimer's 
+disease or other dementias is occurring. In addition, it provides anatomical 
+reference to other imaging modalities, such as functional MRI and positron 
+emission tomography (PET), that provide lower-resolution maps of brain function 
+and pathology, so that regional quantification of key areas can be assessed 
+in these scans.
 
-We will be using two widely used software packages: [SPM](https://www.fil.ion.ucl.ac.uk/spm/) and [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki). These packages provide analysis and visualization functionality of structural and functional neuroimaging data, and they can be used in both cross-sectional and longitudinal studies. The subsequent outputs from these pipelines can be used in the quantification of other imaging modalities. 
+We will be using two widely used software packages: 
+[SPM](https://www.fil.ion.ucl.ac.uk/spm/) and 
+[FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki). These packages provide analysis 
+and visualization functionality of structural and functional neuroimaging data, 
+and they can be used in both cross-sectional and longitudinal studies. The 
+subsequent outputs from these pipelines can be used in the quantification of 
+other imaging modalities. 
 
-After the course, you will be able to perform basic measurements relevant to  dementia research from structural MRI brain scans. 
+After the course, you will be able to perform basic measurements relevant to 
+dementia research from structural MRI brain scans. 
 
 We will use the SPM and FSL tools to perform:
-* image visualization of analysis outputs,
-* intensity inhomogeneity correction, 
-* structural MRI segmentation,
-* quantification of volumetric outputs, and 
-* registration to a standard space atlas. 
+
+- image visualization of analysis outputs,
+- intensity inhomogeneity correction, 
+- structural MRI segmentation,
+- quantification of volumetric outputs, and 
+- registration to a standard space atlas. 
 
 ## Opening up an image
 We are going to be working in the `StructuralMRI` subfolder under `data` in 
-your home directory.From the previous lesson, you learned how to view and navigate images.
+your home directory.From the previous lesson, you learned how to view and 
+navigate images.
 
 Clicking on the Applications in the upper left-hand corner and select the 
 terminal icon. This will open a terminal window that you will use to type 
 commands
-![launching a terminal window](fig/aic_smri_launch_terminal.png){alt="Launch the terminal"}
+![](fig/aic_smri_launch_terminal.png){alt="Launch the terminal"}
  
 From the terminal window, type `fsleyes` to open up the image and have a 
 look around.
-![Open fsleyes](fig/aic_smri_fsleyes.png){alt="Open FSL eyes"}
+![](fig/aic_smri_fsleyes.png){alt="Open FSLeyes"}
 
 Now we choose the file `sub-OAS_30003_T1w.nii` by going to the File menu and 
 choosing the Add Image command
-![Using the Add Image command](fig/aic_smri_fsleyes_addfile.png){alt="Add file"}
-![Choosing the T1 image](fig/aic_smri_fsleyes_choosefile.png){alt="Choose File"}
+![](fig/aic_smri_fsleyes_addfile.png){alt="Add file"}
+![](fig/aic_smri_fsleyes_choosefile.png){alt="Choose File"}
 
 :::::::::::::::::::::::  challenge
 ### Exercise 1
@@ -84,6 +101,7 @@ would expect to have in that voxel and assigns a probability that the voxel
 contains that tissue. It typically generates *n* different volumes, where *n* 
 is the number of tissue types you want to use to classify the brain. We 
 typically focus on three tissue probability maps in particular:
+
 * Grey matter (GM), 
 * White matter (WM), and
 * Cerebrospinal fluid (CSF)
@@ -93,53 +111,66 @@ simultaneously. Follow the steps below to obtain bias-corrected images and
 tissue probability maps. 
 
 ### Bias Correction and Segmenation Steps
-1. Type `spm pet` to launch SPM (screenshot)
- ![The terminal window](fig/aic_smri_terminal_window.png){alt="Launch SPM"}
+1. Type `spm pet` to launch SPM 
+![](fig/aic_smri_terminal_window.png){alt="Launch SPM"}
 1. SPM will then create a number of windows. You want to look at the Main Menu
 Window that has all of the buttons.
- ![SPM windows](fig/aic_smri_spm.png){alt="SPM windows"}
-1. From main menu, select the Segment button (Screenshots). This will launch a 
+![](fig/aic_smri_spm.png){alt="SPM windows"}
+1. From main menu, select the Segment button. This will launch a 
 window known as the *batch editor*, where you can adjust settings on the pipeline to be run.
-![SPM Batch Segment Editor](fig/aic_smri_seg_batch.png){alt="SPM Batch editor"}
+![](fig/aic_smri_seg_batch.png){alt="SPM Batch editor"}
 1. Edit the options for segmentation:
-   1. Under Data->Channels->Volume, click on "Specify...".
-    ![Navigating to volumes in batch editor](fig/aic_smri_seg_volumes.png){alt="Specify volumes"}
-   1. In the dialog box that opens up, please navigate to the folder `data` and 
+   a. Under Data->Channels->Volume, click on "Specify...".
+    ![](fig/aic_smri_seg_volumes.png){alt="Specify volumes"}
+   a. In the dialog box that opens up, please navigate to the folder `data` and 
    then `StructuralMRI`. Then select the first image `sub-OAS30003_T1w.nii`. 
    Once you click on it, you will notice the file move down to the bottom of 
    the box which represents the list of selected files.
-    ![Choose the T1 image](fig/aic_smri_seg_chooset1.png){alt="Choose T1 image"}
-   1. Click the Done button
-   1. Back in the batch editor, under Data->Save Bias Corrected, please 
-   choose "Save Field and Corrected" ![Saving bias field and corrected images]
-   (fig/aic_smri_seg_bcoption.png){alt="Choose bias correction option"}
-   1. Under the Tissues section, please make sure that the first three tissue 
+    ![](fig/aic_smri_seg_chooset1.png){alt="Choose T1 image"}
+   a. Click the `Done` button
+   a. Back in the batch editor, under Data->Save Bias Corrected, please 
+   choose "Save Field and Corrected" 
+   ![](fig/aic_smri_seg_bcoption.png){alt="Choose bias correction option"}
+   a. Under the Tissues section, please make sure that the first three tissue 
    types, which represent GM, WM, and CSF, have the native tissue subfield set 
    to native, while the final three tissue types (4-6), which represent 
    non-brain structures, have the native tissue subfield set to None.
-    ![Only saving input from first three tissues]
-    (fig/aic_smri_seg_native.png){alt="Native segmentation"}
+   ![](fig/aic_smri_seg_native.png){alt="Native segmentation"}
 1. Click the green run button to start! It should take about 5-10 minutes. You 
 will see a lot of other things happening in other windows. The terminal will 
 say `Done - Segment` when it has finished.
+
+::::::::::::::::::::: spoiler
+### Reproducing your work
+When you are using these workflows for your actual research, we **highly 
+recommend** that you save the SPM pipelines so that you could run them again on
+the exact same data
+with the exact same settings. You can do that by selecting `Save batch` from
+the `File` menu. This will save the batch, or pipeline, as a file with a
+`.mat` extension. You can load this file back in by selecting the `Load batch`
+from the `File` menu and selecting the file you save. 
+
+:::::::::::::::::::::
  
 ## Quality check
-The quality check is an important part of any analysis. We are going to visualize the outputs from SPM Segment and make sure that the bias correction and segmentation have worked. 
+The quality check is an important part of any analysis. We are going to 
+visualize the outputs from SPM Segment and make sure that the bias correction 
+and segmentation have worked. 
 
 ### Bias correction
 1. Use `fsleyes` again and open up the original image `sub-OAS30003_T1w.nii` 
 as you did at the start of the session.
 2. Change the image lookup table to `NIH` 
- ![Choose NIH lookup table](fig/aic_smri_fsleyes_selectnih.png){alt="FSL eyes with NIH colormap"}
+![](fig/aic_smri_fsleyes_selectnih.png){alt="FSL eyes with NIH colormap"}
 3. Then change the image minimum to 40 and the maximum to 600. This means that 
 all intensities 40 and below will map to the first color in the lookup table, 
 and all voxels 600 and above will map to the last color. The white matter 
 should be yellow to red. 
- ![Change intensity limits](fig/aic_smri_fsleyes_minmax.png){alt="Change min and max intensity"}   
+![](fig/aic_smri_fsleyes_minmax.png){alt="Change min and max intensity"}   
 4. Next add the  bias corrected image, which is called `msub-OAS30003_T1w.nii`. 
 Change the lookup table to NIH as you did in Step 2. Change the minimum to 40 
 and maximum intensity to 500 similar to what you did in Step 2 and 3. 
- ![Bias image in comparison](fig/aic_smri_fsleyes_biasnih.png){alt="Bias in image using NIH map"}   
+![](fig/aic_smri_fsleyes_biasnih.png){alt="Bias in image using NIH map"}   
 
 When you add this image, it will overlay on top of the original image. 
 Think of this new image a completely opaque, so that you no longer see the 
@@ -160,20 +191,21 @@ the bias correct and original image?*
 ### Tissue segmentation
 Now that we are happy with the bias correction, lets look at the tissue 
 segmentation.
+
 1. Use the icon to turn off the original image. Select the bias corrected 
 image and make sure the colormap is back to the first option "Greyscale"
- ![Turning off bias corrected image](fig/aic_smri_fsleyes_orig.png){alt="Bias correted image in greyscale"}
+![](fig/aic_smri_fsleyes_orig.png){alt="Bias correted image in greyscale"}
 1. Now add the grey matter probability image `c1sub-OAS30003_T1w.nii`. 
 1. Choose the probability map and set the lookup table to Red. Change the 
 minimum intensity to 0.2 and the maximum intensity to 0.9. This will eliminate 
 some noise from very low probability voxels.
 1. Use the opacity slider to make the grey matter probability map transparent.
- ![Adding the grey matter image and turning it red](fig/aic_smri_fsleyes_gm.png){alt="Looking at grey matter image"}
+![](fig/aic_smri_fsleyes_gm.png){alt="Looking at grey matter image"}
 1. Look around the image, zoom in places, and try turning the grey matter 
 probability map off and on. The goal is to make sure the grey matter 
 probability map is not:
-   1. Missing any grey matter
-   1. Not including other tissue (WM, CSF, non-brain tissue that has a 
+   a. Missing any grey matter
+   a. Not including other tissue (WM, CSF, non-brain tissue that has a 
    similar intensity to GM)
 
 :::::::::::::::::::::::::: challenge
@@ -184,6 +216,11 @@ colormaps.
 
 *Do these images look like they have identified the white matter and CSF in 
 the T1 weighted image correctly?*
+
+:::::::::::::::::::::::::::::::::::: solution
+You should have an output that looks something like this.
+![](fig/aic_smri_tissue_seg_check.png){alt="Tissue segmentation check"}
+::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::
 
 ## Obtaining volume
@@ -199,7 +236,7 @@ Then we will run this command to get the total grey matter volume:
 fslstats c1sub-OAS30003_T1w.nii -V
 ```
 ```output
-Produce output for this command
+719954 961026.312500
 ```
 This will produce two numbers. The first number is the number of voxels in the 
 grey matter. These voxels as discussed earlier have physical dimensions 
@@ -231,7 +268,7 @@ let's first check what working directory we are in by using the command `pwd`:
 pwd
 ```
 ```output
-Produce correct output for pwd
+/home/as2-streaming-user/data/StructuralMRI
 ```
 If you have a different output from the above, then run the following command:
 ```bash
@@ -248,22 +285,22 @@ fslmaths c1sub-OAS30003_T1w.nii -add c2sub-OAS30003_T1w.nii -add c3sub-OAS30003_
 
 Let's break this command down a little bit:
 
-* First, we state the command we want to run `fslmaths`
-* We then specify our input image, the GM map `c1sub-OAS30003_T1w.nii`
-* We then specify the first operation `-add`
-* We then specify what we want to add to our input image. In this case, it is 
+- First, we state the command we want to run `fslmaths`
+- We then specify our input image, the GM map `c1sub-OAS30003_T1w.nii`
+- We then specify the first operation `-add`
+- We then specify what we want to add to our input image. In this case, it is 
 the WM map `c2sub-OAS30003_T1w.nii`. The resulting image would contain the 
 probability that a voxel is either GM or WM.
-* We then specify that we want to add another image, and this time it is the 
+- We then specify that we want to add another image, and this time it is the 
 CSF map. This image now holds the probability that a voxel is GM, WM, or CSF, 
 which are the three main tissue types in the brain that we want to process.
-*  We will then threshold this image at 0.5 using the `-thr 0.5` option. This 
+-  We will then threshold this image at 0.5 using the `-thr 0.5` option. This 
 says to only keep voxels who have a probability of 0.5 or greater. All other 
 voxels are set to 0. 
-* Our final operation is to *binarize* the image. Any values that are not 
+- Our final operation is to *binarize* the image. Any values that are not 
 zero are set to one. This creates a mask which says whether the voxel is 
 inside (**1**) or outside (**0**) of the brain.  
-* Finally, we save our results into the new image file 
+- Finally, we save our results into the new image file 
 `sub-OAS30003_T1w_brain_mask.nii`
 
 Now that we have created a mask, we are going to remove all the information 
@@ -274,18 +311,19 @@ fslmaths msub-OAS30003_T1w.nii -mas sub-OAS30003_T1w_brain_mask.nii.gz msub-OAS3
 This command masks our bias corrected image with the brain mask and makes 
 a new file which has the name `msub-OAS30003_T1w_brain.nii`. Take a look at the
 image in `fsleyes`.
-![Skull stripped MRI](fig/aic_smri_fsleyes_skullstripped.png){alt="Skull stripped image"}
+![](fig/aic_smri_fsleyes_skullstripped.png){alt="Skull stripped image"}
 
 We will then use the FSL registration program 
 [FLIRT](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT) to align our image to the 
 standard space MNI152. Please follow the steps below:
+
 1. On the terminal window, please type in the following command `Flirt`
 1. This will open a dialog box. We will change the following settings:
-   1. For reference image, click on the folder icon and choose the image `MNI152_T1_1mm_brain`
-   1. For the input image, please select the mask we created above `msub-OAS30003_T1w_brain.nii`
-   1. For the output image, please type in a new name `msub-OAS30003_T1w_brain_MNI.nii`
+   a. For reference image, click on the folder icon and choose the image `MNI152_T1_1mm_brain`
+   a. For the input image, please select the mask we created above `msub-OAS30003_T1w_brain.nii`
+   a. For the output image, please type in a new name `msub-OAS30003_T1w_brain_MNI.nii`
 The final command setup should look like the screenshot below.
-![FLIRT window](fig/aic_smri_flirt.png){alt="FLIRT window"}
+![](fig/aic_smri_flirt.png){alt="FLIRT window"}
 
 If your window looks like this, then click the **Go** button at the bottom, 
 in the terminal, you will see the *command line* program that would run what 
@@ -295,20 +333,21 @@ it in the terminal it would do the same thing.
 ### Quality check
 Let's open `fsleyes` and open the output from the co-registration 
 `msub-OAS30003_T1w_brain_MNI.nii`.
-![T1 in MNI space](fig/aic_smri_fsleyes_mnispace.png){alt="T1w in MNI space"}
+![](fig/aic_smri_fsleyes_mnispace.png){alt="T1w in MNI space"}
 
 Now click on the Add Standard function. This is where fsleyes keeps all of the 
 standard atlases and templates so that you can quickly access them.
-![Add Standard image](fig/aic_smri_fsleyes_addstd.png){alt="Add standard function"}
+![](fig/aic_smri_fsleyes_addstd.png){alt="Add standard function"}
 
 Select the `MNI152_T1_1mm_brain` from this list of files.
-![](fig/aic_smri_fsleyes_choosemni.png {alt="Choose MNI image"})
+![](fig/aic_smri_fsleyes_choosemni.png){alt="Choose MNI image"}
 
 We can now check if our image is registered by flicking back and forth between 
 the MNI image and our image. 
 
 ## Stretch exercises
-If you have completed all of the above and want to keep working on more structural imaging data, please try the exercises below. 
+If you have completed all of the above and want to keep working on more 
+structural imaging data, please try the exercises below. 
 
 :::::::::::::::::::::::::: challenge
 ### BONUS Exercise 1
@@ -317,7 +356,20 @@ Extract the volumes from the WM and CSF probability maps for `sub-OAS30003_T1w.n
 *What are the three tissue volumes?*
 ::::::::::::::::::::::::::
 :::::::::::::::::::::::::: solution
-TODO: add the solution of the three tissue volumes
+```bash
+# This is the same command as above to get the GM volume out
+fslstats c1sub-OAS30003_T1w.nii -V
+# Now for the WM volume
+fslstats c1sub-OAS30003_T1w.nii -V
+# Finally, for the CSF volume
+fslstats c1sub-OAS30003_T1w.nii -V
+```
+```output
+719954 961026.312500
+462937 617948.687500
+599177 799807.750000
+```
+
 :::::::::::::::::::::::::: 
 
 :::::::::::::::::::::::::: challenge
@@ -339,37 +391,41 @@ will threshold by the value of 0.5 before calculating our volume.
 fslstats c1sub-OAS30003_T1w.nii -l 0.5 -V
 ```
 ```output
-TODO: Output of fslstats
+465968 621994.569978
 ```
 The second approach is to get the mean and volume of the all the non-zero voxels.
 ```bash
 fslstats c1sub-OAS30003_T1w.nii -M -V
 ```
 ```output
-TODO: Output of fslstats
+0.641076 719954 961026.312500
 ```
+
 This will produce three numbers:
+
 1. The mean of the non-zero voxels
 2. The number of voxels greater than zero.
 3. The volume of the voxels greater than zero.
 
 If you multiply (1) by (3), this would be what we call the *probabilistic* 
-volume of the GM and it accurately accounts the amount of GM in each voxel.
+volume of the GM and it accurately accounts the amount of GM in each voxel, 
+which should give you a volume of around 616,090.
 
 *How do these volumes compare with the original volume you obtained?*
 ::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::: challenge
 ### BONUS Exercise 3
 Let's take a look at our other image `sub-OAS30217_T1w.nii`. 
 Perform the same steps as you did for the first image:
-* Segmentation
-* Skull Stripping
-* Co-registration to standard space Run the same skull stripping and registration as you have done before. Now open up both standard space images in `fsleyes`
+
+- Segmentation
+- Skull Stripping
+- Co-registration to standard space Run the same skull stripping and 
+registration as you have done before. Now open up both standard space 
+images in `fsleyes`
 
 *What do you observe about the images?*
-::::::::::::::::::::::::::
-:::::::::::::::::::::::::: solution
-TODO: Provide solution
 ::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::challenge
@@ -397,15 +453,16 @@ with [FLIRT](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT).
 The way to do this is very similar to what you did before to co-register a T1 
 to standard space.
 Please follow the steps below:
+
 1. On the terminal window, type `Flirt`
 1. This will open the dialog box you used before. The new settings are:
-   1. For reference image, delete the text in the box and type 
+   a. For reference image, delete the text in the box and type 
    `~/data/ExtraStructuralMRI`, then click on the folder icon and choose the 
    image `sub-OAS30003_T1w_brain.nii.gz`
-   1. Change the Model/DOF (input to ref) to `Rigid Body (6 parameter model)`
-   1. For the input image, click on the folder icon and choose the image 
+   a. Change the Model/DOF (input to ref) to `Rigid Body (6 parameter model)`
+   a. For the input image, click on the folder icon and choose the image 
    `sub-OAS30003_FLAIR_brain.nii.gz`
-   1. For the output image, please type in a new name `sub-OAS30003_FLAIR_to_T1w.nii.gz`
+   a. For the output image, please type in a new name `sub-OAS30003_FLAIR_to_T1w.nii.gz`
 
 The final command setup should look like the screenshot below:
 ![FLIRT window](fig/aic_smri_flirt_T1FLAIR.png){alt="Coregistration of T1 and FLAIR"}
@@ -423,16 +480,16 @@ fsleyes sub-OAS30003_T1w_brain.nii.gz sub-OAS30003_FLAIR_to_T1w.nii.gz &
 We can now check if our image is registered by flicking back and forth between 
 the T1 image and the FLAIR registered image.
 
-*Can you think of why the registered FLAIR image appears blurred in the sagittal and coronal plane?*
+*Can you think of why the registered FLAIR image appears blurred in the 
+sagittal and coronal plane?*
 
 Now try to do the opposite: co-register the T1 to the FLAIR.
 
-*What differences do you notice with respect to the previous case (FLAIR co-registered to T1)?*
+*What differences do you notice with respect to the previous case 
+(FLAIR co-registered to T1)?*
 
-*Can you think of different cases where you would want to use T1 or FLAIR as your reference?*
-::::::::::::::::::::::::::
-:::::::::::::::::::::::::: solution
-TODO: add key points to solution
+*Can you think of different cases where you would want to use T1 or 
+FLAIR as your reference?*
 ::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
