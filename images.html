@@ -40,12 +40,12 @@
           </a>
           <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
         </abbr>
-        
+
       </div>
     </div>
     <div class="selector-container">
-      
-      
+
+
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -154,7 +154,7 @@
 <!--div.sidenav-view-selector -->
             </div>
 <!--/div.col -->
-      
+
             <hr>
 </div>
 <!--/div.mobile-row -->
@@ -176,7 +176,7 @@
         <a href="index.html">Summary and Setup</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -188,7 +188,7 @@
         <a href="imaging-data-structure-and-formats.html">1. Imaging Data: Structure And Formats</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -200,7 +200,7 @@
         <a href="structural-mri.html">2. Structural MRI: Bias Correction, Segmentation and Image Registration</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -212,7 +212,7 @@
         <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -224,7 +224,7 @@
         <a href="diffusion-weighted-imaging.html">4. Diffusion-weighted imaging (DWI)</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -236,7 +236,7 @@
         <a href="functional-mri.html">5. Functional Magnetic Resonance Imaging (fMRI)</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -248,7 +248,7 @@
         <a href="command-line.html">6. Extra: Using the Command Line</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -286,11 +286,11 @@
             </div>
             <hr class="half-width resources">
 <a href="aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none">
 <div class="d-grid gap-1">
-            
+
             </div>
           </div>
 <!-- /div.accordion -->
@@ -317,7 +317,7 @@ the terminal icon. This will open a terminal window that you will use to
 type commands <img src="fig/aic_smri_launch_terminal.png" alt="Launch terminal window" class="figure"></p>
 <hr>
 <h3 id="imaging-data-structure-and-formats-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Display toolbar’</p>
+<p aria-hidden="true">Image 1 of 1: ‘Coordinate systems’</p>
 <li>
 <strong>Affine transformation</strong> (<code>qform</code>): this
 field encodes a transformation or mapping that tells us <strong>how to
@@ -328,10 +328,9 @@ defined according to the patient. The x-axis tends to go from patient
 left to patient right, the y axis tends to go from anterior to
 posterior, and the z-axis goes from top to bottom of the patient. This
 mapping is very important, as this information will be needed to
-correctly visualize images and also to align them later. <img src="fig/coordinates_affine.png" alt="Display toolbar" class="figure"> An alternative
-command to <code>fslinfo</code> is <code>fslhd</code>, which displays a
-reduced set of properties about the images (mainly data type, dimension
-and resolution).</li>
+correctly visualize images and also to align them later. <img src="fig/coordinates_affine.png" alt="Coordinate systems" class="figure"> Figure from
+<a href="https://slicer.readthedocs.io/en/latest/user_guide/coordinate_systems.html" class="external-link">Slicer</a>
+</li>
 <hr>
 <h3 id="imaging-data-structure-and-formats-figure-3">Figure 3</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Display toolbar’</p>
@@ -534,9 +533,9 @@ the terminal icon. This will open a terminal window that you will use to
 type commands <img src="fig/aic_smri_launch_terminal.png" alt="Launch the terminal" class="figure"></p>
 <hr>
 <h3 id="structural-mri-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Open FSL eyes’</p>
+<p aria-hidden="true">Image 1 of 1: ‘Open FSLeyes’</p>
 <p>From the terminal window, type <code>fsleyes</code> to open up the
-image and have a look around. <img src="fig/aic_smri_fsleyes.png" alt="Open FSL eyes" class="figure"></p>
+image and have a look around. <img src="fig/aic_smri_fsleyes.png" alt="Open FSLeyes" class="figure"></p>
 <hr>
 <h3 id="structural-mri-figure-3">Figure 3</h3>
 <p aria-hidden="true">Image 1 of 2: ‘Add file’</p>
@@ -546,7 +545,7 @@ the File menu and choosing the Add Image command <img src="fig/aic_smri_fsleyes_
 <hr>
 <h3 id="structural-mri-figure-4">Figure 4</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Launch SPM’</p>
-<li>Type <code>spm pet</code> to launch SPM (screenshot) <img src="fig/aic_smri_terminal_window.png" alt="Launch SPM" class="figure">
+<li>Type <code>spm pet</code> to launch SPM <img src="fig/aic_smri_terminal_window.png" alt="Launch SPM" class="figure">
 </li>
 <hr>
 <h3 id="structural-mri-figure-5">Figure 5</h3>
@@ -557,9 +556,9 @@ Main Menu Window that has all of the buttons. <img src="fig/aic_smri_spm.png" al
 <hr>
 <h3 id="structural-mri-figure-6">Figure 6</h3>
 <p aria-hidden="true">Image 1 of 1: ‘SPM Batch editor’</p>
-<li>From main menu, select the Segment button (Screenshots). This will
-launch a window known as the <em>batch editor</em>, where you can adjust
-settings on the pipeline to be run. <img src="fig/aic_smri_seg_batch.png" alt="SPM Batch editor" class="figure">
+<li>From main menu, select the Segment button. This will launch a window
+known as the <em>batch editor</em>, where you can adjust settings on the
+pipeline to be run. <img src="fig/aic_smri_seg_batch.png" alt="SPM Batch editor" class="figure">
 </li>
 <hr>
 <h3 id="structural-mri-figure-7">Figure 7</h3>
@@ -577,11 +576,27 @@ the list of selected files. <img src="fig/aic_smri_seg_chooset1.png" alt="Choose
 </li>
 <hr>
 <h3 id="structural-mri-figure-9">Figure 9</h3>
-<p aria-hidden="true">Image 1 of 1: ‘FSL eyes with NIH colormap’</p>
-<li>Change the image lookup table to <code>NIH</code> <img src="fig/aic_smri_fsleyes_selectnih.png" alt="FSL eyes with NIH colormap" class="figure">
+<p aria-hidden="true">Image 1 of 1: ‘Choose bias correction option’</p>
+<li>Back in the batch editor, under Data-&gt;Save Bias Corrected, please
+choose “Save Field and Corrected” <img src="fig/aic_smri_seg_bcoption.png" alt="Choose bias correction option" class="figure">
 </li>
 <hr>
 <h3 id="structural-mri-figure-10">Figure 10</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Native segmentation’</p>
+<li>Under the Tissues section, please make sure that the first three
+tissue types, which represent GM, WM, and CSF, have the native tissue
+subfield set to native, while the final three tissue types (4-6), which
+represent non-brain structures, have the native tissue subfield set to
+None. <img src="fig/aic_smri_seg_native.png" alt="Native segmentation" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-11">Figure 11</h3>
+<p aria-hidden="true">Image 1 of 1: ‘FSL eyes with NIH colormap’</p>
+<li>Change the image lookup table to <code>NIH [Brain colors]</code>
+<img src="fig/aic_smri_fsleyes_selectnih.png" alt="FSL eyes with NIH colormap" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-12">Figure 12</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Change min and max intensity’</p>
 <li>Then change the image minimum to 40 and the maximum to 600. This
 means that all intensities 40 and below will map to the first color in
@@ -589,7 +604,7 @@ the lookup table, and all voxels 600 and above will map to the last
 color. The white matter should be yellow to red. <img src="fig/aic_smri_fsleyes_minmax.png" alt="Change min and max intensity" class="figure"><br>
 </li>
 <hr>
-<h3 id="structural-mri-figure-11">Figure 11</h3>
+<h3 id="structural-mri-figure-13">Figure 13</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Bias in image using NIH map’</p>
 <li>Next add the bias corrected image, which is called
 <code>msub-OAS30003_T1w.nii</code>. Change the lookup table to NIH as
@@ -597,60 +612,63 @@ you did in Step 2. Change the minimum to 40 and maximum intensity to 500
 similar to what you did in Step 2 and 3. <img src="fig/aic_smri_fsleyes_biasnih.png" alt="Bias in image using NIH map" class="figure">
 </li>
 <hr>
-<h3 id="structural-mri-figure-12">Figure 12</h3>
-<p aria-hidden="true">Image 1 of 2: ‘Bias correted image in greyscale’</p>
-<p aria-hidden="true">Image 2 of 2: ‘Looking at grey matter image’</p>
-<p>Now that we are happy with the bias correction, lets look at the
-tissue segmentation. 1. Use the icon to turn off the original image.
-Select the bias corrected image and make sure the colormap is back to
-the first option “Greyscale” <img src="fig/aic_smri_fsleyes_orig.png" alt="Bias correted image in greyscale" class="figure"> 1. Now add the grey matter
-probability image <code>c1sub-OAS30003_T1w.nii</code>. 1. Choose the
-probability map and set the lookup table to Red. Change the minimum
-intensity to 0.2 and the maximum intensity to 0.9. This will eliminate
-some noise from very low probability voxels. 1. Use the opacity slider
-to make the grey matter probability map transparent. <img src="fig/aic_smri_fsleyes_gm.png" alt="Looking at grey matter image" class="figure">
-1. Look around the image, zoom in places, and try turning the grey
-matter probability map off and on. The goal is to make sure the grey
-matter probability map is not: 1. Missing any grey matter 1. Not
-including other tissue (WM, CSF, non-brain tissue that has a similar
-intensity to GM)</p>
+<h3 id="structural-mri-figure-14">Figure 14</h3>
+<p aria-hidden="true">Image 1 of 1: ‘eye icon’</p>
+<p>When you add this image, it will overlay on top of the original
+image. Think of this new image a completely opaque, so that you no
+longer see the original one. If you want to see the original one, then
+you need to either turn it off using the eye icon ( <img src="fig/eye_icon.png" alt="eye icon" height="24" class="figure"> ) right by the
+file, or you need to turn the opacity (slider near the top of the screen
+which is marked opacity.)</p>
 <hr>
-<h3 id="structural-mri-figure-13">Figure 13</h3>
+<h3 id="structural-mri-figure-15">Figure 15</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Bias correted image in greyscale’</p>
+<li>Use the icon to turn off the original image. Select the bias
+corrected image and make sure the colormap is back to the first option
+“Greyscale” <img src="fig/aic_smri_fsleyes_orig.png" alt="Bias correted image in greyscale" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-16">Figure 16</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Looking at grey matter image’</p>
+<li>Use the opacity slider to make the grey matter probability map
+transparent. <img src="fig/aic_smri_fsleyes_gm.png" alt="Looking at grey matter image" class="figure">
+</li>
+<hr>
+<h3 id="structural-mri-figure-17">Figure 17</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Tissue segmentation check’</p>
+<p>You should have an output that looks something like this. <img src="fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
+<hr>
+<h3 id="structural-mri-figure-18">Figure 18</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Skull stripped image’</p>
 <p>This command masks our bias corrected image with the brain mask and
 makes a new file which has the name
 <code>msub-OAS30003_T1w_brain.nii</code>. Take a look at the image in
 <code>fsleyes</code>. <img src="fig/aic_smri_fsleyes_skullstripped.png" alt="Skull stripped image" class="figure"></p>
 <hr>
-<h3 id="structural-mri-figure-14">Figure 14</h3>
+<h3 id="structural-mri-figure-19">Figure 19</h3>
 <p aria-hidden="true">Image 1 of 1: ‘FLIRT window’</p>
-<p>We will then use the FSL registration program <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT" class="external-link">FLIRT</a> to align
-our image to the standard space MNI152. Please follow the steps below:
-1. On the terminal window, please type in the following command
-<code>Flirt</code> 1. This will open a dialog box. We will change the
-following settings: 1. For reference image, click on the folder icon and
-choose the image <code>MNI152_T1_1mm_brain</code> 1. For the input
-image, please select the mask we created above
-<code>msub-OAS30003_T1w_brain.nii</code> 1. For the output image, please
-type in a new name <code>msub-OAS30003_T1w_brain_MNI.nii</code> The
-final command setup should look like the screenshot below. <img src="fig/aic_smri_flirt.png" alt="FLIRT window" class="figure"></p>
+<li>For the output image, please type in a new name
+<code>msub-OAS30003_T1w_brain_MNI.nii</code> The final command setup
+should look like the screenshot below. <img src="fig/aic_smri_flirt.png" alt="FLIRT window" class="figure">
+</li>
 <hr>
-<h3 id="structural-mri-figure-15">Figure 15</h3>
+<h3 id="structural-mri-figure-20">Figure 20</h3>
 <p aria-hidden="true">Image 1 of 1: ‘T1w in MNI space’</p>
 <p>Let’s open <code>fsleyes</code> and open the output from the
 co-registration <code>msub-OAS30003_T1w_brain_MNI.nii</code>. <img src="fig/aic_smri_fsleyes_mnispace.png" alt="T1w in MNI space" class="figure"></p>
 <hr>
-<h3 id="structural-mri-figure-16">Figure 16</h3>
+<h3 id="structural-mri-figure-21">Figure 21</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Add standard function’</p>
 <p>Now click on the Add Standard function. This is where fsleyes keeps
 all of the standard atlases and templates so that you can quickly access
 them. <img src="fig/aic_smri_fsleyes_addstd.png" alt="Add standard function" class="figure"></p>
 <hr>
-<h3 id="structural-mri-figure-17">Figure 17</h3>
+<h3 id="structural-mri-figure-22">Figure 22</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Choose MNI image’</p>
 <p>Select the <code>MNI152_T1_1mm_brain</code> from this list of files.
-<img src="fig/aic_smri_fsleyes_choosemni.png%20%7Balt=%22Choose%20MNI%20image%22%7D" class="figure"></p>
+<img src="fig/aic_smri_fsleyes_choosemni.png" alt="Choose MNI image" class="figure"></p>
 <hr>
-<h3 id="structural-mri-figure-18">Figure 18</h3>
+<h3 id="structural-mri-figure-23">Figure 23</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Coregistration of T1 and FLAIR’</p>
 <p>The final command setup should look like the screenshot below: <img src="fig/aic_smri_flirt_T1FLAIR.png" alt="Coregistration of T1 and FLAIR" class="figure"></p>
 <hr></section><section id="pet-imaging"><h2 class="section-heading"><a href="pet-imaging.html">Processing and analysing PET brain images</a></h2>
@@ -763,18 +781,18 @@ what responses that the computer provdes. <img src="fig/aic_smri_terminal_window
 <div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/README.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/HealthBioscienceIDEAS/sandpaper/tree/IDEAS" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/ad2542f7f7b9c3f90cc871b355ff81ec14a09ca9" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
 			</div>
@@ -799,8 +817,8 @@ what responses that the computer provdes. <img src="fig/aic_smri_terminal_window
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/images.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/images.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-03",
-  "datePublished": "2024-07-03"
+  "dateModified": "2024-07-08",
+  "datePublished": "2024-07-08"
 }
 
   </script><script>

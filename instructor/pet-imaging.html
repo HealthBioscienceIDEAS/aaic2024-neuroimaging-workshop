@@ -25,12 +25,12 @@
           </a>
           <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
         </abbr>
-        
+
       </div>
     </div>
     <div class="selector-container">
-      
-      
+
+
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -127,7 +127,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -146,7 +146,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -155,7 +155,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="imaging-data-structure-and-formats.html">1. Imaging Data: Structure And Formats</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -164,7 +164,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="structural-mri.html">2. Structural MRI: Bias Correction, Segmentation and Image Registration</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -178,7 +178,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
@@ -187,12 +187,13 @@
 <li><a href="#image-smoothing">Image Smoothing</a></li>
 <li><a href="#intermodal-registration">Intermodal Registration</a></li>
 <li><a href="#create-a-standard-uptake-value-ratio-suvr-image">Create a standard uptake value ratio (SUVR) image</a></li>
+<li><a href="#stretch-exercises">Stretch Exercises</a></li>
 <li><a href="#additional-steps">Additional steps</a></li>
 <li><a href="#appendices-1-filenames-and-descriptions">Appendices 1: Filenames and descriptions</a></li>
 <li><a href="#pib-dvr-pipeline">PiB DVR Pipeline</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -201,7 +202,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="diffusion-weighted-imaging.html">4. Diffusion-weighted imaging (DWI)</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -210,7 +211,7 @@
     <div class="accordion-header" id="flush-heading6">
         <a href="functional-mri.html">5. Functional Magnetic Resonance Imaging (fMRI)</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -219,7 +220,7 @@
     <div class="accordion-header" id="flush-heading7">
         <a href="command-line.html">6. Extra: Using the Command Line</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -251,10 +252,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -275,20 +276,20 @@
           Previous: Structural MRI: Bias
         </a>
         <a class="chapter-link float-end" href="../instructor/diffusion-weighted-imaging.html" rel="next">
-          Next: Diffusion-weighted... 
+          Next: Diffusion-weighted...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Processing and analysing PET brain images</h1>
-        <p>Last updated on 2024-07-03 |
-        
+        <p>Last updated on 2024-07-08 |
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -323,8 +324,8 @@ analysis</li>
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>This tutorial is an introduction to working with PET data in the
 context of AD neuroimaging. Due to the limited time, we will not have
 time to fully recreate a typical image processing pipeline for PET data,
@@ -349,8 +350,8 @@ with common corrections (scatter, dead time, decay, etc.) already
 applied during the reconstruction. Notably, no smoothing was applied
 during the PET reconstruction.</p>
 </div>
-</section><section id="gaining-familiarity-with-4d-pet-data"><h2 class="section-heading">Gaining familiarity with 4D PET data<a class="anchor" aria-label="anchor" href="#gaining-familiarity-with-4d-pet-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="gaining-familiarity-with-4d-pet-data">Gaining familiarity with 4D PET data<a class="anchor" aria-label="anchor" href="#gaining-familiarity-with-4d-pet-data"></a>
+<a class="anchor" aria-label="anchor" href="#gaining-familiarity-with-4d-pet-data"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="prepare-working-directory">Prepare working directory<a class="anchor" aria-label="anchor" href="#prepare-working-directory"></a></h3>
 <ol style="list-style-type: decimal"><li>Open a new terminal window and navigate to the directory with the
@@ -377,7 +378,7 @@ type the following into the terminal:</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -443,8 +444,8 @@ concentration in the brain at later timepoints.</li>
 list at the bottom of the page and clicking Overlay -&gt; Remove from
 the menu at the top of the page.</li>
 </ol></div>
-</section><section id="creating-a-sum-pet-image"><h2 class="section-heading">Creating a SUM PET image<a class="anchor" aria-label="anchor" href="#creating-a-sum-pet-image"></a>
-</h2>
+</section><section><h2 class="section-heading" id="creating-a-sum-pet-image">Creating a SUM PET image<a class="anchor" aria-label="anchor" href="#creating-a-sum-pet-image"></a>
+<a class="anchor" aria-label="anchor" href="#creating-a-sum-pet-image"></a></h2>
 <hr class="half-width"><p>We’ll create two different SUM images from the PiB scan; one for
 early- and one for late-frame data to visualize the differences in
 tracer distribution between these timepoints more easily. The early
@@ -546,8 +547,8 @@ the max intensity settings in both images to be able to observe the
 differences in contrast.</p></li>
 <li><p>Close the SPM batch editor</p></li>
 </ol></div>
-</section><section id="image-smoothing"><h2 class="section-heading">Image Smoothing<a class="anchor" aria-label="anchor" href="#image-smoothing"></a>
-</h2>
+</section><section><h2 class="section-heading" id="image-smoothing">Image Smoothing<a class="anchor" aria-label="anchor" href="#image-smoothing"></a>
+<a class="anchor" aria-label="anchor" href="#image-smoothing"></a></h2>
 <hr class="half-width"><p>As you can see from viewing the smoothed images, they still are quite
 noisy, particularly at the voxel level. In this section we’ll use a
 simple Gaussian smoothing kernel to reduce the voxel-level noise. We are
@@ -582,8 +583,8 @@ filename to indicate the newly created image was smoothed)</li>
 prefix in the filename). Note the reduction in voxel-level noise but
 also the slight reduction in spatial resolution.</li>
 </ol></div>
-</section><section id="intermodal-registration"><h2 class="section-heading">Intermodal Registration<a class="anchor" aria-label="anchor" href="#intermodal-registration"></a>
-</h2>
+</section><section><h2 class="section-heading" id="intermodal-registration">Intermodal Registration<a class="anchor" aria-label="anchor" href="#intermodal-registration"></a>
+<a class="anchor" aria-label="anchor" href="#intermodal-registration"></a></h2>
 <hr class="half-width"><p>While we can quantify PET images without anatomical data like
 T1-weighted MRI, we can gain considerable regional detail if we align
 our PET images to an anatomical reference. This section will use SPM12’s
@@ -614,7 +615,7 @@ of our SUM and 4D images before running the Coregistration
 module).</strong></p>
 <ol style="list-style-type: decimal"><li>Create copies of the smoothed late-frame SUM image and the 4D pib
 image.
-<ol style="list-style-type: decimal"><li>
+<ol style="list-style-type: lower-alpha"><li>
 <p>In the terminal, create a new directory called “safe” in your
 working directory.</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -694,8 +695,8 @@ resliced the PET image matrix such that the image matrix itself now
 aligns with the T1-weighted MRI, and thus no transformation in the
 header is needed to align the images in the viewer.</li>
 </ol></div>
-</section><section id="create-a-standard-uptake-value-ratio-suvr-image"><h2 class="section-heading">Create a standard uptake value ratio (SUVR) image<a class="anchor" aria-label="anchor" href="#create-a-standard-uptake-value-ratio-suvr-image"></a>
-</h2>
+</section><section><h2 class="section-heading" id="create-a-standard-uptake-value-ratio-suvr-image">Create a standard uptake value ratio (SUVR) image<a class="anchor" aria-label="anchor" href="#create-a-standard-uptake-value-ratio-suvr-image"></a>
+<a class="anchor" aria-label="anchor" href="#create-a-standard-uptake-value-ratio-suvr-image"></a></h2>
 <hr class="half-width"><p>In this section, we will use the registered sum image and the
 T1-weighted MRI to create a cerebellum GM ROI and generate a parametric
 SUVR image. We’ll do all of these steps using FSL commands and
@@ -786,26 +787,26 @@ plaques?</strong></li>
 </ul></div>
 </div>
 </div>
-<div id="test-your-knowledge" class="callout challenge">
+</div>
+</section><section><h2 class="section-heading" id="stretch-exercises">Stretch Exercises<a class="anchor" aria-label="anchor" href="#stretch-exercises"></a>
+<a class="anchor" aria-label="anchor" href="#stretch-exercises"></a></h2>
+<hr class="half-width"><p>If you have time, please try the following challenge to test your
+knowledge.</p>
+<div id="suvr-versus-dvr-images" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="test-your-knowledge" class="callout-inner">
-<h3 class="callout-title">Test your knowledge<a class="anchor" aria-label="anchor" href="#test-your-knowledge"></a>
+<div id="suvr-versus-dvr-images" class="callout-inner">
+<h3 class="callout-title">SUVR versus DVR images<a class="anchor" aria-label="anchor" href="#suvr-versus-dvr-images"></a>
 </h3>
 <div class="callout-content">
-<p>You have created a SUVR image for PiB, which used a dynamic
-acquisition wherein the scan started at the same time as tracer
-injection. Now see if you can repeat the relevant steps above to create
-a SUVR image for the MK-6240 scan. You’ll need to look at the .json file
-and the timing and framing information to determine which frames to SUM
-to generate the SUVR image. The most commonly used MK-6240 SUVR windows
-are 70-90 min or 90-110 min post-injection. For most tau tracers, the
-inferior cerebellum is a valid reference region. If you run out of time
-and would like to view an MK-6240 SUVR image, you can view the images in
-<path>, which have been pre-processed. In addition, we have also
-pre-processed the PiB image using a different image pipeline that
-outputs DVR instead of SUVR. Compare the DVR and SUVR images.</path></p>
+<p>We have pre-processed the PiB image using a different image pipeline
+that outputs distribution volume ratio (DVR) images instead of SUVR.
+These are located in the folder
+<code>~/data/PETImaging/ProcessedPiBDVR</code> in the file
+<code>cghrsub001_pib_DVRlga.nii</code> Compare the DVR image with the
+SUVR image you created in the tutorial.</p>
+<p><em>How are similar and how are they different?</em></p>
 </div>
 </div>
 </div>
@@ -814,7 +815,7 @@ outputs DVR instead of SUVR. Compare the DVR and SUVR images.</path></p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -822,21 +823,43 @@ colormap.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="create-a-tau-pet-suvr-image" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="create-a-tau-pet-suvr-image" class="callout-inner">
+<h3 class="callout-title">Create a Tau PET SUVR image<a class="anchor" aria-label="anchor" href="#create-a-tau-pet-suvr-image"></a>
+</h3>
+<div class="callout-content">
+<p>You have created a SUVR image for PiB, which used a dynamic
+acquisition wherein the scan started at the same time as tracer
+injection. Now see if you can repeat the relevant steps above to create
+a SUVR image for the MK-6240 scan.</p>
+</div>
+</div>
+</div>
+<div id="accordionHint3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
+  <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
 <div class="accordion-body">
-<p>TODo put solution here</p>
+<p>You’ll need to look at the .json file for the TAU PET NIfTI file -
+this will contain key information around timing and framing so that you
+can determine which frames to SUM to generate the SUVR image. The most
+commonly used MK-6240 SUVR windows are 70-90 min or 90-110 min
+post-injection. For most tau tracers, the inferior cerebellum is a valid
+reference region. If you run out of time and would like to view an
+MK-6240 SUVR image, you can view the images in
+<code>~/data/PETImaging/ProcessedTutorial</code>, which have been
+pre-processed.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</section><section id="additional-steps"><h2 class="section-heading">Additional steps<a class="anchor" aria-label="anchor" href="#additional-steps"></a>
-</h2>
+</section><section><h2 class="section-heading" id="additional-steps">Additional steps<a class="anchor" aria-label="anchor" href="#additional-steps"></a>
+<a class="anchor" aria-label="anchor" href="#additional-steps"></a></h2>
 <hr class="half-width"><p>In the tutorial above, some steps that would typically be included in
 PET processing were omitted to enable enough time to get through the
 tutorial and create an SUVR image during the workshop. For example, we
@@ -860,7 +883,7 @@ scope of this tutorial. We will use the 4D PiB data and SPM12 to perform
 interframe realignment, but will modify our approach to account for
 differences in PET frame duration and noise.</p>
 <ol style="list-style-type: decimal"><li>View the problem
-<ol style="list-style-type: decimal"><li>In the previous tutorial, we created SUM images of the first and
+<ol style="list-style-type: lower-alpha"><li>In the previous tutorial, we created SUM images of the first and
 last 20 minutes of the PiB acquisition. Load these images in FSLeyes.
 Recall that you’ll need to use the 50-70 SUM image in the /safe
 directory that did not have the coregistration transformation matrix
@@ -881,7 +904,7 @@ using interframe realignment.</li>
 <li>Launch SPM if not already opened</li>
 <li>Smooth all frames of the 4D data – smoothing prior to realignment
 will improve the registration by reducing voxel-level noise.
-<ol style="list-style-type: decimal"><li>Select the Smooth module from SPM</li>
+<ol style="list-style-type: lower-alpha"><li>Select the Smooth module from SPM</li>
 <li>Add all frames for the 4D PiB image <code>sub001_pib.nii</code> to
 the Images to smooth</li>
 <li>Set the FWHM to an isotropic 4 mm kernel (4 4 4).</li>
@@ -891,7 +914,7 @@ the Images to smooth</li>
 <li>View the smoothed 4D PiB image in FSLeyes.</li>
 </ol></li>
 <li>SUM PET frames across the 4D acquisition
-<ol style="list-style-type: decimal"><li><p>For interframe realignment, we typically create an average image
+<ol style="list-style-type: lower-alpha"><li><p>For interframe realignment, we typically create an average image
 of the entire 4D time series to use as a reference image to align each
 frame. Because the PiB framing sequence has different frame durations,
 we cannot simply average the frames as we would in fMRI, but instead
@@ -918,20 +941,24 @@ are stored in the .json file.</p>
 <li><p>Close the SPM <code>ImCalc</code> module.</p></li>
 </ol></li>
 <li>Perform Interframe alignment using SPM12 realign
-<ol style="list-style-type: decimal"><li>Open the Realign: Estimate and Reslice module in SPM12</li>
+<ol style="list-style-type: lower-alpha"><li>Open the Realign: Estimate and Reslice module in SPM12</li>
 <li>Select data and click Specify</li>
 <li>Select Session and click Specify
-<ol style="list-style-type: decimal"><li>Here we will use the SUM0-70 min image as the reference for
+<ol style="list-style-type: lower-roman"><li>Here we will use the SUM0-70 min image as the reference for
 realignment. This is done by selecting this file first in the session
 file input list.</li>
 <li>Select the SUM 0-70 min PiB image, and then specify the entire
 smoothed 4D time series by input each of the 17 frames.</li>
 <li>Use default settings for all parameters except the following
-<ol style="list-style-type: decimal"><li>Estimation Options-Smoothing (FWHM): 7</li>
-<li>Estimation Options-Interpolation: Trilinear</li>
-<li>Reslice Options-Resliced Images: Images 2..n</li>
-<li>Reslice Options-Interpolation: Trilinear</li>
-</ol></li>
+<ul><li>
+<code>Estimation Options-Smoothing (FWHM)</code>: 7</li>
+<li>
+<code>Estimation Options-Interpolation</code>: Trilinear</li>
+<li>
+<code>Reslice Options-Resliced Images</code>: Images 2..n</li>
+<li>
+<code>Reslice Options-Interpolation</code>: Trilinear</li>
+</ul></li>
 <li>Run the module by clicking the green play icon</li>
 </ol></li>
 <li>Once the process has completed, the SPM graphics window will output
@@ -953,8 +980,8 @@ realignment, load the smoothed 4D image, saturate the image to view the
 head motion between frames.</li>
 </ol></li>
 </ol></div>
-</section><section id="appendices-1-filenames-and-descriptions"><h2 class="section-heading">Appendices 1: Filenames and descriptions<a class="anchor" aria-label="anchor" href="#appendices-1-filenames-and-descriptions"></a>
-</h2>
+</section><section><h2 class="section-heading" id="appendices-1-filenames-and-descriptions">Appendices 1: Filenames and descriptions<a class="anchor" aria-label="anchor" href="#appendices-1-filenames-and-descriptions"></a>
+<a class="anchor" aria-label="anchor" href="#appendices-1-filenames-and-descriptions"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="filenames-and-descriptions">Filenames and Descriptions<a class="anchor" aria-label="anchor" href="#filenames-and-descriptions"></a></h3>
 <p>Unprocessed files
@@ -1036,8 +1063,8 @@ region)</li>
 <li>See the file descriptions earlier in the appendix for remaining
 descriptions of images in this directory</li>
 </ul></div>
-</section><section id="pib-dvr-pipeline"><h2 class="section-heading">PiB DVR Pipeline<a class="anchor" aria-label="anchor" href="#pib-dvr-pipeline"></a>
-</h2>
+</section><section><h2 class="section-heading" id="pib-dvr-pipeline">PiB DVR Pipeline<a class="anchor" aria-label="anchor" href="#pib-dvr-pipeline"></a>
+<a class="anchor" aria-label="anchor" href="#pib-dvr-pipeline"></a></h2>
 <hr class="half-width"><p>Smooth 4D data (3 mm) -&gt; SUM 0-70 min for realignment reference
 -&gt; Interframe Realignment -&gt; HYPR Denoising -&gt; SUM 0-20 min for
 coregistration source image -&gt; Coregister to MRI -&gt; Extract
@@ -1063,9 +1090,9 @@ reference region, where there is likely no specific binding</li>
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -1079,7 +1106,7 @@ any links that you are not going to use.
           Previous: Structural MRI: Bias
         </a>
         <a class="chapter-link float-end" href="../instructor/diffusion-weighted-imaging.html" rel="next">
-          Next: Diffusion-weighted... 
+          Next: Diffusion-weighted...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1090,18 +1117,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/HealthBioscienceIDEAS/sandpaper/tree/IDEAS" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/ad2542f7f7b9c3f90cc871b355ff81ec14a09ca9" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
 			</div>
@@ -1125,8 +1152,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/pet-imaging.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/pet-imaging.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-03",
-  "datePublished": "2024-07-03"
+  "dateModified": "2024-07-08",
+  "datePublished": "2024-07-08"
 }
 
   </script><script>

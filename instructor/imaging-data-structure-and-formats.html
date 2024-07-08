@@ -25,12 +25,12 @@
           </a>
           <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
         </abbr>
-        
+
       </div>
     </div>
     <div class="selector-container">
-      
-      
+
+
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -127,7 +127,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -146,7 +146,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -160,7 +160,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
@@ -173,7 +173,7 @@
 <li><a href="#references">References</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -182,7 +182,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="structural-mri.html">2. Structural MRI: Bias Correction, Segmentation and Image Registration</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -191,7 +191,7 @@
     <div class="accordion-header" id="flush-heading4">
         <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -200,7 +200,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="diffusion-weighted-imaging.html">4. Diffusion-weighted imaging (DWI)</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -209,7 +209,7 @@
     <div class="accordion-header" id="flush-heading6">
         <a href="functional-mri.html">5. Functional Magnetic Resonance Imaging (fMRI)</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -218,7 +218,7 @@
     <div class="accordion-header" id="flush-heading7">
         <a href="command-line.html">6. Extra: Using the Command Line</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -250,10 +250,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -274,20 +274,20 @@
           Home
         </a>
         <a class="chapter-link float-end" href="../instructor/structural-mri.html" rel="next">
-          Next: Structural MRI: Bias... 
+          Next: Structural MRI: Bias...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Imaging Data: Structure And Formats</h1>
-        <p>Last updated on 2024-07-03 |
-        
+        <p>Last updated on 2024-07-08 |
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 32 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -321,8 +321,8 @@ contrast</li>
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>Any medical image consists of two parts: a <strong>header</strong>
 and the <strong>image</strong> itself. The header consists of metadata
 that describe the image. This includes the patient’s demographic
@@ -439,19 +439,19 @@ intent_p2	0.000000
 intent_p3	0.000000
 qform_name	Scanner Anat
 qform_code	1
-qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
-qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
-qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
-qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000
 qform_xorient	Left-to-Right
 qform_yorient	Posterior-to-Anterior
 qform_zorient	Inferior-to-Superior
 sform_name	Scanner Anat
 sform_code	1
-sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
-sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
-sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
-sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000
 sform_xorient	Left-to-Right
 sform_yorient	Posterior-to-Anterior
 sform_zorient	Inferior-to-Superior
@@ -526,19 +526,19 @@ intent_p2	0.000000
 intent_p3	0.000000
 qform_name	Scanner Anat
 qform_code	1
-qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
-qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
-qto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
-qto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+qto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321
+qto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193
+qto_xyz:3	0.032771 0.017677 0.999307 -94.454788
+qto_xyz:4	0.000000 0.000000 0.000000 1.000000
 qform_xorient	Left-to-Right
 qform_yorient	Posterior-to-Anterior
 qform_zorient	Inferior-to-Superior
 sform_name	Scanner Anat
 sform_code	1
-sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321 
-sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193 
-sto_xyz:3	0.032771 0.017677 0.999307 -94.454788 
-sto_xyz:4	0.000000 0.000000 0.000000 1.000000 
+sto_xyz:1	0.999466 -0.000520 -0.032767 -73.860321
+sto_xyz:2	-0.000059 0.999844 -0.017685 -88.219193
+sto_xyz:3	0.032771 0.017677 0.999307 -94.454788
+sto_xyz:4	0.000000 0.000000 0.000000 1.000000
 sform_xorient	Left-to-Right
 sform_yorient	Posterior-to-Anterior
 sform_zorient	Inferior-to-Superior
@@ -586,8 +586,8 @@ other (different <code>pixdim3</code>).</em></p>
 <div class="accordion-body">
 <p>If the voxel dimension is the same in all directions (e.g. 1x1x1 mm)
 we talk about <em>isotropic</em> voxels. Having images with isotropic
-(or with very similar voxel size in the 3 directions) is desireable to
-perform reliable quantitative analyses.”</p>
+(or with very similar voxel size in the 3 directions) is desirable to
+perform reliable quantitative analyses.</p>
 </div>
 </div>
 </div>
@@ -602,13 +602,15 @@ defined according to the patient. The x-axis tends to go from patient
 left to patient right, the y axis tends to go from anterior to
 posterior, and the z-axis goes from top to bottom of the patient. This
 mapping is very important, as this information will be needed to
-correctly visualize images and also to align them later. <img src="../fig/coordinates_affine.png" alt="Display toolbar" class="figure"> An alternative
-command to <code>fslinfo</code> is <code>fslhd</code>, which displays a
-reduced set of properties about the images (mainly data type, dimension
-and resolution).</li>
-</ul></div>
-</section><section id="neuroimaging-data-analysis"><h2 class="section-heading">Neuroimaging data analysis<a class="anchor" aria-label="anchor" href="#neuroimaging-data-analysis"></a>
-</h2>
+correctly visualize images and also to align them later. <img src="../fig/coordinates_affine.png" alt="Coordinate systems" class="figure"> Figure from
+<a href="https://slicer.readthedocs.io/en/latest/user_guide/coordinate_systems.html" class="external-link">Slicer</a>
+</li>
+</ul><p>An alternative command to <code>fslinfo</code> is <code>fslhd</code>,
+which displays a reduced set of properties about the images (mainly data
+type, dimension and resolution).</p>
+</div>
+</section><section><h2 class="section-heading" id="neuroimaging-data-analysis">Neuroimaging data analysis<a class="anchor" aria-label="anchor" href="#neuroimaging-data-analysis"></a>
+<a class="anchor" aria-label="anchor" href="#neuroimaging-data-analysis"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="generic-blueprint-of-a-neuroimaging-study">Generic blueprint of a neuroimaging study<a class="anchor" aria-label="anchor" href="#generic-blueprint-of-a-neuroimaging-study"></a></h3>
 <p>The steps to conduct a neuroimaging study are very similar to any
@@ -659,8 +661,8 @@ you are interested, you can find the details of these specifications in
 the <a href="https://bids-standard.github.io/bids-starter-kit/index.html" class="external-link">BIDS
 starter kit</a>.</p>
 </div>
-</section><section id="visualizing-neuroimaging-data---fsleyes"><h2 class="section-heading">Visualizing neuroimaging data - FSLeyes<a class="anchor" aria-label="anchor" href="#visualizing-neuroimaging-data---fsleyes"></a>
-</h2>
+</section><section><h2 class="section-heading" id="visualizing-neuroimaging-data---fsleyes">Visualizing neuroimaging data - FSLeyes<a class="anchor" aria-label="anchor" href="#visualizing-neuroimaging-data---fsleyes"></a>
+<a class="anchor" aria-label="anchor" href="#visualizing-neuroimaging-data---fsleyes"></a></h2>
 <hr class="half-width"><p>FSLeyes (pronounced <strong>fossilize</strong>) is the FSL image
 viewer for 3D and 4D data. It does not perform any processing or
 analysis of images - that is done by separate tools. FSLeyes has lots of
@@ -678,7 +680,11 @@ user guide</a>.</p>
 <p>Assuming you are still in the
 <code>~/data/ImageDataVisualization</code> directory,</p>
 <p>Start FSLeyes by typing in the terminal:</p>
-<pre class="shell"><code>fsleyes &amp;</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">fsleyes</span> <span class="kw">&amp;</span></span></code></pre>
+</div>
 <p>The <code>&amp;</code> means that the program you asked for
 (<code>fsleyes</code>) runs in the background in the terminal (or
 shell), and you can keep typing and running other commands while fsleyes
@@ -848,8 +854,8 @@ the other views.</p>
 <p>Close the lightbox view for now (click on the small red circle or X
 at the very top of the view).</p>
 </div>
-</section><section id="viewing-multiple-images"><h2 class="section-heading">Viewing multiple images<a class="anchor" aria-label="anchor" href="#viewing-multiple-images"></a>
-</h2>
+</section><section><h2 class="section-heading" id="viewing-multiple-images">Viewing multiple images<a class="anchor" aria-label="anchor" href="#viewing-multiple-images"></a>
+<a class="anchor" aria-label="anchor" href="#viewing-multiple-images"></a></h2>
 <hr class="half-width"><p>Now load in a second image
 (<code>sub-OAS30015_T1w_brain_pve_0.nii.gz</code>) using <em>File &gt;
 Add from file</em>. This image is a tissue segmentation image of the
@@ -877,8 +883,8 @@ clicking on the overlay name.</li>
 ).</li>
 <li>Left-click and hold the mouse button down on the overlay name to
 view the overlay source (e.g. its location in the file system).</li>
-</ul></section><section id="image-information"><h2 class="section-heading">Image information<a class="anchor" aria-label="anchor" href="#image-information"></a>
-</h2>
+</ul></section><section><h2 class="section-heading" id="image-information">Image information<a class="anchor" aria-label="anchor" href="#image-information"></a>
+<a class="anchor" aria-label="anchor" href="#image-information"></a></h2>
 <hr class="half-width"><p>In the bottom right corner of the FSLeyes window you will find the
 location panel, which contains information about the current cursor
 location, and image data values at that location. <img src="../fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure"></p>
@@ -895,8 +901,8 @@ control displays the currently selected volume (e.g. time point).</p>
 at the current cursor location for all loaded images. Note that if you
 have images with different resolutions loaded, the voxel location will
 be different for each of them.</p>
-</section><section id="viewing-atlases"><h2 class="section-heading">Viewing Atlases<a class="anchor" aria-label="anchor" href="#viewing-atlases"></a>
-</h2>
+</section><section><h2 class="section-heading" id="viewing-atlases">Viewing Atlases<a class="anchor" aria-label="anchor" href="#viewing-atlases"></a>
+<a class="anchor" aria-label="anchor" href="#viewing-atlases"></a></h2>
 <hr class="half-width"><p>It is often useful to look at images in standard space. This means
 that images are aligned (<em>registered</em>) to a reference template so
 that each coordinate corresponds to the same point in the brain in all
@@ -1047,21 +1053,29 @@ orientation</li>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Do the T1 and the FLAIR have the same dimension? </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<div class="section level4">
-<h4 id="do-the-t1-and-the-flair-have-the-same-resolution"><em>Do the T1 and the FLAIR have the same resolution?</em><a class="anchor" aria-label="anchor" href="#do-the-t1-and-the-flair-have-the-same-resolution"></a></h4>
-</div>
-<div class="section level4">
-<h4 id="do-the-t1-and-the-flair-have-the-same-oreintation"><em>Do the T1 and the FLAIR have the same oreintation?</em><a class="anchor" aria-label="anchor" href="#do-the-t1-and-the-flair-have-the-same-oreintation"></a></h4>
-</div>
-<div class="section level4">
-<h4 id="what-brain-characteristics-are-more-visible-in-these-images"><em>What brain characteristics are more visible in these
-images?</em><a class="anchor" aria-label="anchor" href="#what-brain-characteristics-are-more-visible-in-these-images"></a></h4>
-<p>TODO: Add example screenshots here</p>
-</div>
+<p><em>Do the T1 and the FLAIR have the same dimension?</em></p>
+<p><strong>No</strong>-Using <code>fslhd</code>, we can see that the
+dimensions (<code>dim1</code>, <code>dim2</code>, and <code>dim3</code>)
+of the T1 are 176 x 240 x 161 and the dimensions of the FLAIR image are
+256 x 256 x 35.</p>
+<p><em>Do the T1 and the FLAIR have the same resolution?</em></p>
+<p><strong>No</strong>-From the same <code>fslhd</code> commands, the
+resolution can be found in the fields <code>pixdim1</code>,
+<code>pixdim2</code>, and <code>pixdim3</code>. For the T1 the
+resolution is 1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x
+5.00mm</p>
+<p><em>Do the T1 and the FLAIR have the same orientation?</em></p>
+<p><strong>No</strong> In the bottom right panel you should see the
+warning: “Images have different orientations/fields of view”</p>
+<p><em>What brain characteristics are more visible in the T1w and which
+are more visible on FLAIR?</em></p>
+<p>On T1w, grey and white matter are more easily distinguishable. On
+FLAIR, brain lesions – white matter hyperintensities – are more clearly
+visible</p>
 </div>
 </div>
 </div>
@@ -1070,14 +1084,14 @@ images?</em><a class="anchor" aria-label="anchor" href="#what-brain-characterist
 MRI</a>, we will learn how to align (register) the two images together
 to be able to look at the same point in the brain in both images.</p>
 </div>
-</section><section id="additional-material"><h2 class="section-heading">Additional material<a class="anchor" aria-label="anchor" href="#additional-material"></a>
-</h2>
+</section><section><h2 class="section-heading" id="additional-material">Additional material<a class="anchor" aria-label="anchor" href="#additional-material"></a>
+<a class="anchor" aria-label="anchor" href="#additional-material"></a></h2>
 <hr class="half-width"><p>For a more extensive tutorial on FSLeyes features, please refer to
 the <a href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro1/index.html" class="external-link">FSL
 course - FSLeyes practical</a></p>
 <p>FSLeyes manual: <a href="https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html</a></p>
-</section><section id="references"><h2 class="section-heading">References<a class="anchor" aria-label="anchor" href="#references"></a>
-</h2>
+</section><section><h2 class="section-heading" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<a class="anchor" aria-label="anchor" href="#references"></a></h2>
 <hr class="half-width"><ul><li>FSL course material: <a href="https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html</a>
 </li>
 <li>McCarthy, Paul. (2021). FSLeyes (1.2.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.5504114" class="external-link uri">https://doi.org/10.5281/zenodo.5504114</a>
@@ -1095,15 +1109,19 @@ Carpentry: Introduction to MRI Data Analysis.” Version 2019.11, November
 </h3>
 <div class="callout-content">
 <ul><li>Images are sheets or cubes of numbers.</li>
-<li>Medical image datais typically storedin DICOM or Nifti format.</li>
+<li>Medical image data is typically stored in DICOM or Nifti format.
+They include a header that contains information on the patient and/or
+the image characteristics.</li>
 <li>An affine transformation maps the voxel location to real-world
 coordinates.</li>
+<li>Medical image viewers allow to navigate an image, adjust contrast,
+and localise brain regions with respect to an atlas.</li>
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -1117,7 +1135,7 @@ any links that you are not going to use.
           Home
         </a>
         <a class="chapter-link float-end" href="../instructor/structural-mri.html" rel="next">
-          Next: Structural MRI: Bias... 
+          Next: Structural MRI: Bias...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1128,18 +1146,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/HealthBioscienceIDEAS/sandpaper/tree/IDEAS" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/ad2542f7f7b9c3f90cc871b355ff81ec14a09ca9" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
 			</div>
@@ -1163,8 +1181,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/imaging-data-structure-and-formats.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/imaging-data-structure-and-formats.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-03",
-  "datePublished": "2024-07-03"
+  "dateModified": "2024-07-08",
+  "datePublished": "2024-07-08"
 }
 
   </script><script>

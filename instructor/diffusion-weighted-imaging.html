@@ -25,12 +25,12 @@
           </a>
           <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
         </abbr>
-        
+
       </div>
     </div>
     <div class="selector-container">
-      
-      
+
+
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -127,7 +127,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -146,7 +146,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -155,7 +155,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="imaging-data-structure-and-formats.html">1. Imaging Data: Structure And Formats</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -164,7 +164,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="structural-mri.html">2. Structural MRI: Bias Correction, Segmentation and Image Registration</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -173,7 +173,7 @@
     <div class="accordion-header" id="flush-heading4">
         <a href="pet-imaging.html">3. Processing and analysing PET brain images</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -187,7 +187,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
@@ -196,7 +196,7 @@
 <li><a href="#stretch-your-knowledge">Stretch your knowledge</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -205,7 +205,7 @@
     <div class="accordion-header" id="flush-heading6">
         <a href="functional-mri.html">5. Functional Magnetic Resonance Imaging (fMRI)</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -214,7 +214,7 @@
     <div class="accordion-header" id="flush-heading7">
         <a href="command-line.html">6. Extra: Using the Command Line</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -246,10 +246,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -270,20 +270,20 @@
           Previous: Processing and
         </a>
         <a class="chapter-link float-end" href="../instructor/functional-mri.html" rel="next">
-          Next: Functional Magnetic... 
+          Next: Functional Magnetic...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Diffusion-weighted imaging (DWI)</h1>
-        <p>Last updated on 2024-07-03 |
-        
+        <p>Last updated on 2024-07-08 |
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -316,8 +316,8 @@ resaerch?</li>
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>We will use the FSL diffusion toolbox to perform the processing steps
 that are core to most diffusion weighted imaging analyses:</p>
 <ul><li>image visualization of raw data and analysis outputs,</li>
@@ -329,8 +329,8 @@ loops to run these commands on multiple subjects, all shown at the end
 of this tutorial</li>
 </ul><p>We are going to be working in the DiffusionMRI subfolder under data
 in your home directory, <code>~/data/DiffusionMRI</code>.</p>
-</section><section id="looking-at-the-raw-data"><h2 class="section-heading">Looking at the raw data<a class="anchor" aria-label="anchor" href="#looking-at-the-raw-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="looking-at-the-raw-data">Looking at the raw data<a class="anchor" aria-label="anchor" href="#looking-at-the-raw-data"></a>
+<a class="anchor" aria-label="anchor" href="#looking-at-the-raw-data"></a></h2>
 <hr class="half-width"><p>From the previous lessons, you learned how to view and navigate
 images, let’s first look at the raw data, which can all be found under
 <code>~/data/DiffusionMRI/sourcedata</code>.</p>
@@ -381,7 +381,7 @@ relying on data organized according to the BIDS structure.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> The command should show the following content </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <figure><img src="../fig/bval_bvec.png" alt="example of bval and bvec file" class="figure mx-auto d-block"></figure><ul><li>The nifti file is a 4D file of all the directions acquired.</li>
 <li>The <code>.bval</code> file refers to the <em>b-value</em> applied
@@ -410,7 +410,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -423,7 +423,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is 1 b0 image and 64 gradient images! You can check for the
 maximum number as you move through the “Volume” box as shown below.</p>
@@ -431,8 +431,8 @@ maximum number as you move through the “Volume” box as shown below.</p>
 </div>
 </div>
 </div>
-</section><section id="data-preprocessing"><h2 class="section-heading">Data preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"></a>
-</h2>
+</section><section><h2 class="section-heading" id="data-preprocessing">Data preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"></a>
+<a class="anchor" aria-label="anchor" href="#data-preprocessing"></a></h2>
 <hr class="half-width"><p>We are now ready to start data pre-processing, which we will do using
 the FSL Diffusion Toolbox. Most of the steps and explanation below are
 adapted from the excellent tutorial provided FSL, please refer to it for
@@ -627,8 +627,8 @@ to do such analyses. Some steps can take some time to run, and thus we
 provided the outputs in <code>~/data/DiffusionMRI/tbss</code> if you
 want to examine the different steps and the final outputs.</li>
 </ul></div>
-</section><section id="stretch-your-knowledge"><h2 class="section-heading">Stretch your knowledge<a class="anchor" aria-label="anchor" href="#stretch-your-knowledge"></a>
-</h2>
+</section><section><h2 class="section-heading" id="stretch-your-knowledge">Stretch your knowledge<a class="anchor" aria-label="anchor" href="#stretch-your-knowledge"></a>
+<a class="anchor" aria-label="anchor" href="#stretch-your-knowledge"></a></h2>
 <hr class="half-width"><div id="do-you-want-to-process-multiple-subjects" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -838,9 +838,9 @@ NODDI, etc)</li>
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -854,7 +854,7 @@ any links that you are not going to use.
           Previous: Processing and
         </a>
         <a class="chapter-link float-end" href="../instructor/functional-mri.html" rel="next">
-          Next: Functional Magnetic... 
+          Next: Functional Magnetic...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -865,18 +865,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/HealthBioscienceIDEAS/sandpaper/tree/IDEAS" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/ad2542f7f7b9c3f90cc871b355ff81ec14a09ca9" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
 			</div>
@@ -900,8 +900,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/diffusion-weighted-imaging.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/diffusion-weighted-imaging.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-03",
-  "datePublished": "2024-07-03"
+  "dateModified": "2024-07-08",
+  "datePublished": "2024-07-08"
 }
 
   </script><script>
