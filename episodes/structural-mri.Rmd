@@ -160,7 +160,7 @@ and segmentation have worked.
 ### Bias correction
 1. Use `fsleyes` again and open up the original image `sub-OAS30003_T1w.nii` 
 as you did at the start of the session.
-2. Change the image lookup table to `NIH` 
+2. Change the image lookup table to `NIH [Brain colors]` 
 ![](fig/aic_smri_fsleyes_selectnih.png){alt="FSL eyes with NIH colormap"}
 3. Then change the image minimum to 40 and the maximum to 600. This means that 
 all intensities 40 and below will map to the first color in the lookup table, 
@@ -175,7 +175,8 @@ and maximum intensity to 500 similar to what you did in Step 2 and 3.
 When you add this image, it will overlay on top of the original image. 
 Think of this new image a completely opaque, so that you no longer see the 
 original one. If you want to see the original one, then you need to either 
-turn it off using the eye icon right by the file, or you need to turn the 
+turn it off using the eye icon ( ![](fig/eye_icon.png){alt="eye icon" height='24px'} )
+right by the file, or you need to turn the 
 opacity (slider near the top of the screen which is marked opacity.)
 
 ::::::::::::::::::::: challenge
@@ -242,7 +243,7 @@ This will produce two numbers. The first number is the number of voxels in the
 grey matter. These voxels as discussed earlier have physical dimensions 
 indicating how the volume that each individual voxel represents. So the second 
 value indicates the total volume of the grey matter (usually represented in 
-units of cubic millimeters).
+units of cubic millimeters, 1$ml$ = 1000$mm^3$).
 
 
 ## Coregistration to standard space
