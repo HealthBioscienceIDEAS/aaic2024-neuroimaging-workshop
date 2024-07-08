@@ -266,12 +266,12 @@ the Source Image and Other Image! As such, we will first create a safe copy of o
 images before running the Coregistration module).**
 
 1. Create copies of the smoothed late-frame SUM image and the 4D pib image.
-   1. In the terminal, create a new directory called “safe” in your working directory.
+   a. In the terminal, create a new directory called “safe” in your working directory.
    
         ```bash
         mkdir safe
         ```
-   1. Copy the `ssub001_pib_SUM50-70min.nii` and `sub001_pib.nii` images to the safe
+   a. Copy the `ssub001_pib_SUM50-70min.nii` and `sub001_pib.nii` images to the safe
 directory using the cp command in the terminal.
 
         ```bash
@@ -383,29 +383,40 @@ specific tracer binding to beta-amyloid plaques.
 - **Which regions have the highest density of amyloid plaques?**
 ::::::::::::::::::::::::::::
 
+## Stretch Exercises
+If you have time, please try the following challenge to test your knowledge.
+
 :::::::::::::::::::: challenge
-### Test your knowledge
+### SUVR versus DVR images
+We have pre-processed the PiB image using a different image 
+pipeline that outputs distribution volume ratio (DVR) images instead of SUVR. 
+These are located in the folder `~/data/PETImaging/ProcessedPiBDVR` in the file
+`cghrsub001_pib_DVRlga.nii`
+Compare the DVR image with the SUVR image you created in the tutorial. 
+
+*How are similar and how are they different?*
+
+:::::::::::::::::::: hint
+Pay close attention to the display settings for the window and colormap.
+::::::::::::::::::::
+::::::::::::::::::::
+
+:::::::::::::::::::: challenge
+### Create a Tau PET SUVR image
 You have created a SUVR image for PiB, which used a dynamic acquisition wherein 
 the scan started at the same time as tracer injection. Now see if you can 
 repeat the relevant steps above to create a SUVR image for the MK-6240 scan. 
-You’ll need to look at the .json file and the timing and framing information 
-to determine which frames to SUM to generate the SUVR image. The most commonly 
-used MK-6240 SUVR windows are 70-90 min or 90-110 min post-injection. For most 
-tau tracers, the inferior cerebellum is a valid reference region. If you run 
-out of time and would like to view an MK-6240 SUVR image, you can view the 
-images in <path>, which have been pre-processed. In addition, we have also 
-pre-processed the PiB image using a different image pipeline that outputs DVR 
-instead of SUVR. Compare the DVR and SUVR images. 
 
 ::::::::::::::::::::::::::: hint
-Pay close attention to the 
-display settings for the window and colormap.
+You’ll need to look at the .json file for the TAU PET NIfTI file - this will
+contain key information around timing and 
+framing so that you can determine which frames to SUM to generate the SUVR image. 
+The most commonly used MK-6240 SUVR windows are 70-90 min or 90-110 min 
+post-injection. For most tau tracers, the inferior cerebellum is a valid 
+reference region. If you run out of time and would like to view an MK-6240 SUVR 
+image, you can view the 
+images in `~/data/PETImaging/ProcessedTutorial`, which have been pre-processed. 
 ::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::: solution
-TODo put solution here
-::::::::::::::::::::::::::::::::
-
 ::::::::::::::::::::::::::::::::
 
 ## Additional steps
@@ -427,71 +438,71 @@ the scope of this tutorial. We will use the 4D PiB data and SPM12 to perform int
 will modify our approach to account for differences in PET frame duration and noise.
 
 1. View the problem
-   1. In the previous tutorial, we created SUM images of the first and last 20 minutes of the
+   a. In the previous tutorial, we created SUM images of the first and last 20 minutes of the
 PiB acquisition. Load these images in FSLeyes. Recall that you’ll need to use the 50-70
 SUM image in the /safe directory that did not have the coregistration transformation
 matrix written to the NIfTI header. If you have not completed the tutorial, you can load
 the following images that have been previously processed:
       * `/home/as2-streaming-user/data/PET_Imaging/ProcessedTutorial/ssub001_pib_SUM0-20min.nii`
       * `/home/as2-streaming-user/data/PET_Imaging/ProcessedTutorial/safe/ssub001_pib_SUM50-70min.nii`
-   1. Set the threshold for the min and max window to 0 to 35,000 for the 0-20 min SUM
+   a. Set the threshold for the min and max window to 0 to 35,000 for the 0-20 min SUM
 image and 0 to 20,000 for the 50-70 min SUM image.
-   1. Toggle the top image on and off using the eye icon in the Overlay list. Notice the slight
+   a. Toggle the top image on and off using the eye icon in the Overlay list. Notice the slight
 rotation of the head in the sagittal plane between the early and late frames. This is due
 to participant motion during the scan acquisition and what we are going to attempt to
 correct using interframe realignment.
-   1. Close FSLeyes.
+   a. Close FSLeyes.
 2. Launch SPM if not already opened
 3. Smooth all frames of the 4D data – smoothing prior to realignment will improve the registration
 by reducing voxel-level noise.
-   1. Select the Smooth module from SPM
-   1. Add all frames for the 4D PiB image `sub001_pib.nii` to the Images to smooth
-   1. Set the FWHM to an isotropic 4 mm kernel (4 4 4).
-   1. Set the datatype to FLOAT32
-   1. Press the green play button to execute the smoothing operation
-   1. Close the smooth module in SPM
-   1. View the smoothed 4D PiB image in FSLeyes.
+   a. Select the Smooth module from SPM
+   a. Add all frames for the 4D PiB image `sub001_pib.nii` to the Images to smooth
+   a. Set the FWHM to an isotropic 4 mm kernel (4 4 4).
+   a. Set the datatype to FLOAT32
+   a. Press the green play button to execute the smoothing operation
+   a. Close the smooth module in SPM
+   a. View the smoothed 4D PiB image in FSLeyes.
 4. SUM PET frames across the 4D acquisition
-   1. For interframe realignment, we typically create an average image of the entire 4D time
+   a. For interframe realignment, we typically create an average image of the entire 4D time
 series to use as a reference image to align each frame. Because the PiB framing
 sequence has different frame durations, we cannot simply average the frames as we
 would in fMRI, but instead need to create a SUM image of the entire 70-minute
 acquisition using a weighted average.
-   1. Open the `ImCalc` module in SPM.
-   1. Specify all frames of the smoothed 4D PiB image (ssub001_pib.nii) as Input Images. Be
+   a. Open the `ImCalc` module in SPM.
+   a. Specify all frames of the smoothed 4D PiB image (ssub001_pib.nii) as Input Images. Be
 sure to maintain the frame order on the file input.
-   1. Name the output file `ssub001_pib_SUM0-70min.nii`
-   1. For the expression, specify an equation for a frame duration-weighted average of all
+   a. Name the output file `ssub001_pib_SUM0-70min.nii`
+   a. For the expression, specify an equation for a frame duration-weighted average of all
 frames. Recall that the frame durations are stored in the .json file.
 
         ```matlab
         (i1*2 +i3*2 +i4*2 +i5*2 +i6*5 +i7*5 +i8*5 +i9*5 +i10*5 +i11*5 +i12*5 +i13*5 +i14*5 +i15*5 +i16*5 +i17*5)/70
         ```
-   1. Use FLOAT32 for the Data Type
-   1. Run the module using the green play arrow.
-   1. Close the SPM `ImCalc` module.
+   a. Use FLOAT32 for the Data Type
+   a. Run the module using the green play arrow.
+   a. Close the SPM `ImCalc` module.
 5. Perform Interframe alignment using SPM12 realign
-   1. Open the Realign: Estimate and Reslice module in SPM12
-   1. Select data and click Specify
-   1. Select Session and click Specify
-      1. Here we will use the SUM0-70 min image as the reference for realignment. This is done by selecting this file first in the session file input list.
-      1. Select the SUM 0-70 min PiB image, and then specify the entire smoothed 4D time series by input each of the 17 frames.
-      1. Use default settings for all parameters except the following
-         1. Estimation Options-Smoothing (FWHM): 7
-         2. Estimation Options-Interpolation: Trilinear
-         3. Reslice Options-Resliced Images: Images 2..n
-         4. Reslice Options-Interpolation: Trilinear
-      1. Run the module by clicking the green play icon
-   1. Once the process has completed, the SPM graphics window will output the translation
+   a. Open the Realign: Estimate and Reslice module in SPM12
+   a. Select data and click Specify
+   a. Select Session and click Specify
+      i. Here we will use the SUM0-70 min image as the reference for realignment. This is done by selecting this file first in the session file input list.
+      i. Select the SUM 0-70 min PiB image, and then specify the entire smoothed 4D time series by input each of the 17 frames.
+      i. Use default settings for all parameters except the following
+         - `Estimation Options-Smoothing (FWHM)`: 7
+         - `Estimation Options-Interpolation`: Trilinear
+         - `Reslice Options-Resliced Images`: Images 2..n
+         - `Reslice Options-Interpolation`: Trilinear
+      i. Run the module by clicking the green play icon
+   a. Once the process has completed, the SPM graphics window will output the translation
 and rotation parameters used to correct for motion in each frame. Note these are small
 changes typically <1-2 mm translation and <2 degrees rotation.
-   1. Close the SPM realign module
-   1. View the resultant 4D image in FSLeyes (`rssub001_pib.nii`) using a display min and max
+   a. Close the SPM realign module
+   a. View the resultant 4D image in FSLeyes (`rssub001_pib.nii`) using a display min and max
 of 0 to 30,000. Navigate in the viewer to view the sagittal plane just off mid-sagittal.
 Place your crosshairs at the most inferior part of the orbitofrontal cortex and advance
 through the PET frames. How did the realignment perform? Are you still seeing rotation
 in the sagittal plane between early and late frames?
-   1. Now change the max window to 100 to saturate the image and view the outline of the
+   a. Now change the max window to 100 to saturate the image and view the outline of the
 head. Scroll through the frames to look for any head motion across the frames. To see
 the difference before and after realignment, load the smoothed 4D image, saturate the
 image to view the head motion between frames.

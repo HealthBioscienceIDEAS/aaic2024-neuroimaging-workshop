@@ -19,17 +19,26 @@ relate to world coordinates.
 
 Subsequent lectures will be followed by interactive sessions to demonstrate
 simple workflows including tissue segmentation, registration, and
-pre-processing steps of fMRI or DTI. The objective of the workshop is to ensure
+pre-processing steps for fMRI, DTI, and PET. The objective of the workshop is to ensure
 participants gain an in-depth appreciation of commonly used interpretive 
 clinical and or research applications for each methodology. 
 
 ### Target Audience
-This hands-on workshop can serve as a beginner or refresher course for established investigators, clinicians, and trainees involved in using imaging techniques to study Alzheimer’s disease, related disorders and normal ageing. Participants from any career stage are encouraged to join, including undergraduate students, graduate students, post-doctoral researchers and assistant professors engaged in clinical practice, research or teaching.
+This hands-on workshop can serve as a beginner or refresher course for 
+established investigators, clinicians, and trainees involved in using imaging 
+techniques to study Alzheimer’s disease, related disorders and normal ageing. 
+Participants from any career stage are encouraged to join, including 
+undergraduate students, graduate students, post-doctoral researchers and 
+assistant professors engaged in clinical practice, research or teaching.
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
 ### Requirements
-Registrants must bring their own laptops to do the exercises (tablets or smartphones will not be sufficient). They will be provided with this repository and links to the "Basics of Neuroimaging" series of AAIC webinars. The links to the webinars and the slides are below.
+Registrants must bring their own laptops to do the exercises (tablets or 
+smartphones will not be sufficient). You will be provided with this repository 
+and links to the "Basics of Neuroimaging" series of AAIC webinars. To get the
+most out of this workshop, **we strongly recommend that you watch these
+webinars ahead of time**. The links to the webinars and the slides are below.
 
 
 | Webinar Title | Slides |
