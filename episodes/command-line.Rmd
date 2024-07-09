@@ -50,18 +50,21 @@ the night while you are sleeping.
 clicks. For a small handful of imaging sessions, this is a fine way to work, 
 but what if your research project has *hundreds* of datasets to process. It's 
 far more likely that an error could occur or a dataset is missed. While you go 
-through this lesson, count the number of mouse clicks it takes you to do a task 
-and think about how that would scale to your project. When you run on the 
-command line it has all of the information it needs, so no interaction is 
-needed, saving a lot of your time.
-1. **Control** With GUIs, you often only have access to the options that are 
-presented...but that might not be all of them, and they might restrict you 
-from what you want to do. With the command line, you may need to do some 
-investigation, but you have far more control over how the task is run. 
+through the lessons in this workshop, count the number of mouse clicks it 
+takes you to do a task and think about how that would scale to your project. 
+When you run on the command line it has all of the information it needs, so no 
+interaction is needed, saving a lot of your time.
+1. **Control** With GUIs, you have access to the functionality that the GUI
+provides you. However, hidden from the GUI may be more advanced options that you
+need for your research. For the sake of more software that is often more 
+user-friendly for the majority of tasks you are looking to do, the GUI can
+sometimes be restritie. With the command line, you should have access to more,
+if not all, of the functionality that the software provides, and thus more
+control over how the task is run. It may take some investigation on your part, though.
 1. **Interoperability** You may find that you want to take results from one 
 program and feed them into another and then another. With GUI's this often 
 means saving or exporting the results, then opening up the other program and 
-importing them. The command line often allows you to pieces these steps together
+importing them. The command line often allows you the means to piece these steps together
 in one set of instructions.  
 
 ## Getting started
@@ -71,15 +74,15 @@ following the directions in the [Setup](../learners/setup.md) section of this
 website. As a reminder, you should have a desktop on your virtual machine that
 looks something like this:
 ![](fig/aic_smri_desktop.png){alt="Screenshot of the VM desktop"}
-At the bottom of the the screen, you will see a taskbar. One of the icons is a 
-black box with a white dollar sign in it. That will launch the shell 
-(Terminal Emulator) to give you access to the command line. Click on this button
-to launch the terminal.
+Click on the `Applications` icon in the top left of the window, and you should
+see a taskbar pop out on the left-hand side. One of the icons is a 
+black box with a white border. This icon will launch the `Terminal` and give 
+you access to the command line. 
 ![](fig/aic_smri_launch_terminal.png){alt="Launching a terminal"}
 
 ## Navigating the file structure
-The desktop of your virtual machine will have a black window with green text 
-in it. This is the shell. We will enter some commands and see what responses 
+The terminal should produce a window with a white background and black text.
+This is the shell. We will enter some commands and see what responses 
 that the computer provdes.
 ![](fig/aic_smri_terminal_window.png){alt="Picture of an open terminal"}
 
@@ -93,9 +96,9 @@ in the command line and see what the response is:
     ```
 
     ```output
-    TODO: add home output
+    /home/as2-streaming-user
     ```
-    This directory is also your *home directory*
+    This directory is also known as your *home directory*
 1. Next we are going to see what items are contained in this directory. To do 
 that, simply type `ls` and it should show you all the files.
    
@@ -103,7 +106,7 @@ that, simply type `ls` and it should show you all the files.
     ls
     ``` 
     ```output
-    TODO: add output
+    Background.png  data  MyFiles  test
     ```
     
     You will notice that some of the entries are different colors. The colors 
@@ -117,11 +120,16 @@ to list the files in a long format
     ls -l
     ```
     ```output
+    total 60
+    -rw-r--r-- 1 as2-streaming-user as2-streaming-user 57734 Jun 28  2023 Background.png
+    drwxrwxrwx 8 as2-streaming-user as2-streaming-user   142 Jun 22  2023 data
+    drwxr-xr-x 2 as2-streaming-user as2-streaming-user    46 Jul  8 22:31 MyFiles
+    drwxr-xr-x 2 as2-streaming-user as2-streaming-user     6 Jun 16  2023 test
     ```
     This now gives a lot more information, with the letters before the file
     telling us about who owns the file (3rd and 4th column), what permissions 
-    they have to read, write or run (execute) the file (first column),  
-    and when it was modified (6th column). 
+    they have to read, write or run (execute) the file (first column),and when 
+    it was modified (6th column). 
 
     If you want to list the contents of a different directory, just put it 
     after the `ls -l`
@@ -130,11 +138,18 @@ to list the files in a long format
     ls -l data
     ```
     ```output
+    total 8
+    drwxr-xr-x 6 as2-streaming-user as2-streaming-user   84 Jun 16  2023 DiffusionMRI
+    drwxr-xr-x 2 as2-streaming-user as2-streaming-user 4096 Jul  4  2023 ExtraStructuralMRI
+    drwxr-xr-x 3 as2-streaming-user as2-streaming-user   26 Jun 27  2023 FunctionalMRI
+    drwxr-xr-x 2 as2-streaming-user as2-streaming-user 4096 Jun 16  2023 ImageDataVisualization
+    drwxr-xr-x 5 as2-streaming-user as2-streaming-user   77 Jul  7  2023 PETImaging
+    drwxr-xr-x 2 as2-streaming-user as2-streaming-user  120 Jun 27  2023 StructuralMRI
     ```
 
-1. The `data` directory in your home directory is where you will be storing 
-your work. So let us move into that directory using the `cd` or 
-*change directory* command:
+1. The `data` directory is a sub-directory within your home directory where 
+you will be storing your work. So let us move into that directory using the 
+`cd` or *change directory* command:
 
     ```
     cd data
@@ -142,10 +157,12 @@ your work. So let us move into that directory using the `cd` or
     Now type the command `pwd` again. Has the result changed?
     
     What happens when we list the contents of this directory?
+    
     ```bash
     ls -l
     ```
-    You don't get anything back, as this directory currently is empty!
+    You should get the same result as when you ran `ls -l data` from your
+    home directory.
 1. Inside the data directory, let's create a new directory that we will call
 `mywork`. We do that using a command called `mkdir`,
 
@@ -157,6 +174,33 @@ Run the `ls` command again to see how the contents have now changed
 to show your new directory.
 ::::::::::::::::::::::::::::::
 
+### Absolute versus Relative Paths
+Locations in the file system, whether they are files or directories,
+are known as paths. Paths can be referred to in *absolute* terms 
+(like a postal address or latitude and longitude) or *relative* terms (like 
+directions to your work from home). In some cases it is more convenient to 
+use absolute paths, and in others, relative paths are nicer. Absolute paths 
+always begin with a `/` character. From your home directory, the following two 
+commands do the exact same thing.
+
+```bash
+# Using an absolute path - this will work anywhere
+ls /home/as2-streaming-user/data
+```
+```output
+DiffusionMRI        FunctionalMRI           mywork      StructuralMRI
+ExtraStructuralMRI  ImageDataVisualization  PETImaging
+```
+
+```bash
+# Using a relative path - this will only work if you are in the 
+# directory where data is located
+ls data
+```
+```output
+DiffusionMRI        FunctionalMRI           mywork      StructuralMRI
+ExtraStructuralMRI  ImageDataVisualization  PETImaging
+```
 ### Helpful hints
 * **Feeling lost?** You can always get back to your home directory simply by 
 typing `cd` without any arguments or by using the tilde symbol, which is the
@@ -166,7 +210,6 @@ shortcut for home.
     cd
     cd ~
     ```
-
 * **Help me!** If you want to know more about a command, just type 
 `man` in front of it to get the *manual entry*.
 
@@ -181,20 +224,7 @@ shortcut for home.
 run, you can type in the `history` command. You can also scroll through previous
 commands by tapping the up and down arrow keys and then hit Return when you 
 found the command you want to run again.
-* **Paths** Locations in the file system, whether they are files or directories,
-are known as paths. Paths can be referred to in *absolute* terms 
-(like a postcode or latitude and longitude) or *relative* terms (like 
-directions to your work from home). In some cases it is more convenient to 
-use absolute paths, and in others, relative paths are nicer. Absolute paths 
-always begin with a `/` character. From your home directory, the following two 
-commands do the exact same thing.
 
-```bash
-ls data
-ls /home/as2-streaming-user/data
-```
-```output
-```
 
 ## Processing files
 In this section, we will go over how to copy and view the contents of the files.
@@ -204,7 +234,7 @@ lesson that we want to look at in more detail.
 1. Let's copy it over from the directory it is currently located into our new 
 `mywork` directory. We do this using the `cp` or *copy* command. We first 
 specify the *source*, or the file/directory that we want to copy 
-(`data/StructuralMRI/sub-OAS_30003_T1w.json`), and then we specify the 
+(`data/StructuralMRI/sub-OAS30003_T1w.json`), and then we specify the 
 destination path where we want to make the copy (`data/mywork`). **Before we 
 do this command, let's make sure we are back in the home directory first** 
 
@@ -212,7 +242,7 @@ do this command, let's make sure we are back in the home directory first**
     # Go back to the home directory
     cd
     # Copy the file.
-    cp data/StructuralMRI/sub-OAS_30003_T1w.json data/mywork
+    cp data/StructuralMRI/sub-OAS30003_T1w.json data/mywork
     ```
 1. Now let us confirm that the copy of the file is where we expect it to be:
 
@@ -220,6 +250,7 @@ do this command, let's make sure we are back in the home directory first**
     ls data/mywork/
     ```
     ```output
+    sub-OAS30003_T1w.json
     ```
 1. Finally, let's look at the contents of the file. We can do that with the 
 command `cat` which concatenates and prints files.
@@ -229,14 +260,78 @@ command `cat` which concatenates and prints files.
     ``` 
     
 :::::::::::::::::::: spoiler
-### That just flew off the screen1!
+### That just flew off the screen!
+Using `cat` on a large text file can end up looking impressive as text
+swarms all over your terminal, but it can be hard to examine the file...
 
 ```output
-TODO: add output
+{
+    "Modality": "MR",
+    "MagneticFieldStrength": 3,
+    "Manufacturer": "Siemens",
+    "ManufacturersModelName": "Biograph_mMR",
+    "DeviceSerialNumber": "51010",
+    "PatientPosition": "HFS",
+    "SoftwareVersions": "syngo_MR_B18P",
+    "MRAcquisitionType": "3D",
+    "SeriesDescription": "MPRAGE_GRAPPA2",
+    "ScanningSequence": "GR_IR",
+    "SequenceVariant": "SP_MP",
+    "ScanOptions": "IR",
+    "SequenceName": "_tfl3d1_ns",
+    "ImageType": [
+        "ORIGINAL",
+        "PRIMARY",
+        "M",
+        "ND",
+        "NORM"
+    ],
+    "AcquisitionTime": "11:53:18.945000",
+    "AcquisitionNumber": 1,
+    "SliceThickness": 1.2,
+    "SAR": 0.0397884,
+    "EchoTime": 0.00295,
+    "RepetitionTime": 2.3,
+    "InversionTime": 0.9,
+    "FlipAngle": 9,
+    "PartialFourier": 1,
+    "BaseResolution": 256,
+    "ShimSetting": [
+        -6853,
+        14225,
+        -5859,
+        -89,
+        -201,
+        157,
+        585,
+        -236
+    ],
+    "TxRefAmp": 307.072,
+    "PhaseResolution": 1,
+    "ReceiveCoilName": "HeadNeck_MRPET",
+    "PulseSequenceDetails": "%SiemensSeq%_tfl",
+    "PercentPhaseFOV": 93.75,
+    "PhaseEncodingSteps": 239,
+    "AcquisitionMatrixPE": 240,
+    "ReconMatrixPE": 256,
+    "ParallelReductionFactorInPlane": 2,
+    "PixelBandwidth": 238,
+    "DwellTime": 8.2e-06,
+    "ImageOrientationPatientDICOM": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+    ],
+    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+    "ConversionSoftware": "dcm2niix",
+    "ConversionSoftwareVersion": "v1.0.20171017 GCC4.4.7"
 ```
 If we want to have a bit more control over how we view larger files, then we 
-can use the `more` command. Press the return key to scroll one line at a time 
-or the space bar to scroll a whole screen page at a time.
+can use either the `more` or `less` command. This allows you to scroll through
+the file a line or page at a time, go back, search the text, etc. 
 
 ```bash
 more data/mywork/sub-OAS_30003_T1w.json 
@@ -248,7 +343,8 @@ more data/mywork/sub-OAS_30003_T1w.json
 remove files by using the `rm` command, but **BE CAREFUL** and check the command
 twice before executing the command, as this cannot be undone! Watch out for any 
 spaces or any special characters like the `*` and `?` as they mean something 
-special in the shell.
+special in the shell, and including them in a remove command may remove
+more files than you intended.
 
     ```bash
     rm data/mywork/sub-OAS_30003_T1w.json 
@@ -261,10 +357,10 @@ following helpful resources:
 * ["The Unix Shell" Software Carpentry lesson](https://swcarpentry.github.io/shell-novice/)
 * [Bash guide for beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html) 
 
-::::::::::::::::::::::challenge
-## Stretch your knowledge
+## Stretch exercises
 As you get more comfortable, you can start to do powerful things with the command line.
 
+::::::::::::::::::::::challenge
 ### Variables
 Sometimes we want to store some information for future use. We can do that 
 with a variable. A variable has a name and a value. A variable in the shell can 
@@ -289,7 +385,9 @@ echo "My favorite images are $image scans."
 ```output
 My favorite images are DTI scans.
 ```
+::::::::::::::::::::::
 
+:::::::::::::::::::::: challenge
 ### Looping
 Variables are really helpful when we want to set up a loop. Let's say we have 
 images from 100 different subjects who are in our study, and we want to make 
@@ -319,7 +417,9 @@ that you want to loop over. The for loop will determine how many entries are in
 the list. At each iteration, it will place the next value of the 
 list in to the variable (in our example `name`) and execute the commands that 
 are inside the keywords `do` (start the loop) and `done` (end the loop).
+::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::: challenge
 ### Redirection
 Quite often, when you execute a command on the shell, it prints out information 
 on the screen that is useful to  store for later. You can store them in the 
@@ -377,7 +477,9 @@ grep 64 < squares.txt
 ```output
 8 64
 ```
-Finally you can redirect output from one command into input of another command using the `|` character. In this case we are directing the output from the `echo` command from the screen to the input of the calculator command `bc`.
+Finally you can redirect output from one command into input of another command 
+using the pipe character, `|`. In this case we are directing the output from 
+the `echo` command from the screen to the input of the calculator command `bc`.
 ```bash
 echo "242*242" | bc
 ```
