@@ -51,6 +51,9 @@ webinars ahead of time**. The links to the webinars and the slides are below.
 
 At the workshop, we will all be using a standard environment, using a virtual machine (VM) hosted on the cloud. This ensures that everyone will be seeing the exact same screen for these lessons, regardless of if you are using a Mac or Windows operating system. You can find out more how to access this virtual machine below.
 
+We will be using a Linux terminal to enter commands on the Unix shell. Before 
+attending the session, you may want to familiarize yourself with the shell
+by running through the [Command line lesson](./command-line.md)
 ::::::::::::::::::::::::::::::::::::::::::
 
 ### Agenda
