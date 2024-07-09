@@ -213,6 +213,7 @@
 <li><a href="#navigating-the-file-structure">Navigating the file structure</a></li>
 <li><a href="#processing-files">Processing files</a></li>
 <li><a href="#further-reading">Further reading</a></li>
+<li><a href="#stretch-exercises">Stretch exercises</a></li>
 <li><a href="#command-line-cheatsheet">Command line cheatsheet</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -348,23 +349,27 @@ tasks so that it works late in the night while you are sleeping.</li>
 mouse moves and clicks. For a small handful of imaging sessions, this is
 a fine way to work, but what if your research project has
 <em>hundreds</em> of datasets to process. It’s far more likely that an
-error could occur or a dataset is missed. While you go through this
-lesson, count the number of mouse clicks it takes you to do a task and
-think about how that would scale to your project. When you run on the
-command line it has all of the information it needs, so no interaction
-is needed, saving a lot of your time.</li>
+error could occur or a dataset is missed. While you go through the
+lessons in this workshop, count the number of mouse clicks it takes you
+to do a task and think about how that would scale to your project. When
+you run on the command line it has all of the information it needs, so
+no interaction is needed, saving a lot of your time.</li>
 <li>
-<strong>Control</strong> With GUIs, you often only have access to
-the options that are presented…but that might not be all of them, and
-they might restrict you from what you want to do. With the command line,
-you may need to do some investigation, but you have far more control
-over how the task is run.</li>
+<strong>Control</strong> With GUIs, you have access to the
+functionality that the GUI provides you. However, hidden from the GUI
+may be more advanced options that you need for your research. For the
+sake of more software that is often more user-friendly for the majority
+of tasks you are looking to do, the GUI can sometimes be restritie. With
+the command line, you should have access to more, if not all, of the
+functionality that the software provides, and thus more control over how
+the task is run. It may take some investigation on your part,
+though.</li>
 <li>
 <strong>Interoperability</strong> You may find that you want to take
 results from one program and feed them into another and then another.
 With GUI’s this often means saving or exporting the results, then
 opening up the other program and importing them. The command line often
-allows you to pieces these steps together in one set of
+allows you the means to piece these steps together in one set of
 instructions.</li>
 </ol></div>
 </section><section><h2 class="section-heading" id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
@@ -373,16 +378,16 @@ instructions.</li>
 working with the command line. Make sure you are able to connect to your
 working environment by following the directions in the <a href="index.html#setup">Setup</a> section of this website. As a reminder, you
 should have a desktop on your virtual machine that looks something like
-this: <img src="../fig/aic_smri_desktop.png" alt="Screenshot of the VM desktop" class="figure"> At the bottom of the the screen,
-you will see a taskbar. One of the icons is a black box with a white
-dollar sign in it. That will launch the shell (Terminal Emulator) to
-give you access to the command line. Click on this button to launch the
-terminal. <img src="../fig/aic_smri_launch_terminal.png" alt="Launching a terminal" class="figure"></p>
+this: <img src="../fig/aic_smri_desktop.png" alt="Screenshot of the VM desktop" class="figure"> Click on the
+<code>Applications</code> icon in the top left of the window, and you
+should see a taskbar pop out on the left-hand side. One of the icons is
+a black box with a white border. This icon will launch the
+<code>Terminal</code> and give you access to the command line. <img src="../fig/aic_smri_launch_terminal.png" alt="Launching a terminal" class="figure"></p>
 </section><section><h2 class="section-heading" id="navigating-the-file-structure">Navigating the file structure<a class="anchor" aria-label="anchor" href="#navigating-the-file-structure"></a>
 <a class="anchor" aria-label="anchor" href="#navigating-the-file-structure"></a></h2>
-<hr class="half-width"><p>The desktop of your virtual machine will have a black window with
-green text in it. This is the shell. We will enter some commands and see
-what responses that the computer provdes. <img src="../fig/aic_smri_terminal_window.png" alt="Picture of an open terminal" class="figure"></p>
+<hr class="half-width"><p>The terminal should produce a window with a white background and
+black text. This is the shell. We will enter some commands and see what
+responses that the computer provdes. <img src="../fig/aic_smri_terminal_window.png" alt="Picture of an open terminal" class="figure"></p>
 <ol style="list-style-type: decimal"><li>
 <p>The first thing we are going to do is figure out our present
 location in the file system of the computer. We do that using the
@@ -397,9 +402,9 @@ is:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>TODO: add home output</code></pre>
+<pre class="output" tabindex="0"><code>/home/as2-streaming-user</code></pre>
 </div>
-<p>This directory is also your <em>home directory</em></p>
+<p>This directory is also known as your <em>home directory</em></p>
 </li>
 <li>
 <p>Next we are going to see what items are contained in this
@@ -413,7 +418,7 @@ you all the files.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>TODO: add output</code></pre>
+<pre class="output" tabindex="0"><code>Background.png  data  MyFiles  test</code></pre>
 </div>
 <p>You will notice that some of the entries are different colors. The
 colors indicate whether the entries are files or directories. They also
@@ -433,13 +438,16 @@ format</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code></code></pre>
+<pre class="output" tabindex="0"><code>total 60
+-rw-r--r-- 1 as2-streaming-user as2-streaming-user 57734 Jun 28  2023 Background.png
+drwxrwxrwx 8 as2-streaming-user as2-streaming-user   142 Jun 22  2023 data
+drwxr-xr-x 2 as2-streaming-user as2-streaming-user    46 Jul  8 22:31 MyFiles
+drwxr-xr-x 2 as2-streaming-user as2-streaming-user     6 Jun 16  2023 test</code></pre>
 </div>
 <p>This now gives a lot more information, with the letters before the
 file telling us about who owns the file (3rd and 4th column), what
 permissions they have to read, write or run (execute) the file (first
-column),<br>
-and when it was modified (6th column).</p>
+column),and when it was modified (6th column).</p>
 <p>If you want to list the contents of a different directory, just put
 it after the <code>ls -l</code></p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -450,28 +458,40 @@ it after the <code>ls -l</code></p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code></code></pre>
+<pre class="output" tabindex="0"><code>total 8
+drwxr-xr-x 6 as2-streaming-user as2-streaming-user   84 Jun 16  2023 DiffusionMRI
+drwxr-xr-x 2 as2-streaming-user as2-streaming-user 4096 Jul  4  2023 ExtraStructuralMRI
+drwxr-xr-x 3 as2-streaming-user as2-streaming-user   26 Jun 27  2023 FunctionalMRI
+drwxr-xr-x 2 as2-streaming-user as2-streaming-user 4096 Jun 16  2023 ImageDataVisualization
+drwxr-xr-x 5 as2-streaming-user as2-streaming-user   77 Jul  7  2023 PETImaging
+drwxr-xr-x 2 as2-streaming-user as2-streaming-user  120 Jun 27  2023 StructuralMRI</code></pre>
 </div>
 </li>
 <li>
-<p>The <code>data</code> directory in your home directory is where
-you will be storing your work. So let us move into that directory using
-the <code>cd</code> or <em>change directory</em> command:</p>
+<p>The <code>data</code> directory is a sub-directory within your
+home directory where you will be storing your work. So let us move into
+that directory using the <code>cd</code> or <em>change directory</em>
+command:</p>
 <pre><code>cd data</code></pre>
 <p>Now type the command <code>pwd</code> again. Has the result
 changed?</p>
-<p>What happens when we list the contents of this directory?
-<code>bash  ls -l</code> You don’t get anything back, as this directory
-currently is empty!</p>
+<p>What happens when we list the contents of this directory?</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre>
+</div>
+<p>You should get the same result as when you ran
+<code>ls -l data</code> from your home directory.</p>
 </li>
 <li>
 <p>Inside the data directory, let’s create a new directory that we
 will call <code>mywork</code>. We do that using a command called
 <code>mkdir</code>,</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">mkdir</span> mywork</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">mkdir</span> mywork</span></code></pre>
 </div>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
@@ -488,29 +508,65 @@ now changed to show your new directory.</p>
 </div>
 </li>
 </ol><div class="section level3">
+<h3 id="absolute-versus-relative-paths">Absolute versus Relative Paths<a class="anchor" aria-label="anchor" href="#absolute-versus-relative-paths"></a></h3>
+<p>Locations in the file system, whether they are files or directories,
+are known as paths. Paths can be referred to in <em>absolute</em> terms
+(like a postal address or latitude and longitude) or <em>relative</em>
+terms (like directions to your work from home). In some cases it is more
+convenient to use absolute paths, and in others, relative paths are
+nicer. Absolute paths always begin with a <code>/</code> character. From
+your home directory, the following two commands do the exact same
+thing.</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Using an absolute path - this will work anywhere</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">ls</span> /home/as2-streaming-user/data</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>DiffusionMRI        FunctionalMRI           mywork      StructuralMRI
+ExtraStructuralMRI  ImageDataVisualization  PETImaging</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Using a relative path - this will only work if you are in the </span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="co"># directory where data is located</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">ls</span> data</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>DiffusionMRI        FunctionalMRI           mywork      StructuralMRI
+ExtraStructuralMRI  ImageDataVisualization  PETImaging</code></pre>
+</div>
+</div>
+<div class="section level3">
 <h3 id="helpful-hints">Helpful hints<a class="anchor" aria-label="anchor" href="#helpful-hints"></a></h3>
 <ul><li>
 <p><strong>Feeling lost?</strong> You can always get back to your
 home directory simply by typing <code>cd</code> without any arguments or
 by using the tilde symbol, which is the shortcut for home.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">cd</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre>
 </div>
 </li>
 <li>
 <p><strong>Help me!</strong> If you want to know more about a
 command, just type <code>man</code> in front of it to get the <em>manual
 entry</em>.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">man</span> ls</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">man</span> find</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">man</span> more</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">man</span> less</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">man</span> ls</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">man</span> find</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="fu">man</span> more</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="fu">man</span> less</span></code></pre>
 </div>
 </li>
 <li><p><strong>Previous commands</strong> If you want to see a list of
@@ -518,26 +574,7 @@ commands that you have run, you can type in the <code>history</code>
 command. You can also scroll through previous commands by tapping the up
 and down arrow keys and then hit Return when you found the command you
 want to run again.</p></li>
-<li><p><strong>Paths</strong> Locations in the file system, whether they
-are files or directories, are known as paths. Paths can be referred to
-in <em>absolute</em> terms (like a postcode or latitude and longitude)
-or <em>relative</em> terms (like directions to your work from home). In
-some cases it is more convenient to use absolute paths, and in others,
-relative paths are nicer. Absolute paths always begin with a
-<code>/</code> character. From your home directory, the following two
-commands do the exact same thing.</p></li>
-</ul><div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ls</span> data</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">ls</span> /home/as2-streaming-user/data</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code></code></pre>
-</div>
-</div>
+</ul></div>
 </section><section><h2 class="section-heading" id="processing-files">Processing files<a class="anchor" aria-label="anchor" href="#processing-files"></a>
 <a class="anchor" aria-label="anchor" href="#processing-files"></a></h2>
 <hr class="half-width"><p>In this section, we will go over how to copy and view the contents of
@@ -548,41 +585,41 @@ our Structural MRI lesson that we want to look at in more detail.</p>
 into our new <code>mywork</code> directory. We do this using the
 <code>cp</code> or <em>copy</em> command. We first specify the
 <em>source</em>, or the file/directory that we want to copy
-(<code>data/StructuralMRI/sub-OAS_30003_T1w.json</code>), and then we
+(<code>data/StructuralMRI/sub-OAS30003_T1w.json</code>), and then we
 specify the destination path where we want to make the copy
 (<code>data/mywork</code>). <strong>Before we do this command, let’s
 make sure we are back in the home directory first</strong></p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Go back to the home directory</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">cd</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co"># Copy the file.</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="fu">cp</span> data/StructuralMRI/sub-OAS_30003_T1w.json data/mywork</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Go back to the home directory</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="co"># Copy the file.</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="fu">cp</span> data/StructuralMRI/sub-OAS30003_T1w.json data/mywork</span></code></pre>
 </div>
 </li>
 <li>
 <p>Now let us confirm that the copy of the file is where we expect
 it to be:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ls</span> data/mywork/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">ls</span> data/mywork/</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="va">sub</span><span class="op">-</span><span class="va">OAS30003_T1w.json</span></span></code></pre>
 </div>
 </li>
 <li>
 <p>Finally, let’s look at the contents of the file. We can do that
 with the command <code>cat</code> which concatenates and prints
 files.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cat</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">cat</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
 </div>
 </li>
 </ol><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
@@ -590,24 +627,89 @@ files.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
   <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  That just flew off the screen1!
+  That just flew off the screen!
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
+<p>Using <code>cat</code> on a large text file can end up looking
+impressive as text swarms all over your terminal, but it can be hard to
+examine the file…</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>TODO: add output</code></pre>
+<pre class="output" tabindex="0"><code>{
+    "Modality": "MR",
+    "MagneticFieldStrength": 3,
+    "Manufacturer": "Siemens",
+    "ManufacturersModelName": "Biograph_mMR",
+    "DeviceSerialNumber": "51010",
+    "PatientPosition": "HFS",
+    "SoftwareVersions": "syngo_MR_B18P",
+    "MRAcquisitionType": "3D",
+    "SeriesDescription": "MPRAGE_GRAPPA2",
+    "ScanningSequence": "GR_IR",
+    "SequenceVariant": "SP_MP",
+    "ScanOptions": "IR",
+    "SequenceName": "_tfl3d1_ns",
+    "ImageType": [
+        "ORIGINAL",
+        "PRIMARY",
+        "M",
+        "ND",
+        "NORM"
+    ],
+    "AcquisitionTime": "11:53:18.945000",
+    "AcquisitionNumber": 1,
+    "SliceThickness": 1.2,
+    "SAR": 0.0397884,
+    "EchoTime": 0.00295,
+    "RepetitionTime": 2.3,
+    "InversionTime": 0.9,
+    "FlipAngle": 9,
+    "PartialFourier": 1,
+    "BaseResolution": 256,
+    "ShimSetting": [
+        -6853,
+        14225,
+        -5859,
+        -89,
+        -201,
+        157,
+        585,
+        -236
+    ],
+    "TxRefAmp": 307.072,
+    "PhaseResolution": 1,
+    "ReceiveCoilName": "HeadNeck_MRPET",
+    "PulseSequenceDetails": "%SiemensSeq%_tfl",
+    "PercentPhaseFOV": 93.75,
+    "PhaseEncodingSteps": 239,
+    "AcquisitionMatrixPE": 240,
+    "ReconMatrixPE": 256,
+    "ParallelReductionFactorInPlane": 2,
+    "PixelBandwidth": 238,
+    "DwellTime": 8.2e-06,
+    "ImageOrientationPatientDICOM": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+    ],
+    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+    "ConversionSoftware": "dcm2niix",
+    "ConversionSoftwareVersion": "v1.0.20171017 GCC4.4.7"</code></pre>
 </div>
 <p>If we want to have a bit more control over how we view larger files,
-then we can use the <code>more</code> command. Press the return key to
-scroll one line at a time or the space bar to scroll a whole screen page
-at a time.</p>
-<div class="codewrapper sourceCode" id="cb20">
+then we can use either the <code>more</code> or <code>less</code>
+command. This allows you to scroll through the file a line or page at a
+time, go back, search the text, etc.</p>
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">more</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">more</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
 </div>
 </div>
 </div>
@@ -619,11 +721,12 @@ so we can remove files by using the <code>rm</code> command, but
 <strong>BE CAREFUL</strong> and check the command twice before executing
 the command, as this cannot be undone! Watch out for any spaces or any
 special characters like the <code>*</code> and <code>?</code> as they
-mean something special in the shell.</p>
-<div class="codewrapper sourceCode" id="cb21">
+mean something special in the shell, and including them in a remove
+command may remove more files than you intended.</p>
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">rm</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">rm</span> data/mywork/sub-OAS_30003_T1w.json </span></code></pre>
 </div>
 </li>
 </ol></section><section><h2 class="section-heading" id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
@@ -634,18 +737,18 @@ check out the following helpful resources:</p>
 Shell” Software Carpentry lesson</a></li>
 <li><a href="https://tldp.org/LDP/Bash-Beginners-Guide/html" class="external-link">Bash guide
 for beginners</a></li>
-</ul><div id="stretch-your-knowledge" class="callout discussion">
+</ul></section><section><h2 class="section-heading" id="stretch-exercises">Stretch exercises<a class="anchor" aria-label="anchor" href="#stretch-exercises"></a>
+<a class="anchor" aria-label="anchor" href="#stretch-exercises"></a></h2>
+<hr class="half-width"><p>As you get more comfortable, you can start to do powerful things with
+the command line.</p>
+<div id="variables" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="stretch-your-knowledge" class="callout-inner">
-<h3 class="callout-title">Stretch your knowledge<a class="anchor" aria-label="anchor" href="#stretch-your-knowledge"></a>
+<div id="variables" class="callout-inner">
+<h3 class="callout-title">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h3>
 <div class="callout-content">
-<p>As you get more comfortable, you can start to do powerful things with
-the command line.</p>
-<div class="section level3">
-<h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a></h3>
 <p>Sometimes we want to store some information for future use. We can do
 that with a variable. A variable has a name and a value. A variable in
 the shell can hold a number, a single character, a word, sentence or a
@@ -655,11 +758,11 @@ that you want to call the variable and replace value with the value you
 want to store. Once the variable has been assigned, you can access the
 value within the variable by putting a <code>$</code> in front of the
 variable name</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="va">image</span><span class="op">=</span><span class="st">"T1"</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My favorite images are </span><span class="va">$image</span><span class="st"> scans."</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="va">image</span><span class="op">=</span><span class="st">"T1"</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My favorite images are </span><span class="va">$image</span><span class="st"> scans."</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -668,11 +771,11 @@ variable name</p>
 </div>
 <p>See how it replaces <code>$image</code> with T1. Let’s do it again
 and assign a new value to <code>image</code>.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="va">image</span><span class="op">=</span><span class="st">"DTI"</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My favorite images are </span><span class="va">$image</span><span class="st"> scans."</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="va">image</span><span class="op">=</span><span class="st">"DTI"</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My favorite images are </span><span class="va">$image</span><span class="st"> scans."</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -680,8 +783,16 @@ and assign a new value to <code>image</code>.</p>
 <pre class="output" tabindex="0"><code>My favorite images are DTI scans.</code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="looping">Looping<a class="anchor" aria-label="anchor" href="#looping"></a></h3>
+</div>
+</div>
+<div id="looping" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="looping" class="callout-inner">
+<h3 class="callout-title">Looping<a class="anchor" aria-label="anchor" href="#looping"></a>
+</h3>
+<div class="callout-content">
 <p>Variables are really helpful when we want to set up a loop. Let’s say
 we have images from 100 different subjects who are in our study, and we
 want to make sure that we process each of the images in the exact same
@@ -691,13 +802,13 @@ that would be really boring, and there is definitely more risk of an
 error being introduced. A loop is a solution to this and makes your
 command writing much simpler. It is simply an instruction to the shell
 that says run the same command a bunch of times.</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> David Ludovica Tobey Alexa Luigi</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Hey </span><span class="va">${name}</span><span class="st">, I need help!"</span></span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> David Ludovica Tobey Alexa Luigi</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Hey </span><span class="va">${name}</span><span class="st">, I need help!"</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -718,8 +829,16 @@ example <code>name</code>) and execute the commands that are inside the
 keywords <code>do</code> (start the loop) and <code>done</code> (end the
 loop).</p>
 </div>
-<div class="section level3">
-<h3 id="redirection">Redirection<a class="anchor" aria-label="anchor" href="#redirection"></a></h3>
+</div>
+</div>
+<div id="redirection" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="redirection" class="callout-inner">
+<h3 class="callout-title">Redirection<a class="anchor" aria-label="anchor" href="#redirection"></a>
+</h3>
+<div class="callout-content">
 <p>Quite often, when you execute a command on the shell, it prints out
 information on the screen that is useful to store for later. You can
 store them in the file using <em>redirection</em>. The <code>&gt;</code>
@@ -727,14 +846,14 @@ says redirects the output from the screen to another location, such as a
 file, overwriting the current contents. The <code>&gt;&gt;</code> does
 the same thing but it just appends the contents at the end. This loop
 just prints the number and its square on the screen.</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5 6 7 8 9 10</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="cf">do</span> </span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>    <span class="bu">let</span> <span class="va">j</span><span class="op">=</span><span class="va">i</span><span class="pp">*</span>i</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$i</span> <span class="va">$j</span></span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5 6 7 8 9 10</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="cf">do</span> </span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>    <span class="bu">let</span> <span class="va">j</span><span class="op">=</span><span class="va">i</span><span class="pp">*</span>i</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$i</span> <span class="va">$j</span></span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -752,21 +871,21 @@ just prints the number and its square on the screen.</p>
 </div>
 <p>This loop does the same thing but saves it to a text file called
 <code>squares.txt</code></p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5 6 7 8 9 10</span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="cf">do</span> </span>
-<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>    <span class="bu">let</span> <span class="va">j</span><span class="op">=</span><span class="va">i</span><span class="pp">*</span>i</span>
-<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$i</span> <span class="va">$j</span> <span class="op">&gt;&gt;</span> squares.txt</span>
-<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5 6 7 8 9 10</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="cf">do</span> </span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>    <span class="bu">let</span> <span class="va">j</span><span class="op">=</span><span class="va">i</span><span class="pp">*</span>i</span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$i</span> <span class="va">$j</span> <span class="op">&gt;&gt;</span> squares.txt</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>Now if we show the contents of <code>squares.txt</code>, we see it
 has the same information.</p>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">cat</span> squares.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">cat</span> squares.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -785,10 +904,10 @@ has the same information.</p>
 <p>Redirection can also be used for getting input using the
 <code>&lt;</code> character. This finds the line where 64 is the
 answer.</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">grep</span> 64 <span class="op">&lt;</span> squares.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="fu">grep</span> 64 <span class="op">&lt;</span> squares.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -796,19 +915,18 @@ answer.</p>
 <pre class="output" tabindex="0"><code>8 64</code></pre>
 </div>
 <p>Finally you can redirect output from one command into input of
-another command using the <code>|</code> character. In this case we are
-directing the output from the <code>echo</code> command from the screen
-to the input of the calculator command <code>bc</code>.</p>
-<div class="codewrapper sourceCode" id="cb35">
+another command using the pipe character, <code>|</code>. In this case
+we are directing the output from the <code>echo</code> command from the
+screen to the input of the calculator command <code>bc</code>.</p>
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"242*242"</span> <span class="kw">|</span> <span class="fu">bc</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"242*242"</span> <span class="kw">|</span> <span class="fu">bc</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="fl">58564</span></span></code></pre>
-</div>
 </div>
 </div>
 </div>
