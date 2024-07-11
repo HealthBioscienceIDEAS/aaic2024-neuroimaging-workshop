@@ -312,7 +312,7 @@
         
 <section id="aio-imaging-data-structure-and-formats"><p>Content from <a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 32 minutes</p>
@@ -1232,7 +1232,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-structural-mri"><p>Content from <a href="structural-mri.html">Structural MRI: Bias Correction, Segmentation and Image Registration</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/structural-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -1406,7 +1406,7 @@ finished.</li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Reproducing your work </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When you are using these workflows for your actual research, we
 <strong>highly recommend</strong> that you save the SPM pipelines so
@@ -1522,7 +1522,7 @@ and CSF in the T1 weighted image correctly?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You should have an output that looks something like this. <img src="../fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
 </div>
@@ -1717,7 +1717,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1924,7 +1924,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-pet-imaging"><p>Content from <a href="pet-imaging.html">Processing and analysing PET brain images</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1940,9 +1940,10 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>What does positron emission tomography measure?</li>
-<li>How is PET data stored and acquired?</li>
-<li>How can I extract key measurements of tracer uptake out of
-scans?</li>
+<li>What are some common processing steps used for PET
+quantification?</li>
+<li>How can I extract key measurements of tracer binding from dynamic
+PET data?</li>
 </ul>
 </div>
 </div>
@@ -1952,11 +1953,12 @@ scans?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Describe how images are reconstructed in PET</li>
+<li>Understand the basic structure of 4D PET data and key variables
+needed for quantification.</li>
 <li>Explain the differences between static and dynamic acquisitions, and
 what information can be derived from them.</li>
 <li>Perform the basic processing steps involved in PET image
-analysis</li>
+quantification and analysis.</li>
 </ul>
 </div>
 </div>
@@ -2026,7 +2028,7 @@ type the following into the terminal:</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -2038,10 +2040,10 @@ side-by-side.</p>
 <li><p>Note that the Time section differs with regard to the scant start
 and injection start times. Namely, the MK-6240 scan starts 70 minutes
 after tracer injection, whereas the PiB image starts at the same time as
-the scan start. The latter is often referred to as a <em>full
-dynamic</em> acquisition and enables us to calculate more accurate
-measurements like distribution volume ratio (DVR) and often additional
-parameters from the time-series data (e.g., <span class="math inline">\(R_1\)</span> relative perfusion). If we had
+the tracer injection. The latter acuisition protocol is often referred
+to as a <em>full dynamic</em> acquisition and enables us to calculate
+more accurate measurements like distribution volume ratio (DVR) and
+often additional parameters from the time-series data (e.g., <span class="math inline">\(R_1\)</span> relative perfusion). If we had
 arterial data available, we could also use the full dynamic scan to
 perform kinetic modeling.</p></li>
 <li><p>Also note the framing sequences differs between the two tracers.
@@ -2084,14 +2086,14 @@ volume indices is moving forward in time, like a 3D movie, as the tracer
 distributes throughout the brain over time. Note how the distribution of
 the tracer changes from the first frame to the last frame. The tracer
 distribution in early frames of this acquisition largely reflects the
-tracer perfusing the. brain tissue whereas later frames largely reflect
-a combination of free tracer and specific and non-specific tracer
-binding. You may need to adjust the upper window level to a lower value
-to more clearly visualize the later PET frames. You’ll also likely
-notice that the later frames are noisier than the beginning frames,
-again, this has to do with counting statistics and the reduced counts
-detected over time due to radioactive decay and lower tracer
-concentration in the brain at later timepoints.</li>
+tracer perfusing the brain tissue whereas later frames largely reflect a
+combination of free tracer and specific and non-specific tracer binding.
+You may need to adjust the upper window level to a lower value to more
+clearly visualize the later PET frames. You’ll also likely notice that
+the later frames are noisier than the beginning frames, again, this has
+to do with counting statistics and the reduced counts detected over time
+due to radioactive decay and lower tracer concentration in the brain at
+later timepoints.</li>
 <li>Close the 4D PET image in FSL by selecting the image in the Overlay
 list at the bottom of the page and clicking Overlay -&gt; Remove from
 the menu at the top of the page.</li>
@@ -2113,8 +2115,8 @@ which frames correspond to 0-20 min and 50-70 min postinjection.</p>
 <h3 id="using-imcalc-to-sum-frames">Using ImCalc to Sum Frames<a class="anchor" aria-label="anchor" href="#using-imcalc-to-sum-frames"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li><p>Open SPM12 by typing <code>spm pet</code> in the command line.
-option.</p></li>
+<li><p>Open SPM12 by typing <code>spm pet</code> in the command
+line.</p></li>
 <li><p>Select the <code>ImCalc</code> module. <img src="../fig/aic_pet_imcalc_start.png" alt="SPM ImCalc module" class="figure"></p></li>
 <li>
 <p>For each variable in the GUI, you will need to specify values
@@ -2157,9 +2159,8 @@ the last 20 minutes of counts.</p>
 <pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
 </div>
 <p>Note that taking the average of these frames is equivalent to summing
-all of the detected counts across the frames <img src="../fig/aic_pet_imcalc_expression.png" alt="ImCalc expression" class="figure"> . and
-dividing by the total amount of time that has passed during those frames
-(i.e., 20 min).</p>
+all of the detected counts across the frames and dividing by the total
+amount of time that has passed during those frames (i.e., 20 min). <img src="../fig/aic_pet_imcalc_expression.png" alt="ImCalc expression" class="figure"></p>
 </li>
 <li><p><code>Data Matrix</code>, <code>Masking</code>,
 <code>Interpolation</code> can all use default values</p></li>
@@ -2171,14 +2172,15 @@ play button at the top of the batch editor. This should create a new
 NIfTI file with the late-frame summed data.</p></li>
 <li>
 <p>Open the 50-70 min SUM image in FSLeyes and note the difference
-in noise properties vs. those you observed in a single frame. The SNR
-has improved because we are now viewing an image with more total counts.
-Notice that you can now more clearly see some contrast between the
-precuneus and the adjacent occipital cortex in the sagittal plane just
-to the left or right of mid-sagittal. You can similarly see differences
-in intensity between much of the cortex and the cerebellar GM, a common
-reference region used for amyloid PET as it typically has negligible
-specific binding in the cerebellum.</p>
+in noise properties vs. those you observed in a single frame. (note: you
+will likely need to use different thresholding to see the image; e.g.,
+0-20,000 Bq/mL) The SNR has improved because we are now viewing an image
+with more total counts. Notice that you can now more clearly see some
+contrast between the precuneus and the adjacent occipital cortex in the
+sagittal plane just to the left or right of mid-sagittal. You can
+similarly see differences in intensity between much of the cortex and
+the cerebellar GM, a common reference region used for amyloid PET as it
+typically has negligible specific binding in the cerebellum.</p>
 <p><strong>Do you think this person is amyloid positive or
 negative?</strong></p>
 </li>
@@ -2211,14 +2213,14 @@ differences in contrast.</p></li>
 <a class="anchor" aria-label="anchor" href="#image-smoothing"></a>
 </h2>
 <hr class="half-width">
-<p>As you can see from viewing the smoothed images, they still are quite
-noisy, particularly at the voxel level. In this section we’ll use a
-simple Gaussian smoothing kernel to reduce the voxel-level noise. We are
-really trading voxel variance for co-variance between voxels. This means
-that the activity concentration in any particular voxel will have lower
-variance, but will be more influenced by neighboring voxels. Thus we are
-degrading the spatial resolution of the image slightly to improve the
-noise characteristics. The size of the Gaussian smoothing kernel is
+<p>As you can see from viewing the unsmoothed images, they are still
+quite noisy, particularly at the voxel level. In this section we’ll use
+a simple Gaussian smoothing kernel to reduce the voxel-level noise. We
+are really trading voxel variance for co-variance between voxels. This
+means that the activity concentration in any particular voxel will have
+lower variance, but will be more influenced by neighboring voxels. Thus,
+we are degrading the spatial resolution of the image slightly to improve
+the noise characteristics. The size of the Gaussian smoothing kernel is
 typically specified as the full-width of the kernel at half the maximum
 value of the kernel.</p>
 <div class="section level3">
@@ -2269,7 +2271,7 @@ PET data to the T1-w MRI.</p>
 <h3 id="view-images-in-fsl">View images in FSL<a class="anchor" aria-label="anchor" href="#view-images-in-fsl"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>Open the <code>sub001_t1mri.nii</code> and in FSL. Use the down
+<li>Open the <code>rsub001_t1mri.nii</code> and in FSL. Use the down
 arrow next to the Overlay list to move the T1 to the bottom of the list.
 Select the T1 and set the window min and max to 0 and 1,400,
 respectively.</li>
@@ -2323,7 +2325,7 @@ the NIfTI headers for those files and will create new images with the
 image matrices resliced to align voxel- to-voxel with the reference
 image.
 <ul>
-<li>Select <code>sub001_t1mri.nii</code> for the reference image.</li>
+<li>Select <code>rsub001_t1mri.nii</code> for the reference image.</li>
 <li>Select the smoothed 50-70 SUM image for the source image.
 <code>ssub001_pib_SUM50-70min.nii</code>
 </li>
@@ -2507,7 +2509,7 @@ These are located in the folder
 <code>~/data/PETImaging/ProcessedPiBDVR</code> in the file
 <code>cghrsub001_pib_DVRlga.nii</code> Compare the DVR image with the
 SUVR image you created in the tutorial.</p>
-<p><em>How are similar and how are they different?</em></p>
+<p><em>How are the images similar and how are they different?</em></p>
 </div>
 </div>
 </div>
@@ -2516,7 +2518,7 @@ SUVR image you created in the tutorial.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -2544,7 +2546,7 @@ a SUVR image for the MK-6240 scan.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>You’ll need to look at the .json file for the TAU PET NIfTI file -
 this will contain key information around timing and framing so that you
@@ -2833,7 +2835,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-diffusion-weighted-imaging"><p>Content from <a href="diffusion-weighted-imaging.html">Diffusion-weighted imaging (DWI)</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2943,7 +2945,7 @@ relying on data organized according to the BIDS structure.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> The command should show the following content </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <figure><img src="../fig/bval_bvec.png" alt="example of bval and bvec file" class="figure mx-auto d-block"></figure><ul>
 <li>The nifti file is a 4D file of all the directions acquired.</li>
@@ -2974,7 +2976,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -2987,7 +2989,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is 1 b0 image and 64 gradient images! You can check for the
 maximum number as you move through the “Volume” box as shown below.</p>
@@ -3430,7 +3432,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-functional-mri"><p>Content from <a href="functional-mri.html">Functional Magnetic Resonance Imaging (fMRI)</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/functional-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -3852,7 +3854,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-command-line"><p>Content from <a href="command-line.html">Extra: Using the Command Line</a></p>
 <hr>
-<p>Last updated on 2024-07-09 |
+<p>Last updated on 2024-07-11 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/command-line.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -4219,7 +4221,7 @@ files.</p>
   That just flew off the screen!
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Using <code>cat</code> on a large text file can end up looking
 impressive as text swarms all over your terminal, but it can be hard to
@@ -4689,8 +4691,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/aio.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/aio.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-09",
-  "datePublished": "2024-07-09"
+  "dateModified": "2024-07-11",
+  "datePublished": "2024-07-11"
 }
 
   </script><script>
