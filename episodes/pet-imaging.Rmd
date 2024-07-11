@@ -7,17 +7,17 @@ exercises: 15
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - What does positron emission tomography measure?
-- How is PET data stored and acquired?
-- How can I extract key measurements of tracer uptake out of scans?
+- What are some common processing steps used for PET quantification?
+- How can I extract key measurements of tracer binding from dynamic PET data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Describe how images are reconstructed in PET
+- Understand the basic structure of 4D PET data and key variables needed for quantification.
 - Explain the differences between static and dynamic acquisitions, and what 
 information can be derived from them.
-- Perform the basic processing steps involved in PET image analysis
+- Perform the basic processing steps involved in PET image quantification and analysis.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -73,7 +73,7 @@ side-by-side.
 * Note that the Time section differs with regard to the scant start and 
 injection start times. Namely, the MK-6240 scan starts 70 minutes after 
 tracer injection, whereas the PiB image starts at the same time as the 
-scan start. The latter is often referred to as a _full dynamic_ acquisition 
+tracer injection. The latter acuisition protocol is often referred to as a _full dynamic_ acquisition 
 and enables us to calculate more accurate measurements like distribution 
 volume ratio (DVR) and often additional parameters from the time-series
 data (e.g., $R_1$ relative perfusion). If we had arterial data available, we 
@@ -112,7 +112,7 @@ indices is moving forward in time, like a 3D movie, as the tracer
 distributes throughout the brain over time. Note how the distribution of 
 the tracer changes from the first frame to the last frame. The tracer 
 distribution in early frames of this acquisition largely reflects the tracer 
-perfusing the. brain tissue whereas later frames largely reflect a 
+perfusing the brain tissue whereas later frames largely reflect a 
 combination of free tracer and specific and non-specific tracer binding. 
 You may need to adjust the upper window level to a lower value to more 
 clearly visualize the later PET frames. You’ll also likely notice that the 
@@ -134,8 +134,7 @@ reference the FrameTimeStart and FrameTimeEnd fields in the .json file to
 determine which frames correspond to 0-20 min and 50-70 min postinjection.
 
 ### Using ImCalc to Sum Frames
-1. Open SPM12 by typing `spm pet` in the command line. 
-option.
+1. Open SPM12 by typing `spm pet` in the command line.
 1. Select the `ImCalc` module.
     ![Start ImCalc](fig/aic_pet_imcalc_start.png){alt="SPM ImCalc module"}
 1. For each variable in the GUI, you will need to specify values using the `Specify` button.
@@ -174,9 +173,9 @@ first frame, which corresponds to index 0 in FSL.
        ```
        
        Note that taking the average of these frames is equivalent to summing 
-       all of the detected counts across the frames
+       all of the detected counts across the frames and dividing by the total 
+       amount of time that has passed during those frames (i.e., 20 min).
        ![](fig/aic_pet_imcalc_expression.png){alt="ImCalc expression"}
- .     and dividing by the total amount of time that has passed during those frames (i.e., 20 min).
     * `Data Matrix`, `Masking`, `Interpolation` can all use default values
     * `Data Type` – specify FLOAT32
        ![](fig/aic_pet_imcalc_float.png){alt="Choose float image"}
@@ -184,7 +183,8 @@ first frame, which corresponds to index 0 in FSL.
 button at the top of the batch editor. This should create a new NIfTI file 
 with the late-frame summed data.
 1. Open the 50-70 min SUM image in FSLeyes and note the difference in noise 
-properties vs. those you observed in a single frame. The SNR has improved 
+properties vs. those you observed in a single frame. (note: you will likely 
+need to use different thresholding to see the image; e.g., 0-20,000 Bq/mL) The SNR has improved 
 because we are now viewing an image with more total counts. Notice that you 
 can now more clearly see some contrast between the precuneus and the adjacent 
 occipital cortex in the sagittal plane just to the left or right of 
@@ -214,12 +214,12 @@ in contrast.
 1. Close the SPM batch editor
 
 ## Image Smoothing
-As you can see from viewing the smoothed images, they still are quite noisy, 
+As you can see from viewing the unsmoothed images, they are still quite noisy, 
 particularly at the voxel level. In this section we’ll use a simple Gaussian 
 smoothing kernel to reduce the voxel-level noise. We are
 really trading voxel variance for co-variance between voxels. This means that 
 the activity concentration in any particular voxel will have lower variance, 
-but will be more influenced by neighboring voxels. Thus we are degrading the 
+but will be more influenced by neighboring voxels. Thus, we are degrading the 
 spatial resolution of the image slightly to improve the noise characteristics. 
 The size of the Gaussian smoothing kernel is typically specified as the 
 full-width of the kernel at half the maximum value of the kernel.
@@ -250,7 +250,7 @@ problem in FSL to demonstrate why we need to register the images and
 then perform the co-registration to align the PET data to the T1-w MRI.
 
 ### View images in FSL
-1. Open the `sub001_t1mri.nii` and in FSL. Use the down arrow next to the Overlay list to
+1. Open the `rsub001_t1mri.nii` and in FSL. Use the down arrow next to the Overlay list to
 move the T1 to the bottom of the list. Select the T1 and set the window min and max to
 0 and 1,400, respectively.
 1. Select the smoothed 50-70 min SUM PIB image in the viewer and adjust the min and
@@ -282,7 +282,7 @@ processing drop down. This function will estimate the parameters needed to align
 source image to the reference image, write those transformations to the NIfTI headers
 for those files and will create new images with the image matrices resliced to align voxel-
 to-voxel with the reference image.
-   * Select `sub001_t1mri.nii` for the reference image.
+   * Select `rsub001_t1mri.nii` for the reference image.
    * Select the smoothed 50-70 SUM image for the source image. `ssub001_pib_SUM50-70min.nii`
    * Optional: if you’d like to also apply this registration to the 4D data, Select the 4D
 data for Other Images. You will need to enter each volume in the 4D image to
@@ -394,7 +394,7 @@ These are located in the folder `~/data/PETImaging/ProcessedPiBDVR` in the file
 `cghrsub001_pib_DVRlga.nii`
 Compare the DVR image with the SUVR image you created in the tutorial. 
 
-*How are similar and how are they different?*
+*How are the images similar and how are they different?*
 
 :::::::::::::::::::: hint
 Pay close attention to the display settings for the window and colormap.
