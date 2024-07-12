@@ -282,7 +282,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Processing and analysing PET brain images</h1>
-        <p>Last updated on 2024-07-11 |
+        <p>Last updated on 2024-07-12 |
 
         <a href="https://github.com/HealthBioscienceIDEAS/aaic2024-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -361,26 +361,29 @@ unprocessed PET NIfTI images and data
 <code>/home/as2-streaming-user/data/PET_Imaging</code>.</li>
 <li>Use <code>ls</code> to view the contents of this directory</li>
 <li>Use <code>cd</code> to change your working directory to the
-following location:
-<code>bash     cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData</code>
-</li>
-</ol></div>
+following location:</li>
+</ol><div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> /home/as2-streaming-user/data/PET_Imaging/UnprocessedData</span></code></pre>
+</div>
+</div>
 <div class="section level3">
 <h3 id="view-pet-metadata">View PET metadata<a class="anchor" aria-label="anchor" href="#view-pet-metadata"></a></h3>
 <p>View the information in the .json file for MK-6240 and PiB images by
 opening the .json files for the MK-6240 and PiB images. For example,
 type the following into the terminal:</p>
-<div class="codewrapper sourceCode" id="cb1">
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">gedit</span> sub001_pib.json</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">gedit</span> sub001_pib.json</span></code></pre>
 </div>
 <div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -495,10 +498,10 @@ from in the command line)</p></li>
 long at this part of the sequence, we can simply take the average to sum
 the last 20 minutes of counts.</p>
 <p>Enter the expression</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
 </div>
 <p>Note that taking the average of these frames is equivalent to summing
 all of the detected counts across the frames and dividing by the total
@@ -535,10 +538,10 @@ equivalent to summing all of the counts and dividing by the total time.
 How can we use a weighted average to account for the differences in
 frame durations between the first five and last two frames of the first
 20 minutes?</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i2</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span> <span class="va">i7</span><span class="op">*</span><span class="fl">5</span>) <span class="op">/</span> <span class="fl">20</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i2</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span> <span class="va">i7</span><span class="op">*</span><span class="fl">5</span>) <span class="op">/</span> <span class="fl">20</span></span></code></pre>
 </div>
 </li>
 <li><p>Name this file <code>sub001_pib_SUM0-20min.nii</code></p></li>
@@ -571,15 +574,15 @@ do both at the same time)</li>
 <li>
 <code>FWHM</code> – 4 4 4 (this specified an isotropic 4 mm
 full-width half Gaussian smoothing kernel)</li>
-</ul></li>
-</ol><ul><li>
+<li>
 <code>Data Type</code> – Same</li>
 <li>
 <code>Implicit Mask</code> – No</li>
 <li>
 <code>Filename prefix</code> – ‘s’ (this prepends an “s” onto the
 filename to indicate the newly created image was smoothed)</li>
-</ul><ol style="list-style-type: decimal"><li>Press the green play button to run the smoothing module.</li>
+</ul></li>
+<li>Press the green play button to run the smoothing module.</li>
 <li>Close the SPM batch editor.</li>
 <li>View the resultant smoothed images in FSL (the ones with an ‘s’
 prefix in the filename). Note the reduction in voxel-level noise but
@@ -620,20 +623,20 @@ image.
 <ol style="list-style-type: lower-alpha"><li>
 <p>In the terminal, create a new directory called “safe” in your
 working directory.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">mkdir</span> safe</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">mkdir</span> safe</span></code></pre>
 </div>
 </li>
 <li>
 <p>Copy the <code>ssub001_pib_SUM50-70min.nii</code> and
 <code>sub001_pib.nii</code> images to the safe directory using the cp
 command in the terminal.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">cp</span> ssub001_pib_SUM50-70min.nii safe/ ssub001_pib_SUM50-70min.nii</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">cp</span> ssub001_pib_SUM50-70min.nii safe/ ssub001_pib_SUM50-70min.nii</span></code></pre>
 </div>
 </li>
 </ol></li>
@@ -741,24 +744,24 @@ We’ll do this in two steps using FSL.</p></li>
 <li>
 <p>In the command line, extract the mean activity concentration in
 the cerebellum mask using fslstats</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">fslstats</span> rssub001_pib_SUM50-70min.nii <span class="at">-k</span> rsub001_cblm_mask.nii <span class="at">-M</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">fslstats</span> rssub001_pib_SUM50-70min.nii <span class="at">-k</span> rsub001_cblm_mask.nii <span class="at">-M</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>TODO: add output</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fl">5902.898170</span> </span></code></pre>
 </div>
 </li>
 <li>
 <p>Create the SUVR image by dividing the SUM 50-70min image by the
 mean activity concentration output by <code>fslstats</code></p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">fslmaths</span> rssub001_pib_SUM50-70min.nii <span class="at">-div</span> {ROI mean} rssub001_pib_SUVR50-70min.nii</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fslmaths</span> rssub001_pib_SUM50-70min.nii <span class="at">-div</span> {ROI mean} rssub001_pib_SUVR50-70min.nii</span></code></pre>
 </div>
 </li>
 </ol></div>
@@ -817,7 +820,7 @@ SUVR image you created in the tutorial.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -845,7 +848,7 @@ a SUVR image for the MK-6240 scan.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
 <div class="accordion-body">
 <p>You’ll need to look at the .json file for the TAU PET NIfTI file -
 this will contain key information around timing and framing so that you
@@ -932,10 +935,10 @@ input.</p></li>
 <p>For the expression, specify an equation for a frame
 duration-weighted average of all frames. Recall that the frame durations
 are stored in the .json file.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i7</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i8</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i9</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i10</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i11</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i12</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i13</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i14</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i15</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i16</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i17</span><span class="op">*</span><span class="fl">5</span>)<span class="op">/</span><span class="fl">70</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i7</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i8</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i9</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i10</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i11</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i12</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i13</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i14</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i15</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i16</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i17</span><span class="op">*</span><span class="fl">5</span>)<span class="op">/</span><span class="fl">70</span></span></code></pre>
 </div>
 </li>
 <li><p>Use FLOAT32 for the Data Type</p></li>
@@ -1154,8 +1157,8 @@ any links that you are not going to use.
   "url": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/pet-imaging.html",
   "identifier": "https://HealthBioscienceIDEAS.github.io/aaic2024-neuroimaging-workshop/instructor/pet-imaging.html",
   "dateCreated": "2024-06-04",
-  "dateModified": "2024-07-11",
-  "datePublished": "2024-07-11"
+  "dateModified": "2024-07-12",
+  "datePublished": "2024-07-12"
 }
 
   </script><script>
