@@ -52,9 +52,10 @@ Notably, no smoothing was applied during the PET reconstruction.
 unprocessed PET NIfTI images and data `/home/as2-streaming-user/data/PET_Imaging`.
 1. Use `ls` to view the contents of this directory
 1. Use `cd` to change your working directory to the following location: 
-    ```bash
-    cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData
-    ```
+    
+```bash
+cd /home/as2-streaming-user/data/PET_Imaging/UnprocessedData
+```
     
 ### View PET metadata
 View the information in the .json file for MK-6240 and PiB images by 
@@ -227,14 +228,11 @@ full-width of the kernel at half the maximum value of the kernel.
 ### Apply smoothing to SUM images
 1. Click on the Smooth button to launch the Smooth module in SPM and use the following
 inputs:
-   * `Image to Smooth` - Specify the two SUM images (you can do both at the same
-time)
-   * `FWHM` – 4 4 4 (this specified an isotropic 4 mm full-width half Gaussian
-smoothing kernel)
-  * `Data Type` – Same
-  * `Implicit Mask` – No
-  * `Filename prefix` – ‘s’ (this prepends an “s” onto the filename to 
-  indicate the newly created image was smoothed)
+   * `Image to Smooth` - Specify the two SUM images (you can do both at the same time)
+   * `FWHM` – 4 4 4 (this specified an isotropic 4 mm full-width half Gaussian smoothing kernel)
+   * `Data Type` – Same
+   * `Implicit Mask` – No
+   * `Filename prefix` – ‘s’ (this prepends an “s” onto the filename to indicate the newly created image was smoothed)
 1. Press the green play button to run the smoothing module.
 1. Close the SPM batch editor.
 1. View the resultant smoothed images in FSL (the ones with an ‘s’ prefix in 
@@ -360,7 +358,7 @@ using fslstats
     fslstats rssub001_pib_SUM50-70min.nii -k rsub001_cblm_mask.nii -M
     ```
     ```output
-    TODO: add output
+    5902.898170 
     ```
 1. Create the SUVR image by dividing the SUM 50-70min image by the mean activity
 concentration output by `fslstats`
