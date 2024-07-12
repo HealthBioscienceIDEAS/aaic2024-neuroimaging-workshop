@@ -36,12 +36,13 @@ The following committee members have been developing and testing the content and
 | Ludovica Griffanti | University of Oxford, United Kingdom |
 | Tobey Betthauser | University of Wisconsin, U.S.A. | 
 | Alexa Pichet Binette | Lund University, Sweden |
+| Tavia Evans | Erasmus Medical Center, Netherlands |
 
 ### Acknowledgements
 These lessons are developed as part of the [Health and Biosciences IDEAS](https://healthbioscienceideas.github.io) project, which is a training initiative funded by [UKRI Innovation Scholars](https://www.ukri.org/opportunity/innovation-scholars-data-science-training-in-health-bioscience/) (MR/V03863X/1)
 
 Thanks to the generous support of the Alzheimer's Association, the [International Society to Advance Alzheimer's Research and Treatment (ISTAART)](https://action.alz.org/personifyebusiness/default.aspx?tabid=1516) and the ISTAART Neuroimaging Professional Interest Area in terms of travel funding for the organizers.
 
-The data for this course comes from the [Open Access Series of Imaging Studies](https://www.oasis-brains.org/)(OASIS) dataset. Many thanks to Pamela LaMontaigne and the OASIS team as Washington University for their support with the data.
+The data for this course comes from the [Open Access Series of Imaging Studies](https://www.oasis-brains.org/)(OASIS) dataset and the [Wisconsin Registry for Alzheimer's Prevention](https://wrap.wisc.edu/). Many thanks to Pamela LaMontaigne and the OASIS team as Washington University for their support with the data. Thanks to the WRAP study teams and participants at the University of Wisconsin-Madison for their contributions.
 
 Special thanks to Christian Haselgrove (NITRC-CE), Courtney Waugh (Amazon), and Mark Watts (UCL) for their support in creating the infrastructure for this project. 
