@@ -4,7 +4,7 @@ site: sandpaper::sandpaper_site
 
 |  |  |
 | --- | --- |
-| Date | Friday 26th July 2023 |
+| Date | Friday 26th July 2024 |
 | Time | 8AM - 12PM Eastern Daylight Time | 
 | Location | Marriott Philadelphia Downtown |
 | Format | In-person workshop | 
